@@ -1,0 +1,8 @@
+# Output products list for <icon>
+icon.ncf
+icon.ngc
+icon.v
+icon.veo
+icon.xco
+icon_flist.txt
+icon_xmdf.tcl

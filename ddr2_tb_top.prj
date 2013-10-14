@@ -1,0 +1,5 @@
+verilog work "xupv5_mig_design/mig_23/example_design/rtl/ddr2_tb_test_data_gen.v"
+verilog work "xupv5_mig_design/mig_23/example_design/rtl/ddr2_tb_test_addr_gen.v"
+verilog work "xupv5_mig_design/mig_23/example_design/rtl/ddr2_tb_test_gen.v"
+verilog work "xupv5_mig_design/mig_23/example_design/rtl/ddr2_tb_test_cmp.v"
+verilog work "xupv5_mig_design/mig_23/example_design/rtl/ddr2_tb_top.v"

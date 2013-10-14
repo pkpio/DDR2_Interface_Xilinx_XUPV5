@@ -1,0 +1,1509 @@
+Release 14.6 Map P.68d (nt64)
+Xilinx Mapping Report File for Design 'mig_36_1'
+
+Design Information
+------------------
+Command Line   : map -intstyle ise -p xc5vlx110t-ff1136-1 -w -logic_opt off -ol high -t 1 -register_duplication off
+-global_opt off -mt off -cm area -ir off -pr off -lc off -power off -o mig_36_1_map.ncd mig_36_1.ngd mig_36_1.pcf 
+Target Device  : xc5vlx110t
+Target Package : ff1136
+Target Speed   : -1
+Mapper Version : virtex5 -- $Revision: 1.55 $
+Mapped Date    : Tue Oct 08 16:43:51 2013
+
+Design Summary
+--------------
+Number of errors:      0
+Number of warnings:    1
+Slice Logic Utilization:
+  Number of Slice Registers:                 2,171 out of  69,120    3%
+    Number used as Flip Flops:               2,171
+  Number of Slice LUTs:                      1,492 out of  69,120    2%
+    Number used as logic:                    1,469 out of  69,120    2%
+      Number using O6 output only:           1,209
+      Number using O5 output only:              11
+      Number using O5 and O6:                  249
+    Number used as Memory:                      22 out of  17,920    1%
+      Number used as Shift Register:            22
+        Number using O6 output only:            22
+    Number used as exclusive route-thru:         1
+  Number of route-thrus:                        13
+    Number using O6 output only:                12
+    Number using O5 output only:                 1
+
+Slice Logic Distribution:
+  Number of occupied Slices:                 1,024 out of  17,280    5%
+  Number of LUT Flip Flop pairs used:        2,611
+    Number with an unused Flip Flop:           440 out of   2,611   16%
+    Number with an unused LUT:               1,119 out of   2,611   42%
+    Number of fully used LUT-FF pairs:       1,052 out of   2,611   40%
+    Number of unique control sets:             152
+    Number of slice register sites lost
+      to control set restrictions:             267 out of  69,120    1%
+
+  A LUT Flip Flop pair for this architecture represents one LUT paired with
+  one Flip Flop within a slice.  A control set is a unique combination of
+  clock, reset, set, and enable signals for a registered element.
+  The Slice Logic Distribution report is not meaningful if the design is
+  over-mapped for a non-slice resource or if Placement fails.
+  OVERMAPPING of BRAM resources should be ignored if the design is
+  over-mapped for a non-BRAM resource or if placement fails.
+
+IO Utilization:
+  Number of bonded IOBs:                       432 out of     640   67%
+    Number of LOCed IOBs:                      119 out of     432   27%
+    IOB Flip Flops:                            265
+
+Specific Feature Utilization:
+  Number of BlockRAM/FIFO:                       3 out of     148    2%
+    Number using FIFO only:                      3
+    Total primitives used:
+      Number of 36k FIFO used:                   3
+    Total Memory used (KB):                    108 out of   5,328    2%
+  Number of BUFG/BUFGCTRLs:                      4 out of      32   12%
+    Number used as BUFGs:                        4
+  Number of IDELAYCTRLs:                         3 out of      22   13%
+  Number of BUFIOs:                              8 out of      80   10%
+  Number of PLL_ADVs:                            1 out of       6   16%
+
+Average Fanout of Non-Clock Nets:                2.73
+
+Peak Memory Usage:  661 MB
+Total REAL time to MAP completion:  1 mins 26 secs 
+Total CPU time to MAP completion:   1 mins 13 secs 
+
+Table of Contents
+-----------------
+Section 1 - Errors
+Section 2 - Warnings
+Section 3 - Informational
+Section 4 - Removed Logic Summary
+Section 5 - Removed Logic
+Section 6 - IOB Properties
+Section 7 - RPMs
+Section 8 - Guide Report
+Section 9 - Area Group and Partition Summary
+Section 10 - Timing Report
+Section 11 - Configuration String Information
+Section 12 - Control Set Information
+Section 13 - Utilization by Hierarchy
+
+Section 1 - Errors
+------------------
+
+Section 2 - Warnings
+--------------------
+WARNING:Timing:3223 - Timing constraint TS_MC_PHY_INIT_DATA_SEL_90 = MAXDELAY
+   FROM TIMEGRP "TNM_PHY_INIT_DATA_SEL" TO TIMEGRP "RAMS" TS_SYS_CLK * 4 ignored
+   during timing analysis.
+
+Section 3 - Informational
+-------------------------
+INFO:LIT:243 - Logical network N582 has no load.
+INFO:LIT:395 - The above info message is repeated 7 more times for the following
+   (max. 5 shown):
+   N583,
+   N584,
+   N585,
+   N586,
+   N587
+   To see the details of these info messages, please use the -detail switch.
+INFO:MapLib:562 - No environment variables are currently set.
+INFO:MapLib:950 - SAVE has been detected on block
+   "u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_ctl_io/gen_cs_n[0]..u_ff_cs_n"
+INFO:MapLib:950 - SAVE has been detected on block
+   "u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_ctl_io/gen_cke[0].u_ff_cke"
+INFO:MapLib:950 - SAVE has been detected on block
+   "u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_ctl_io/gen_odt_ddr2.gen_odt[0].u_f
+   f_odt"
+INFO:MapLib:856 - PLL_ADV u_ddr2_infrastructure/gen_pll_adv.u_pll_adv CLKIN2 pin
+   was disconnected because a constant 1 is driving the CLKINSEL pin.
+INFO:MapLib:841 - Changing COMPENSATION attribute from SYSTEM_SYNCHRONOUS to
+   INTERNAL for PLL_ADV u_ddr2_infrastructure/gen_pll_adv.u_pll_adv.
+INFO:LIT:244 - All of the single ended outputs in this design are using slew
+   rate limited output drivers. The delay on speed critical single ended outputs
+   can be dramatically reduced by designating them as fast outputs.
+INFO:Pack:1716 - Initializing temperature to 85.000 Celsius. (default - Range:
+   0.000 to 85.000 Celsius)
+INFO:Pack:1720 - Initializing voltage to 0.950 Volts. (default - Range: 0.950 to
+   1.050 Volts)
+INFO:Timing:3386 - Intersecting Constraints found and resolved.  For more
+   information, see the TSI report.  Please consult the Xilinx Command Line
+   Tools User Guide for information on generating a TSI report.
+INFO:Map:215 - The Interim Design Summary has been generated in the MAP Report
+   (.mrp).
+INFO:Place:834 - Only a subset of IOs are locked. Out of 432 IOs, 119 are locked
+   and 313 are not locked. If you would like to print the names of these IOs,
+   please set the environment variable XIL_PAR_DESIGN_CHECK_VERBOSE to 1. 
+INFO:Pack:1650 - Map created a placed design.
+
+Section 4 - Removed Logic Summary
+---------------------------------
+ 122 block(s) removed
+   2 block(s) optimized away
+ 115 signal(s) removed
+
+Section 5 - Removed Logic
+-------------------------
+
+The trimmed logic report below shows the logic removed from your design due to
+sourceless or loadless signals, and VCC or ground connections.  If the removal
+of a signal or symbol results in the subsequent removal of an additional signal
+or symbol, the message explaining that second removal will be indented.  This
+indentation will be repeated as a chain of related logic is removed.
+
+To quickly locate the original cause for the removal of a chain of logic, look
+above the place where that logic is listed in the trimming report, then locate
+the lines that are least indented (begin at the leftmost edge).
+
+Loadless block
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/gen_rden[1].u_calib_rd
+en_r" (SFF) removed.
+ The signal
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_srl_out<1>" is
+loadless and has been removed.
+Loadless block
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/gen_rden[2].u_calib_rd
+en_r" (SFF) removed.
+ The signal
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_srl_out<2>" is
+loadless and has been removed.
+Loadless block
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/gen_rden[3].u_calib_rd
+en_r" (SFF) removed.
+ The signal
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_srl_out<3>" is
+loadless and has been removed.
+Loadless block
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/gen_rden[4].u_calib_rd
+en_r" (SFF) removed.
+ The signal
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_srl_out<4>" is
+loadless and has been removed.
+Loadless block
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/gen_rden[5].u_calib_rd
+en_r" (SFF) removed.
+ The signal
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_srl_out<5>" is
+loadless and has been removed.
+Loadless block
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/gen_rden[6].u_calib_rd
+en_r" (SFF) removed.
+ The signal
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_srl_out<6>" is
+loadless and has been removed.
+Loadless block
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/gen_rden[7].u_calib_rd
+en_r" (SFF) removed.
+ The signal
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_srl_out<7>" is
+loadless and has been removed.
+
+The trimmed logic reported below is either:
+   1. part of a cycle
+   2. part of disabled logic
+   3. a side-effect of other trimmed logic
+
+The signal "N126" is unused and has been removed.
+ Unused block
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_35_mux0000_SW
+0" (ROM) removed.
+  The signal
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly<35>" is
+unused and has been removed.
+   Unused block
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_35" (SFF)
+removed.
+The signal "N575" is unused and has been removed.
+ Unused block
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_33_mux0000_G"
+(ROM) removed.
+  The signal
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly<33>" is
+unused and has been removed.
+   Unused block
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_33" (SFF)
+removed.
+    The signal
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_33_mux0000"
+is unused and has been removed.
+     Unused block
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_33_mux00001"
+(ROM) removed.
+The signal "N77" is unused and has been removed.
+ Unused block
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_12_mux000011_
+SW0" (ROM) removed.
+The signal "u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/N131" is
+unused and has been removed.
+ Unused block
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_18_mux000011"
+(ROM) removed.
+The signal
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly<10>" is
+unused and has been removed.
+ Unused block
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_10" (SFF)
+removed.
+  The signal
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_10_mux0000"
+is unused and has been removed.
+   Unused block
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_10_mux00002"
+(ROM) removed.
+The signal
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly<11>" is
+unused and has been removed.
+ Unused block
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_11" (SFF)
+removed.
+  The signal
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_11_mux0000"
+is unused and has been removed.
+   Unused block
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_11_mux00002"
+(ROM) removed.
+The signal
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly<12>" is
+unused and has been removed.
+ Unused block
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_12" (SFF)
+removed.
+  The signal
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_12_mux0000"
+is unused and has been removed.
+   Unused block
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_12_mux00002"
+(ROM) removed.
+The signal
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly<13>" is
+unused and has been removed.
+ Unused block
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_13" (SFF)
+removed.
+  The signal
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_13_mux0000"
+is unused and has been removed.
+   Unused block
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_13_mux00001"
+(ROM) removed.
+The signal
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly<14>" is
+unused and has been removed.
+ Unused block
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_14" (SFF)
+removed.
+  The signal
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_14_mux0000"
+is unused and has been removed.
+   Unused block
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_14_mux00002"
+(ROM) removed.
+The signal
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly<15>" is
+unused and has been removed.
+ Unused block
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_15" (SFF)
+removed.
+  The signal
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_15_mux0000"
+is unused and has been removed.
+   Unused block
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_15_mux00001"
+(ROM) removed.
+The signal
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly<16>" is
+unused and has been removed.
+ Unused block
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_16" (SFF)
+removed.
+  The signal
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_16_mux0000"
+is unused and has been removed.
+   Unused block
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_16_mux00001"
+(ROM) removed.
+The signal
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly<17>" is
+unused and has been removed.
+ Unused block
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_17" (SFF)
+removed.
+  The signal
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_17_mux0000"
+is unused and has been removed.
+   Unused block
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_17_mux00001"
+(ROM) removed.
+The signal
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly<18>" is
+unused and has been removed.
+ Unused block
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_18" (SFF)
+removed.
+  The signal
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_18_mux0000"
+is unused and has been removed.
+   Unused block
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_18_mux00001"
+(ROM) removed.
+The signal
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly<19>" is
+unused and has been removed.
+ Unused block
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_19" (SFF)
+removed.
+  The signal
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_19_mux0000"
+is unused and has been removed.
+   Unused block
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_19_mux00001"
+(ROM) removed.
+The signal
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly<20>" is
+unused and has been removed.
+ Unused block
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_20" (SFF)
+removed.
+  The signal
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_20_mux0000"
+is unused and has been removed.
+   Unused block
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_20_mux00001"
+(ROM) removed.
+The signal
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly<21>" is
+unused and has been removed.
+ Unused block
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_21" (SFF)
+removed.
+  The signal
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_21_mux0000"
+is unused and has been removed.
+   Unused block
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_21_mux00001"
+(ROM) removed.
+The signal
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly<22>" is
+unused and has been removed.
+ Unused block
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_22" (SFF)
+removed.
+  The signal
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_22_mux0000"
+is unused and has been removed.
+   Unused block
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_22_mux00001"
+(ROM) removed.
+The signal
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly<23>" is
+unused and has been removed.
+ Unused block
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_23" (SFF)
+removed.
+  The signal
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_23_mux0000"
+is unused and has been removed.
+   Unused block
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_23_mux00001"
+(ROM) removed.
+The signal
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly<24>" is
+unused and has been removed.
+ Unused block
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_24" (SFF)
+removed.
+  The signal
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_24_mux0000"
+is unused and has been removed.
+   Unused block
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_24_mux00001"
+(ROM) removed.
+The signal
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly<25>" is
+unused and has been removed.
+ Unused block
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_25" (SFF)
+removed.
+  The signal
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_25_mux0000"
+is unused and has been removed.
+   Unused block
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_25_mux0000"
+(ROM) removed.
+The signal
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly<26>" is
+unused and has been removed.
+ Unused block
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_26" (SFF)
+removed.
+  The signal
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_26_mux0000"
+is unused and has been removed.
+   Unused block
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_26_mux00001"
+(ROM) removed.
+The signal
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly<27>" is
+unused and has been removed.
+ Unused block
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_27" (SFF)
+removed.
+  The signal
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_27_mux0000"
+is unused and has been removed.
+   Unused block
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_27_mux00001"
+(ROM) removed.
+The signal
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly<28>" is
+unused and has been removed.
+ Unused block
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_28" (SFF)
+removed.
+  The signal
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_28_mux0000"
+is unused and has been removed.
+   Unused block
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_28_mux00001"
+(ROM) removed.
+The signal
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly<29>" is
+unused and has been removed.
+ Unused block
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_29" (SFF)
+removed.
+  The signal
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_29_mux0000"
+is unused and has been removed.
+   Unused block
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_29_mux00001"
+(ROM) removed.
+The signal
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly<30>" is
+unused and has been removed.
+ Unused block
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_30" (SFF)
+removed.
+  The signal
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_30_mux0000"
+is unused and has been removed.
+   Unused block
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_30_mux00001"
+(ROM) removed.
+The signal
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly<31>" is
+unused and has been removed.
+ Unused block
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_31" (SFF)
+removed.
+  The signal
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_31_mux0000"
+is unused and has been removed.
+   Unused block
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_31_mux00001"
+(ROM) removed.
+The signal
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly<32>" is
+unused and has been removed.
+ Unused block
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_32" (SFF)
+removed.
+  The signal
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_32_mux0000"
+is unused and has been removed.
+   Unused block
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_32_mux00001"
+(ROM) removed.
+The signal
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly<34>" is
+unused and has been removed.
+ Unused block
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_34" (SFF)
+removed.
+  The signal
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_34_mux0000"
+is unused and has been removed.
+   Unused block
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_34_mux000069"
+(ROM) removed.
+The signal
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly<36>" is
+unused and has been removed.
+ Unused block
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_36" (SFF)
+removed.
+  The signal
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_36_mux0000"
+is unused and has been removed.
+   Unused block
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_36_mux00001"
+(ROM) removed.
+The signal
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly<37>" is
+unused and has been removed.
+ Unused block
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_37" (SFF)
+removed.
+  The signal
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_37_mux0000"
+is unused and has been removed.
+   Unused block
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_37_mux00001"
+(ROM) removed.
+The signal
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly<38>" is
+unused and has been removed.
+ Unused block
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_38" (SFF)
+removed.
+  The signal
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_38_mux0000"
+is unused and has been removed.
+   Unused block
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_38_mux00001"
+(ROM) removed.
+The signal
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly<39>" is
+unused and has been removed.
+ Unused block
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_39" (SFF)
+removed.
+  The signal
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_39_mux0000"
+is unused and has been removed.
+   Unused block
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_39_mux00001"
+(ROM) removed.
+The signal
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly<5>" is unused
+and has been removed.
+ Unused block
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_5" (SFF)
+removed.
+  The signal
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_5_mux0000" is
+unused and has been removed.
+   Unused block
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_5_mux00001"
+(ROM) removed.
+The signal
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly<6>" is unused
+and has been removed.
+ Unused block
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_6" (SFF)
+removed.
+  The signal
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_6_mux0000" is
+unused and has been removed.
+   Unused block
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_6_mux00001"
+(ROM) removed.
+The signal
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly<7>" is unused
+and has been removed.
+ Unused block
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_7" (SFF)
+removed.
+  The signal
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_7_mux0000" is
+unused and has been removed.
+   Unused block
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_7_mux00001"
+(ROM) removed.
+The signal
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly<8>" is unused
+and has been removed.
+ Unused block
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_8" (SFF)
+removed.
+  The signal
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_8_mux0000" is
+unused and has been removed.
+   Unused block
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_8_mux00001"
+(ROM) removed.
+The signal
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly<9>" is unused
+and has been removed.
+ Unused block
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_9" (SFF)
+removed.
+  The signal
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_9_mux0000" is
+unused and has been removed.
+   Unused block
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_9_mux0000"
+(ROM) removed.
+The signal
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_r<10>" is
+unused and has been removed.
+ Unused block
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/gen_rden_dly[10].u_ff_
+rden_dly" (SFF) removed.
+The signal
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_r<11>" is
+unused and has been removed.
+ Unused block
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/gen_rden_dly[11].u_ff_
+rden_dly" (SFF) removed.
+The signal
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_r<12>" is
+unused and has been removed.
+ Unused block
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/gen_rden_dly[12].u_ff_
+rden_dly" (SFF) removed.
+The signal
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_r<13>" is
+unused and has been removed.
+ Unused block
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/gen_rden_dly[13].u_ff_
+rden_dly" (SFF) removed.
+The signal
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_r<14>" is
+unused and has been removed.
+ Unused block
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/gen_rden_dly[14].u_ff_
+rden_dly" (SFF) removed.
+The signal
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_r<15>" is
+unused and has been removed.
+ Unused block
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/gen_rden_dly[15].u_ff_
+rden_dly" (SFF) removed.
+The signal
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_r<16>" is
+unused and has been removed.
+ Unused block
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/gen_rden_dly[16].u_ff_
+rden_dly" (SFF) removed.
+The signal
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_r<17>" is
+unused and has been removed.
+ Unused block
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/gen_rden_dly[17].u_ff_
+rden_dly" (SFF) removed.
+The signal
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_r<18>" is
+unused and has been removed.
+ Unused block
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/gen_rden_dly[18].u_ff_
+rden_dly" (SFF) removed.
+The signal
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_r<19>" is
+unused and has been removed.
+ Unused block
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/gen_rden_dly[19].u_ff_
+rden_dly" (SFF) removed.
+The signal
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_r<20>" is
+unused and has been removed.
+ Unused block
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/gen_rden_dly[20].u_ff_
+rden_dly" (SFF) removed.
+The signal
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_r<21>" is
+unused and has been removed.
+ Unused block
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/gen_rden_dly[21].u_ff_
+rden_dly" (SFF) removed.
+The signal
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_r<22>" is
+unused and has been removed.
+ Unused block
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/gen_rden_dly[22].u_ff_
+rden_dly" (SFF) removed.
+The signal
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_r<23>" is
+unused and has been removed.
+ Unused block
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/gen_rden_dly[23].u_ff_
+rden_dly" (SFF) removed.
+The signal
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_r<24>" is
+unused and has been removed.
+ Unused block
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/gen_rden_dly[24].u_ff_
+rden_dly" (SFF) removed.
+The signal
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_r<25>" is
+unused and has been removed.
+ Unused block
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/gen_rden_dly[25].u_ff_
+rden_dly" (SFF) removed.
+The signal
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_r<26>" is
+unused and has been removed.
+ Unused block
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/gen_rden_dly[26].u_ff_
+rden_dly" (SFF) removed.
+The signal
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_r<27>" is
+unused and has been removed.
+ Unused block
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/gen_rden_dly[27].u_ff_
+rden_dly" (SFF) removed.
+The signal
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_r<28>" is
+unused and has been removed.
+ Unused block
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/gen_rden_dly[28].u_ff_
+rden_dly" (SFF) removed.
+The signal
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_r<29>" is
+unused and has been removed.
+ Unused block
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/gen_rden_dly[29].u_ff_
+rden_dly" (SFF) removed.
+The signal
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_r<30>" is
+unused and has been removed.
+ Unused block
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/gen_rden_dly[30].u_ff_
+rden_dly" (SFF) removed.
+The signal
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_r<31>" is
+unused and has been removed.
+ Unused block
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/gen_rden_dly[31].u_ff_
+rden_dly" (SFF) removed.
+The signal
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_r<32>" is
+unused and has been removed.
+ Unused block
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/gen_rden_dly[32].u_ff_
+rden_dly" (SFF) removed.
+The signal
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_r<33>" is
+unused and has been removed.
+ Unused block
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/gen_rden_dly[33].u_ff_
+rden_dly" (SFF) removed.
+The signal
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_r<34>" is
+unused and has been removed.
+ Unused block
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/gen_rden_dly[34].u_ff_
+rden_dly" (SFF) removed.
+The signal
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_r<35>" is
+unused and has been removed.
+ Unused block
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/gen_rden_dly[35].u_ff_
+rden_dly" (SFF) removed.
+The signal
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_r<36>" is
+unused and has been removed.
+ Unused block
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/gen_rden_dly[36].u_ff_
+rden_dly" (SFF) removed.
+The signal
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_r<37>" is
+unused and has been removed.
+ Unused block
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/gen_rden_dly[37].u_ff_
+rden_dly" (SFF) removed.
+The signal
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_r<38>" is
+unused and has been removed.
+ Unused block
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/gen_rden_dly[38].u_ff_
+rden_dly" (SFF) removed.
+The signal
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_r<39>" is
+unused and has been removed.
+ Unused block
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/gen_rden_dly[39].u_ff_
+rden_dly" (SFF) removed.
+The signal
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_r<5>" is
+unused and has been removed.
+ Unused block
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/gen_rden_dly[5].u_ff_r
+den_dly" (SFF) removed.
+The signal
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_r<6>" is
+unused and has been removed.
+ Unused block
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/gen_rden_dly[6].u_ff_r
+den_dly" (SFF) removed.
+The signal
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_r<7>" is
+unused and has been removed.
+ Unused block
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/gen_rden_dly[7].u_ff_r
+den_dly" (SFF) removed.
+The signal
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_r<8>" is
+unused and has been removed.
+ Unused block
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/gen_rden_dly[8].u_ff_r
+den_dly" (SFF) removed.
+The signal
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/rden_dly_r<9>" is
+unused and has been removed.
+ Unused block
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/gen_rden_dly[9].u_ff_r
+den_dly" (SFF) removed.
+Unused block
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/gen_rden[1].u_rden_srl
+" (SRLC32E) removed.
+Unused block
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/gen_rden[2].u_rden_srl
+" (SRLC32E) removed.
+Unused block
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/gen_rden[3].u_rden_srl
+" (SRLC32E) removed.
+Unused block
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/gen_rden[4].u_rden_srl
+" (SRLC32E) removed.
+Unused block
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/gen_rden[5].u_rden_srl
+" (SRLC32E) removed.
+Unused block
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/gen_rden[6].u_rden_srl
+" (SRLC32E) removed.
+Unused block
+"u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/gen_rden[7].u_rden_srl
+" (SRLC32E) removed.
+
+Optimized Block(s):
+TYPE 		BLOCK
+GND 		XST_GND
+VCC 		XST_VCC
+
+To enable printing of redundant blocks removed and signals merged, set the
+detailed map report option and rerun map.
+
+Section 6 - IOB Properties
+--------------------------
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| IOB Name                           | Type             | Direction | IO Standard          | Diff  | Drive    | Slew | Reg (s)      | Resistor | IOB      |
+|                                    |                  |           |                      | Term  | Strength | Rate |              |          | Delay    |
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| app_af_addr<0>                     | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_af_addr<1>                     | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_af_addr<2>                     | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_af_addr<3>                     | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_af_addr<4>                     | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_af_addr<5>                     | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_af_addr<6>                     | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_af_addr<7>                     | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_af_addr<8>                     | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_af_addr<9>                     | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_af_addr<10>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_af_addr<11>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_af_addr<12>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_af_addr<13>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_af_addr<14>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_af_addr<15>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_af_addr<16>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_af_addr<17>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_af_addr<18>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_af_addr<19>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_af_addr<20>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_af_addr<21>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_af_addr<22>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_af_addr<23>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_af_addr<24>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_af_addr<25>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_af_addr<26>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_af_addr<27>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_af_addr<28>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_af_addr<29>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_af_addr<30>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_af_afull                       | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| app_af_cmd<0>                      | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_af_cmd<1>                      | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_af_cmd<2>                      | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_af_wren                        | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_afull                      | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| app_wdf_data<0>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<1>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<2>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<3>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<4>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<5>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<6>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<7>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<8>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<9>                    | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<10>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<11>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<12>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<13>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<14>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<15>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<16>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<17>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<18>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<19>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<20>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<21>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<22>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<23>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<24>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<25>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<26>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<27>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<28>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<29>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<30>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<31>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<32>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<33>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<34>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<35>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<36>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<37>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<38>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<39>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<40>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<41>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<42>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<43>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<44>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<45>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<46>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<47>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<48>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<49>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<50>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<51>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<52>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<53>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<54>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<55>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<56>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<57>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<58>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<59>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<60>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<61>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<62>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<63>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<64>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<65>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<66>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<67>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<68>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<69>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<70>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<71>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<72>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<73>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<74>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<75>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<76>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<77>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<78>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<79>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<80>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<81>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<82>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<83>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<84>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<85>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<86>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<87>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<88>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<89>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<90>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<91>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<92>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<93>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<94>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<95>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<96>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<97>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<98>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<99>                   | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<100>                  | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<101>                  | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<102>                  | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<103>                  | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<104>                  | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<105>                  | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<106>                  | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<107>                  | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<108>                  | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<109>                  | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<110>                  | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<111>                  | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<112>                  | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<113>                  | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<114>                  | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<115>                  | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<116>                  | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<117>                  | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<118>                  | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<119>                  | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<120>                  | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<121>                  | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<122>                  | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<123>                  | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<124>                  | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<125>                  | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<126>                  | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_data<127>                  | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_mask_data<0>               | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_mask_data<1>               | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_mask_data<2>               | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_mask_data<3>               | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_mask_data<4>               | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_mask_data<5>               | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_mask_data<6>               | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_mask_data<7>               | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_mask_data<8>               | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_mask_data<9>               | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_mask_data<10>              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_mask_data<11>              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_mask_data<12>              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_mask_data<13>              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_mask_data<14>              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_mask_data<15>              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| app_wdf_wren                       | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| clk0_tb                            | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| clk200_n                           | IOB              | INPUT     | LVPECL_25            |       |          |      |              |          |          |
+| clk200_p                           | IOB              | INPUT     | LVPECL_25            |       |          |      |              |          |          |
+| ddr2_a<0>                          | IOB              | OUTPUT    | SSTL18_II            |       |          |      | OFF          |          |          |
+| ddr2_a<1>                          | IOB              | OUTPUT    | SSTL18_II            |       |          |      | OFF          |          |          |
+| ddr2_a<2>                          | IOB              | OUTPUT    | SSTL18_II            |       |          |      | OFF          |          |          |
+| ddr2_a<3>                          | IOB              | OUTPUT    | SSTL18_II            |       |          |      | OFF          |          |          |
+| ddr2_a<4>                          | IOB              | OUTPUT    | SSTL18_II            |       |          |      | OFF          |          |          |
+| ddr2_a<5>                          | IOB              | OUTPUT    | SSTL18_II            |       |          |      | OFF          |          |          |
+| ddr2_a<6>                          | IOB              | OUTPUT    | SSTL18_II            |       |          |      | OFF          |          |          |
+| ddr2_a<7>                          | IOB              | OUTPUT    | SSTL18_II            |       |          |      | OFF          |          |          |
+| ddr2_a<8>                          | IOB              | OUTPUT    | SSTL18_II            |       |          |      | OFF          |          |          |
+| ddr2_a<9>                          | IOB              | OUTPUT    | SSTL18_II            |       |          |      | OFF          |          |          |
+| ddr2_a<10>                         | IOB              | OUTPUT    | SSTL18_II            |       |          |      | OFF          |          |          |
+| ddr2_a<11>                         | IOB              | OUTPUT    | SSTL18_II            |       |          |      | OFF          |          |          |
+| ddr2_a<12>                         | IOB              | OUTPUT    | SSTL18_II            |       |          |      | OFF          |          |          |
+| ddr2_ba<0>                         | IOB              | OUTPUT    | SSTL18_II            |       |          |      | OFF          |          |          |
+| ddr2_ba<1>                         | IOB              | OUTPUT    | SSTL18_II            |       |          |      | OFF          |          |          |
+| ddr2_cas_n                         | IOB              | OUTPUT    | SSTL18_II            |       |          |      | OFF          |          |          |
+| ddr2_ck<0>                         | IOB              | OUTPUT    | DIFF_SSTL18_II       |       |          |      | ODDR         |          |          |
+| ddr2_ck<1>                         | IOB              | OUTPUT    | DIFF_SSTL18_II       |       |          |      | ODDR         |          |          |
+| ddr2_ck_n<0>                       | IOB              | OUTPUT    | DIFF_SSTL18_II       |       |          |      | ODDR         |          |          |
+| ddr2_ck_n<1>                       | IOB              | OUTPUT    | DIFF_SSTL18_II       |       |          |      | ODDR         |          |          |
+| ddr2_cke<0>                        | IOB              | OUTPUT    | SSTL18_II            |       |          |      | OFF          |          |          |
+| ddr2_cs_n<0>                       | IOB              | OUTPUT    | SSTL18_II            |       |          |      | OFF          |          |          |
+| ddr2_dm<0>                         | IOB              | OUTPUT    | SSTL18_II_DCI        |       |          |      | ODDR         |          |          |
+| ddr2_dm<1>                         | IOB              | OUTPUT    | SSTL18_II_DCI        |       |          |      | ODDR         |          |          |
+| ddr2_dm<2>                         | IOB              | OUTPUT    | SSTL18_II_DCI        |       |          |      | ODDR         |          |          |
+| ddr2_dm<3>                         | IOB              | OUTPUT    | SSTL18_II_DCI        |       |          |      | ODDR         |          |          |
+| ddr2_dm<4>                         | IOB              | OUTPUT    | SSTL18_II_DCI        |       |          |      | ODDR         |          |          |
+| ddr2_dm<5>                         | IOB              | OUTPUT    | SSTL18_II_DCI        |       |          |      | ODDR         |          |          |
+| ddr2_dm<6>                         | IOB              | OUTPUT    | SSTL18_II_DCI        |       |          |      | ODDR         |          |          |
+| ddr2_dm<7>                         | IOB              | OUTPUT    | SSTL18_II_DCI        |       |          |      | ODDR         |          |          |
+| ddr2_dq<0>                         | IOB              | BIDIR     | SSTL18_II_DCI        |       |          |      | IDDR         |          | VARIABLE |
+|                                    |                  |           |                      |       |          |      | ODDR         |          |          |
+|                                    |                  |           |                      |       |          |      | TDDR         |          |          |
+| ddr2_dq<1>                         | IOB              | BIDIR     | SSTL18_II_DCI        |       |          |      | IDDR         |          | VARIABLE |
+|                                    |                  |           |                      |       |          |      | ODDR         |          |          |
+|                                    |                  |           |                      |       |          |      | TDDR         |          |          |
+| ddr2_dq<2>                         | IOB              | BIDIR     | SSTL18_II_DCI        |       |          |      | IDDR         |          | VARIABLE |
+|                                    |                  |           |                      |       |          |      | ODDR         |          |          |
+|                                    |                  |           |                      |       |          |      | TDDR         |          |          |
+| ddr2_dq<3>                         | IOB              | BIDIR     | SSTL18_II_DCI        |       |          |      | IDDR         |          | VARIABLE |
+|                                    |                  |           |                      |       |          |      | ODDR         |          |          |
+|                                    |                  |           |                      |       |          |      | TDDR         |          |          |
+| ddr2_dq<4>                         | IOB              | BIDIR     | SSTL18_II_DCI        |       |          |      | IDDR         |          | VARIABLE |
+|                                    |                  |           |                      |       |          |      | ODDR         |          |          |
+|                                    |                  |           |                      |       |          |      | TDDR         |          |          |
+| ddr2_dq<5>                         | IOB              | BIDIR     | SSTL18_II_DCI        |       |          |      | IDDR         |          | VARIABLE |
+|                                    |                  |           |                      |       |          |      | ODDR         |          |          |
+|                                    |                  |           |                      |       |          |      | TDDR         |          |          |
+| ddr2_dq<6>                         | IOB              | BIDIR     | SSTL18_II_DCI        |       |          |      | IDDR         |          | VARIABLE |
+|                                    |                  |           |                      |       |          |      | ODDR         |          |          |
+|                                    |                  |           |                      |       |          |      | TDDR         |          |          |
+| ddr2_dq<7>                         | IOB              | BIDIR     | SSTL18_II_DCI        |       |          |      | IDDR         |          | VARIABLE |
+|                                    |                  |           |                      |       |          |      | ODDR         |          |          |
+|                                    |                  |           |                      |       |          |      | TDDR         |          |          |
+| ddr2_dq<8>                         | IOB              | BIDIR     | SSTL18_II_DCI        |       |          |      | IDDR         |          | VARIABLE |
+|                                    |                  |           |                      |       |          |      | ODDR         |          |          |
+|                                    |                  |           |                      |       |          |      | TDDR         |          |          |
+| ddr2_dq<9>                         | IOB              | BIDIR     | SSTL18_II_DCI        |       |          |      | IDDR         |          | VARIABLE |
+|                                    |                  |           |                      |       |          |      | ODDR         |          |          |
+|                                    |                  |           |                      |       |          |      | TDDR         |          |          |
+| ddr2_dq<10>                        | IOB              | BIDIR     | SSTL18_II_DCI        |       |          |      | IDDR         |          | VARIABLE |
+|                                    |                  |           |                      |       |          |      | ODDR         |          |          |
+|                                    |                  |           |                      |       |          |      | TDDR         |          |          |
+| ddr2_dq<11>                        | IOB              | BIDIR     | SSTL18_II_DCI        |       |          |      | IDDR         |          | VARIABLE |
+|                                    |                  |           |                      |       |          |      | ODDR         |          |          |
+|                                    |                  |           |                      |       |          |      | TDDR         |          |          |
+| ddr2_dq<12>                        | IOB              | BIDIR     | SSTL18_II_DCI        |       |          |      | IDDR         |          | VARIABLE |
+|                                    |                  |           |                      |       |          |      | ODDR         |          |          |
+|                                    |                  |           |                      |       |          |      | TDDR         |          |          |
+| ddr2_dq<13>                        | IOB              | BIDIR     | SSTL18_II_DCI        |       |          |      | IDDR         |          | VARIABLE |
+|                                    |                  |           |                      |       |          |      | ODDR         |          |          |
+|                                    |                  |           |                      |       |          |      | TDDR         |          |          |
+| ddr2_dq<14>                        | IOB              | BIDIR     | SSTL18_II_DCI        |       |          |      | IDDR         |          | VARIABLE |
+|                                    |                  |           |                      |       |          |      | ODDR         |          |          |
+|                                    |                  |           |                      |       |          |      | TDDR         |          |          |
+| ddr2_dq<15>                        | IOB              | BIDIR     | SSTL18_II_DCI        |       |          |      | IDDR         |          | VARIABLE |
+|                                    |                  |           |                      |       |          |      | ODDR         |          |          |
+|                                    |                  |           |                      |       |          |      | TDDR         |          |          |
+| ddr2_dq<16>                        | IOB              | BIDIR     | SSTL18_II_DCI        |       |          |      | IDDR         |          | VARIABLE |
+|                                    |                  |           |                      |       |          |      | ODDR         |          |          |
+|                                    |                  |           |                      |       |          |      | TDDR         |          |          |
+| ddr2_dq<17>                        | IOB              | BIDIR     | SSTL18_II_DCI        |       |          |      | IDDR         |          | VARIABLE |
+|                                    |                  |           |                      |       |          |      | ODDR         |          |          |
+|                                    |                  |           |                      |       |          |      | TDDR         |          |          |
+| ddr2_dq<18>                        | IOB              | BIDIR     | SSTL18_II_DCI        |       |          |      | IDDR         |          | VARIABLE |
+|                                    |                  |           |                      |       |          |      | ODDR         |          |          |
+|                                    |                  |           |                      |       |          |      | TDDR         |          |          |
+| ddr2_dq<19>                        | IOB              | BIDIR     | SSTL18_II_DCI        |       |          |      | IDDR         |          | VARIABLE |
+|                                    |                  |           |                      |       |          |      | ODDR         |          |          |
+|                                    |                  |           |                      |       |          |      | TDDR         |          |          |
+| ddr2_dq<20>                        | IOB              | BIDIR     | SSTL18_II_DCI        |       |          |      | IDDR         |          | VARIABLE |
+|                                    |                  |           |                      |       |          |      | ODDR         |          |          |
+|                                    |                  |           |                      |       |          |      | TDDR         |          |          |
+| ddr2_dq<21>                        | IOB              | BIDIR     | SSTL18_II_DCI        |       |          |      | IDDR         |          | VARIABLE |
+|                                    |                  |           |                      |       |          |      | ODDR         |          |          |
+|                                    |                  |           |                      |       |          |      | TDDR         |          |          |
+| ddr2_dq<22>                        | IOB              | BIDIR     | SSTL18_II_DCI        |       |          |      | IDDR         |          | VARIABLE |
+|                                    |                  |           |                      |       |          |      | ODDR         |          |          |
+|                                    |                  |           |                      |       |          |      | TDDR         |          |          |
+| ddr2_dq<23>                        | IOB              | BIDIR     | SSTL18_II_DCI        |       |          |      | IDDR         |          | VARIABLE |
+|                                    |                  |           |                      |       |          |      | ODDR         |          |          |
+|                                    |                  |           |                      |       |          |      | TDDR         |          |          |
+| ddr2_dq<24>                        | IOB              | BIDIR     | SSTL18_II_DCI        |       |          |      | IDDR         |          | VARIABLE |
+|                                    |                  |           |                      |       |          |      | ODDR         |          |          |
+|                                    |                  |           |                      |       |          |      | TDDR         |          |          |
+| ddr2_dq<25>                        | IOB              | BIDIR     | SSTL18_II_DCI        |       |          |      | IDDR         |          | VARIABLE |
+|                                    |                  |           |                      |       |          |      | ODDR         |          |          |
+|                                    |                  |           |                      |       |          |      | TDDR         |          |          |
+| ddr2_dq<26>                        | IOB              | BIDIR     | SSTL18_II_DCI        |       |          |      | IDDR         |          | VARIABLE |
+|                                    |                  |           |                      |       |          |      | ODDR         |          |          |
+|                                    |                  |           |                      |       |          |      | TDDR         |          |          |
+| ddr2_dq<27>                        | IOB              | BIDIR     | SSTL18_II_DCI        |       |          |      | IDDR         |          | VARIABLE |
+|                                    |                  |           |                      |       |          |      | ODDR         |          |          |
+|                                    |                  |           |                      |       |          |      | TDDR         |          |          |
+| ddr2_dq<28>                        | IOB              | BIDIR     | SSTL18_II_DCI        |       |          |      | IDDR         |          | VARIABLE |
+|                                    |                  |           |                      |       |          |      | ODDR         |          |          |
+|                                    |                  |           |                      |       |          |      | TDDR         |          |          |
+| ddr2_dq<29>                        | IOB              | BIDIR     | SSTL18_II_DCI        |       |          |      | IDDR         |          | VARIABLE |
+|                                    |                  |           |                      |       |          |      | ODDR         |          |          |
+|                                    |                  |           |                      |       |          |      | TDDR         |          |          |
+| ddr2_dq<30>                        | IOB              | BIDIR     | SSTL18_II_DCI        |       |          |      | IDDR         |          | VARIABLE |
+|                                    |                  |           |                      |       |          |      | ODDR         |          |          |
+|                                    |                  |           |                      |       |          |      | TDDR         |          |          |
+| ddr2_dq<31>                        | IOB              | BIDIR     | SSTL18_II_DCI        |       |          |      | IDDR         |          | VARIABLE |
+|                                    |                  |           |                      |       |          |      | ODDR         |          |          |
+|                                    |                  |           |                      |       |          |      | TDDR         |          |          |
+| ddr2_dq<32>                        | IOB              | BIDIR     | SSTL18_II_DCI        |       |          |      | IDDR         |          | VARIABLE |
+|                                    |                  |           |                      |       |          |      | ODDR         |          |          |
+|                                    |                  |           |                      |       |          |      | TDDR         |          |          |
+| ddr2_dq<33>                        | IOB              | BIDIR     | SSTL18_II_DCI        |       |          |      | IDDR         |          | VARIABLE |
+|                                    |                  |           |                      |       |          |      | ODDR         |          |          |
+|                                    |                  |           |                      |       |          |      | TDDR         |          |          |
+| ddr2_dq<34>                        | IOB              | BIDIR     | SSTL18_II_DCI        |       |          |      | IDDR         |          | VARIABLE |
+|                                    |                  |           |                      |       |          |      | ODDR         |          |          |
+|                                    |                  |           |                      |       |          |      | TDDR         |          |          |
+| ddr2_dq<35>                        | IOB              | BIDIR     | SSTL18_II_DCI        |       |          |      | IDDR         |          | VARIABLE |
+|                                    |                  |           |                      |       |          |      | ODDR         |          |          |
+|                                    |                  |           |                      |       |          |      | TDDR         |          |          |
+| ddr2_dq<36>                        | IOB              | BIDIR     | SSTL18_II_DCI        |       |          |      | IDDR         |          | VARIABLE |
+|                                    |                  |           |                      |       |          |      | ODDR         |          |          |
+|                                    |                  |           |                      |       |          |      | TDDR         |          |          |
+| ddr2_dq<37>                        | IOB              | BIDIR     | SSTL18_II_DCI        |       |          |      | IDDR         |          | VARIABLE |
+|                                    |                  |           |                      |       |          |      | ODDR         |          |          |
+|                                    |                  |           |                      |       |          |      | TDDR         |          |          |
+| ddr2_dq<38>                        | IOB              | BIDIR     | SSTL18_II_DCI        |       |          |      | IDDR         |          | VARIABLE |
+|                                    |                  |           |                      |       |          |      | ODDR         |          |          |
+|                                    |                  |           |                      |       |          |      | TDDR         |          |          |
+| ddr2_dq<39>                        | IOB              | BIDIR     | SSTL18_II_DCI        |       |          |      | IDDR         |          | VARIABLE |
+|                                    |                  |           |                      |       |          |      | ODDR         |          |          |
+|                                    |                  |           |                      |       |          |      | TDDR         |          |          |
+| ddr2_dq<40>                        | IOB              | BIDIR     | SSTL18_II_DCI        |       |          |      | IDDR         |          | VARIABLE |
+|                                    |                  |           |                      |       |          |      | ODDR         |          |          |
+|                                    |                  |           |                      |       |          |      | TDDR         |          |          |
+| ddr2_dq<41>                        | IOB              | BIDIR     | SSTL18_II_DCI        |       |          |      | IDDR         |          | VARIABLE |
+|                                    |                  |           |                      |       |          |      | ODDR         |          |          |
+|                                    |                  |           |                      |       |          |      | TDDR         |          |          |
+| ddr2_dq<42>                        | IOB              | BIDIR     | SSTL18_II_DCI        |       |          |      | IDDR         |          | VARIABLE |
+|                                    |                  |           |                      |       |          |      | ODDR         |          |          |
+|                                    |                  |           |                      |       |          |      | TDDR         |          |          |
+| ddr2_dq<43>                        | IOB              | BIDIR     | SSTL18_II_DCI        |       |          |      | IDDR         |          | VARIABLE |
+|                                    |                  |           |                      |       |          |      | ODDR         |          |          |
+|                                    |                  |           |                      |       |          |      | TDDR         |          |          |
+| ddr2_dq<44>                        | IOB              | BIDIR     | SSTL18_II_DCI        |       |          |      | IDDR         |          | VARIABLE |
+|                                    |                  |           |                      |       |          |      | ODDR         |          |          |
+|                                    |                  |           |                      |       |          |      | TDDR         |          |          |
+| ddr2_dq<45>                        | IOB              | BIDIR     | SSTL18_II_DCI        |       |          |      | IDDR         |          | VARIABLE |
+|                                    |                  |           |                      |       |          |      | ODDR         |          |          |
+|                                    |                  |           |                      |       |          |      | TDDR         |          |          |
+| ddr2_dq<46>                        | IOB              | BIDIR     | SSTL18_II_DCI        |       |          |      | IDDR         |          | VARIABLE |
+|                                    |                  |           |                      |       |          |      | ODDR         |          |          |
+|                                    |                  |           |                      |       |          |      | TDDR         |          |          |
+| ddr2_dq<47>                        | IOB              | BIDIR     | SSTL18_II_DCI        |       |          |      | IDDR         |          | VARIABLE |
+|                                    |                  |           |                      |       |          |      | ODDR         |          |          |
+|                                    |                  |           |                      |       |          |      | TDDR         |          |          |
+| ddr2_dq<48>                        | IOB              | BIDIR     | SSTL18_II_DCI        |       |          |      | IDDR         |          | VARIABLE |
+|                                    |                  |           |                      |       |          |      | ODDR         |          |          |
+|                                    |                  |           |                      |       |          |      | TDDR         |          |          |
+| ddr2_dq<49>                        | IOB              | BIDIR     | SSTL18_II_DCI        |       |          |      | IDDR         |          | VARIABLE |
+|                                    |                  |           |                      |       |          |      | ODDR         |          |          |
+|                                    |                  |           |                      |       |          |      | TDDR         |          |          |
+| ddr2_dq<50>                        | IOB              | BIDIR     | SSTL18_II_DCI        |       |          |      | IDDR         |          | VARIABLE |
+|                                    |                  |           |                      |       |          |      | ODDR         |          |          |
+|                                    |                  |           |                      |       |          |      | TDDR         |          |          |
+| ddr2_dq<51>                        | IOB              | BIDIR     | SSTL18_II_DCI        |       |          |      | IDDR         |          | VARIABLE |
+|                                    |                  |           |                      |       |          |      | ODDR         |          |          |
+|                                    |                  |           |                      |       |          |      | TDDR         |          |          |
+| ddr2_dq<52>                        | IOB              | BIDIR     | SSTL18_II_DCI        |       |          |      | IDDR         |          | VARIABLE |
+|                                    |                  |           |                      |       |          |      | ODDR         |          |          |
+|                                    |                  |           |                      |       |          |      | TDDR         |          |          |
+| ddr2_dq<53>                        | IOB              | BIDIR     | SSTL18_II_DCI        |       |          |      | IDDR         |          | VARIABLE |
+|                                    |                  |           |                      |       |          |      | ODDR         |          |          |
+|                                    |                  |           |                      |       |          |      | TDDR         |          |          |
+| ddr2_dq<54>                        | IOB              | BIDIR     | SSTL18_II_DCI        |       |          |      | IDDR         |          | VARIABLE |
+|                                    |                  |           |                      |       |          |      | ODDR         |          |          |
+|                                    |                  |           |                      |       |          |      | TDDR         |          |          |
+| ddr2_dq<55>                        | IOB              | BIDIR     | SSTL18_II_DCI        |       |          |      | IDDR         |          | VARIABLE |
+|                                    |                  |           |                      |       |          |      | ODDR         |          |          |
+|                                    |                  |           |                      |       |          |      | TDDR         |          |          |
+| ddr2_dq<56>                        | IOB              | BIDIR     | SSTL18_II_DCI        |       |          |      | IDDR         |          | VARIABLE |
+|                                    |                  |           |                      |       |          |      | ODDR         |          |          |
+|                                    |                  |           |                      |       |          |      | TDDR         |          |          |
+| ddr2_dq<57>                        | IOB              | BIDIR     | SSTL18_II_DCI        |       |          |      | IDDR         |          | VARIABLE |
+|                                    |                  |           |                      |       |          |      | ODDR         |          |          |
+|                                    |                  |           |                      |       |          |      | TDDR         |          |          |
+| ddr2_dq<58>                        | IOB              | BIDIR     | SSTL18_II_DCI        |       |          |      | IDDR         |          | VARIABLE |
+|                                    |                  |           |                      |       |          |      | ODDR         |          |          |
+|                                    |                  |           |                      |       |          |      | TDDR         |          |          |
+| ddr2_dq<59>                        | IOB              | BIDIR     | SSTL18_II_DCI        |       |          |      | IDDR         |          | VARIABLE |
+|                                    |                  |           |                      |       |          |      | ODDR         |          |          |
+|                                    |                  |           |                      |       |          |      | TDDR         |          |          |
+| ddr2_dq<60>                        | IOB              | BIDIR     | SSTL18_II_DCI        |       |          |      | IDDR         |          | VARIABLE |
+|                                    |                  |           |                      |       |          |      | ODDR         |          |          |
+|                                    |                  |           |                      |       |          |      | TDDR         |          |          |
+| ddr2_dq<61>                        | IOB              | BIDIR     | SSTL18_II_DCI        |       |          |      | IDDR         |          | VARIABLE |
+|                                    |                  |           |                      |       |          |      | ODDR         |          |          |
+|                                    |                  |           |                      |       |          |      | TDDR         |          |          |
+| ddr2_dq<62>                        | IOB              | BIDIR     | SSTL18_II_DCI        |       |          |      | IDDR         |          | VARIABLE |
+|                                    |                  |           |                      |       |          |      | ODDR         |          |          |
+|                                    |                  |           |                      |       |          |      | TDDR         |          |          |
+| ddr2_dq<63>                        | IOB              | BIDIR     | SSTL18_II_DCI        |       |          |      | IDDR         |          | VARIABLE |
+|                                    |                  |           |                      |       |          |      | ODDR         |          |          |
+|                                    |                  |           |                      |       |          |      | TDDR         |          |          |
+| ddr2_dqs<0>                        | IOB              | BIDIR     | DIFF_SSTL18_II_DCI   |       |          |      | ODDR         |          | VARIABLE |
+|                                    |                  |           |                      |       |          |      | TFF          |          |          |
+| ddr2_dqs<1>                        | IOB              | BIDIR     | DIFF_SSTL18_II_DCI   |       |          |      | ODDR         |          | VARIABLE |
+|                                    |                  |           |                      |       |          |      | TFF          |          |          |
+| ddr2_dqs<2>                        | IOB              | BIDIR     | DIFF_SSTL18_II_DCI   |       |          |      | ODDR         |          | VARIABLE |
+|                                    |                  |           |                      |       |          |      | TFF          |          |          |
+| ddr2_dqs<3>                        | IOB              | BIDIR     | DIFF_SSTL18_II_DCI   |       |          |      | ODDR         |          | VARIABLE |
+|                                    |                  |           |                      |       |          |      | TFF          |          |          |
+| ddr2_dqs<4>                        | IOB              | BIDIR     | DIFF_SSTL18_II_DCI   |       |          |      | ODDR         |          | VARIABLE |
+|                                    |                  |           |                      |       |          |      | TFF          |          |          |
+| ddr2_dqs<5>                        | IOB              | BIDIR     | DIFF_SSTL18_II_DCI   |       |          |      | ODDR         |          | VARIABLE |
+|                                    |                  |           |                      |       |          |      | TFF          |          |          |
+| ddr2_dqs<6>                        | IOB              | BIDIR     | DIFF_SSTL18_II_DCI   |       |          |      | ODDR         |          | VARIABLE |
+|                                    |                  |           |                      |       |          |      | TFF          |          |          |
+| ddr2_dqs<7>                        | IOB              | BIDIR     | DIFF_SSTL18_II_DCI   |       |          |      | ODDR         |          | VARIABLE |
+|                                    |                  |           |                      |       |          |      | TFF          |          |          |
+| ddr2_dqs_n<0>                      | IOB              | BIDIR     | DIFF_SSTL18_II_DCI   |       |          |      | ODDR         |          |          |
+|                                    |                  |           |                      |       |          |      | TFF          |          |          |
+| ddr2_dqs_n<1>                      | IOB              | BIDIR     | DIFF_SSTL18_II_DCI   |       |          |      | ODDR         |          |          |
+|                                    |                  |           |                      |       |          |      | TFF          |          |          |
+| ddr2_dqs_n<2>                      | IOB              | BIDIR     | DIFF_SSTL18_II_DCI   |       |          |      | ODDR         |          |          |
+|                                    |                  |           |                      |       |          |      | TFF          |          |          |
+| ddr2_dqs_n<3>                      | IOB              | BIDIR     | DIFF_SSTL18_II_DCI   |       |          |      | ODDR         |          |          |
+|                                    |                  |           |                      |       |          |      | TFF          |          |          |
+| ddr2_dqs_n<4>                      | IOB              | BIDIR     | DIFF_SSTL18_II_DCI   |       |          |      | ODDR         |          |          |
+|                                    |                  |           |                      |       |          |      | TFF          |          |          |
+| ddr2_dqs_n<5>                      | IOB              | BIDIR     | DIFF_SSTL18_II_DCI   |       |          |      | ODDR         |          |          |
+|                                    |                  |           |                      |       |          |      | TFF          |          |          |
+| ddr2_dqs_n<6>                      | IOB              | BIDIR     | DIFF_SSTL18_II_DCI   |       |          |      | ODDR         |          |          |
+|                                    |                  |           |                      |       |          |      | TFF          |          |          |
+| ddr2_dqs_n<7>                      | IOB              | BIDIR     | DIFF_SSTL18_II_DCI   |       |          |      | ODDR         |          |          |
+|                                    |                  |           |                      |       |          |      | TFF          |          |          |
+| ddr2_odt<0>                        | IOB              | OUTPUT    | SSTL18_II            |       |          |      | OFF          |          |          |
+| ddr2_ras_n                         | IOB              | OUTPUT    | SSTL18_II            |       |          |      | OFF          |          |          |
+| ddr2_we_n                          | IOB              | OUTPUT    | SSTL18_II            |       |          |      | OFF          |          |          |
+| phy_init_done                      | IOB              | OUTPUT    | LVCMOS18             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<0>                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<1>                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<2>                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<3>                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<4>                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<5>                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<6>                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<7>                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<8>                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<9>                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<10>               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<11>               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<12>               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<13>               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<14>               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<15>               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<16>               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<17>               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<18>               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<19>               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<20>               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<21>               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<22>               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<23>               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<24>               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<25>               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<26>               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<27>               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<28>               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<29>               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<30>               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<31>               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<32>               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<33>               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<34>               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<35>               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<36>               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<37>               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<38>               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<39>               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<40>               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<41>               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<42>               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<43>               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<44>               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<45>               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<46>               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<47>               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<48>               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<49>               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<50>               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<51>               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<52>               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<53>               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<54>               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<55>               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<56>               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<57>               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<58>               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<59>               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<60>               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<61>               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<62>               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<63>               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<64>               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<65>               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<66>               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<67>               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<68>               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<69>               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<70>               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<71>               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<72>               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<73>               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<74>               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<75>               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<76>               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<77>               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<78>               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<79>               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<80>               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<81>               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<82>               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<83>               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<84>               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<85>               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<86>               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<87>               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<88>               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<89>               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<90>               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<91>               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<92>               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<93>               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<94>               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<95>               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<96>               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<97>               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<98>               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<99>               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<100>              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<101>              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<102>              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<103>              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<104>              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<105>              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<106>              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<107>              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<108>              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<109>              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<110>              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<111>              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<112>              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<113>              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<114>              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<115>              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<116>              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<117>              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<118>              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<119>              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<120>              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<121>              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<122>              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<123>              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<124>              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<125>              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<126>              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_fifo_out<127>              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rd_data_valid                      | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| rst0_tb                            | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| sys_clk_n                          | IOB              | INPUT     | LVPECL_25            |       |          |      |              |          |          |
+| sys_clk_p                          | IOB              | INPUT     | LVPECL_25            |       |          |      |              |          |          |
+| sys_rst_n                          | IOB              | INPUT     | LVCMOS18             |       |          |      |              |          |          |
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Section 7 - RPMs
+----------------
+
+Section 8 - Guide Report
+------------------------
+Guide not run on this design.
+
+Section 9 - Area Group and Partition Summary
+--------------------------------------------
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+Area Group Information
+----------------------
+
+  No area groups were found in this design.
+
+----------------------
+
+Section 10 - Timing Report
+--------------------------
+A logic-level (pre-route) timing report can be generated by using Xilinx static
+timing analysis tools, Timing Analyzer (GUI) or TRCE (command line), with the
+mapped NCD and PCF files. Please note that this timing report will be generated
+using estimated delay information. For accurate numbers, please generate a
+timing report with the post Place and Route NCD file.
+
+For more information about the Timing Analyzer, consult the Xilinx Timing
+Analyzer Reference Manual; for more information about TRCE, consult the Xilinx
+Command Line Tools User Guide "TRACE" chapter.
+
+Section 11 - Configuration String Details
+-----------------------------------------
+Use the "-detail" map option to print out Configuration Strings
+
+Section 12 - Control Set Information
+------------------------------------
+Use the "-detail" map option to print out Control Set Information.
+
+Section 13 - Utilization by Hierarchy
+-------------------------------------
+Use the "-detail" map option to print out the Utilization by Hierarchy section.

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IMPORTANT: This is an internal file that has been generated
+     by the Xilinx ISE software.  Any direct editing or
+     changes made to this file may result in unpredictable
+     behavior or data corruption.  It is strongly advised that
+     users do not edit the contents of this file. -->
+<messages>
+<msg type="info" file="LIT" num="243" delta="new" >Logical network <arg fmt="%s" index="1">N582</arg> has no load.
+</msg>
+
+<msg type="info" file="LIT" num="395" delta="new" >The above <arg fmt="%s" index="1">info</arg> message is repeated <arg fmt="%d" index="2">7</arg> more times for the following (max. 5 shown):
+<arg fmt="%s" index="3">N583,
+N584,
+N585,
+N586,
+N587</arg>
+To see the details of these <arg fmt="%s" index="4">info</arg> messages, please use the -detail switch.
+</msg>
+
+<msg type="info" file="MapLib" num="562" delta="new" >No environment variables are currently set.
+</msg>
+
+<msg type="info" file="MapLib" num="950" delta="new" >SAVE has been detected on block &quot;<arg fmt="%s" index="1">u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_ctl_io/gen_cs_n[0]..u_ff_cs_n</arg>&quot;
+</msg>
+
+<msg type="info" file="MapLib" num="950" delta="new" >SAVE has been detected on block &quot;<arg fmt="%s" index="1">u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_ctl_io/gen_cke[0].u_ff_cke</arg>&quot;
+</msg>
+
+<msg type="info" file="MapLib" num="950" delta="new" >SAVE has been detected on block &quot;<arg fmt="%s" index="1">u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_ctl_io/gen_odt_ddr2.gen_odt[0].u_ff_odt</arg>&quot;
+</msg>
+
+<msg type="info" file="MapLib" num="856" delta="new" >PLL_ADV <arg fmt="%s" index="1">u_ddr2_infrastructure/gen_pll_adv.u_pll_adv</arg> CLKIN2 pin was disconnected because a constant 1 is driving the CLKINSEL pin.
+</msg>
+
+<msg type="info" file="MapLib" num="841" delta="new" >Changing COMPENSATION attribute from <arg fmt="%s" index="1">SYSTEM_SYNCHRONOUS</arg> to <arg fmt="%s" index="2">INTERNAL</arg> for PLL_ADV <arg fmt="%s" index="3">u_ddr2_infrastructure/gen_pll_adv.u_pll_adv</arg>.
+</msg>
+
+<msg type="info" file="LIT" num="244" delta="new" >All of the single ended outputs in this design are using slew rate limited output drivers. The delay on speed critical single ended outputs can be dramatically reduced by designating them as fast outputs.
+</msg>
+
+<msg type="info" file="Pack" num="1716" delta="new" >Initializing temperature to <arg fmt="%0.3f" index="1">85.000</arg> Celsius. (default - Range: <arg fmt="%0.3f" index="2">0.000</arg> to <arg fmt="%0.3f" index="3">85.000</arg> Celsius)
+</msg>
+
+<msg type="info" file="Pack" num="1720" delta="new" >Initializing voltage to <arg fmt="%0.3f" index="1">0.950</arg> Volts. (default - Range: <arg fmt="%0.3f" index="2">0.950</arg> to <arg fmt="%0.3f" index="3">1.050</arg> Volts)
+</msg>
+
+<msg type="warning" file="Timing" num="3223" delta="new" >Timing constraint <arg fmt="%s" index="1">TS_MC_PHY_INIT_DATA_SEL_90 = MAXDELAY FROM TIMEGRP &quot;TNM_PHY_INIT_DATA_SEL&quot; TO TIMEGRP &quot;RAMS&quot; TS_SYS_CLK * 4</arg> ignored during timing analysis.</msg>
+
+<msg type="info" file="Timing" num="3386" delta="new" >Intersecting Constraints found and resolved.  For more information, see the TSI report.  Please consult the Xilinx Command Line Tools User Guide for information on generating a TSI report.</msg>
+
+<msg type="info" file="Map" num="215" delta="new" >The Interim Design Summary has been generated in the MAP Report (.mrp).
+</msg>
+
+<msg type="info" file="Place" num="834" delta="new" >Only a subset of IOs are locked. Out of <arg fmt="%d" index="1">432</arg> IOs, <arg fmt="%d" index="2">119</arg> are locked and <arg fmt="%d" index="3">313</arg> are not locked. <arg fmt="%s" index="4">If you would like to print the names of these IOs, please set the environment variable XIL_PAR_DESIGN_CHECK_VERBOSE to 1.</arg> 
+</msg>
+
+<msg type="info" file="Pack" num="1650" delta="new" >Map created a placed design.
+</msg>
+
+</messages>
+

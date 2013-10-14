@@ -1,0 +1,403 @@
+Release 14.6 Map P.68d (nt64)
+Xilinx Map Application Log File for Design 'mig_30'
+
+Design Information
+------------------
+Command Line   : map -intstyle ise -p xc5vlx50t-ff1136-1 -w -logic_opt off -ol
+high -t 1 -register_duplication off -global_opt off -mt off -cm area -ir off -pr
+off -lc off -power off -o mig_30_map.ncd mig_30.ngd mig_30.pcf 
+Target Device  : xc5vlx50t
+Target Package : ff1136
+Target Speed   : -1
+Mapper Version : virtex5 -- $Revision: 1.55 $
+Mapped Date    : Wed Sep 18 07:08:12 2013
+
+Mapping design into LUTs...
+Running directed packing...
+Running delay-based LUT packing...
+Updating timing models...
+WARNING:Timing:3223 - Timing constraint TS_MC_PHY_INIT_DATA_SEL_90 = MAXDELAY
+   FROM TIMEGRP "TNM_PHY_INIT_DATA_SEL" TO TIMEGRP "RAMS" TS_SYS_CLK * 4 ignored
+   during timing analysis.
+INFO:Map:215 - The Interim Design Summary has been generated in the MAP Report
+   (.mrp).
+Running timing-driven placement...
+Total REAL time at the beginning of Placer: 33 secs 
+Total CPU  time at the beginning of Placer: 19 secs 
+
+Phase 1.1  Initial Placement Analysis
+Phase 1.1  Initial Placement Analysis (Checksum:cff576cb) REAL time: 37 secs 
+
+Phase 2.7  Design Feasibility Check
+INFO:Place:834 - Only a subset of IOs are locked. Out of 432 IOs, 119 are locked
+   and 313 are not locked. If you would like to print the names of these IOs,
+   please set the environment variable XIL_PAR_DESIGN_CHECK_VERBOSE to 1. 
+Phase 2.7  Design Feasibility Check (Checksum:cff576cb) REAL time: 38 secs 
+
+Phase 3.31  Local Placement Optimization
+Phase 3.31  Local Placement Optimization (Checksum:e447412b) REAL time: 38 secs 
+
+Phase 4.37  Local Placement Optimization
+Phase 4.37  Local Placement Optimization (Checksum:65816b1b) REAL time: 38 secs 
+
+Phase 5.33  Local Placement Optimization
+Phase 5.33  Local Placement Optimization (Checksum:65816b1b) REAL time: 43 secs 
+
+Phase 6.32  Local Placement Optimization
+Phase 6.32  Local Placement Optimization (Checksum:65816b1b) REAL time: 43 secs 
+
+Phase 7.2  Initial Clock and IO Placement
+....
+.....
+
+
+There are 12 clock regions on the target FPGA device:
+|------------------------------------------|------------------------------------------|
+| CLOCKREGION_X0Y5:                        | CLOCKREGION_X1Y5:                        |
+|   2 BUFRs available, 0 in use            |   2 BUFRs available, 0 in use            |
+|   4 Regional Clock Spines, 0 in use      |   4 Regional Clock Spines, 0 in use      |
+|   4 edge BUFIOs available, 3 in use      |   4 edge BUFIOs available, 0 in use      |
+|   0 center BUFIOs available, 0 in use    |   0 center BUFIOs available, 0 in use    |
+|                                          |                                          |
+|------------------------------------------|------------------------------------------|
+| CLOCKREGION_X0Y4:                        | CLOCKREGION_X1Y4:                        |
+|   2 BUFRs available, 0 in use            |   2 BUFRs available, 0 in use            |
+|   4 Regional Clock Spines, 0 in use      |   4 Regional Clock Spines, 0 in use      |
+|   4 edge BUFIOs available, 3 in use      |   4 edge BUFIOs available, 0 in use      |
+|   2 center BUFIOs available, 0 in use    |   0 center BUFIOs available, 0 in use    |
+|                                          |                                          |
+|------------------------------------------|------------------------------------------|
+| CLOCKREGION_X0Y3:                        | CLOCKREGION_X1Y3:                        |
+|   2 BUFRs available, 0 in use            |   2 BUFRs available, 0 in use            |
+|   4 Regional Clock Spines, 0 in use      |   4 Regional Clock Spines, 0 in use      |
+|   4 edge BUFIOs available, 2 in use      |   4 edge BUFIOs available, 0 in use      |
+|   2 center BUFIOs available, 0 in use    |   0 center BUFIOs available, 0 in use    |
+|                                          |                                          |
+|------------------------------------------|------------------------------------------|
+| CLOCKREGION_X0Y2:                        | CLOCKREGION_X1Y2:                        |
+|   2 BUFRs available, 0 in use            |   2 BUFRs available, 0 in use            |
+|   4 Regional Clock Spines, 0 in use      |   4 Regional Clock Spines, 0 in use      |
+|   4 edge BUFIOs available, 0 in use      |   4 edge BUFIOs available, 0 in use      |
+|   2 center BUFIOs available, 0 in use    |   0 center BUFIOs available, 0 in use    |
+|                                          |                                          |
+|------------------------------------------|------------------------------------------|
+| CLOCKREGION_X0Y1:                        | CLOCKREGION_X1Y1:                        |
+|   2 BUFRs available, 0 in use            |   2 BUFRs available, 0 in use            |
+|   4 Regional Clock Spines, 0 in use      |   4 Regional Clock Spines, 0 in use      |
+|   4 edge BUFIOs available, 0 in use      |   4 edge BUFIOs available, 0 in use      |
+|   2 center BUFIOs available, 0 in use    |   0 center BUFIOs available, 0 in use    |
+|                                          |                                          |
+|------------------------------------------|------------------------------------------|
+| CLOCKREGION_X0Y0:                        | CLOCKREGION_X1Y0:                        |
+|   2 BUFRs available, 0 in use            |   2 BUFRs available, 0 in use            |
+|   4 Regional Clock Spines, 0 in use      |   4 Regional Clock Spines, 0 in use      |
+|   4 edge BUFIOs available, 0 in use      |   4 edge BUFIOs available, 0 in use      |
+|   0 center BUFIOs available, 0 in use    |   0 center BUFIOs available, 0 in use    |
+|                                          |                                          |
+|------------------------------------------|------------------------------------------|
+
+
+Clock-Region: <CLOCKREGION_X0Y3>
+  key resource utilizations (used/available): edge-bufios - 2/4; center-bufios - 0/2; bufrs - 0/2; regional-clock-spines - 0/4
+|-----------------------------------------------------------------------------------------------------------------------------------------------------------
+|       |    clock    | BRAM |     |    |        |        |       |       |       |      |      |     |      |
+|       |    region   | FIFO | DCM | GT | ILOGIC | OLOGIC |   FF  |  LUTM |  LUTL | MULT | EMAC | PPC | PCIe | <- (Types of Resources in Clock Region)
+|-------|-------------|------|-----|----|--------|--------|-------|-------|-------|------|------|-----|------|----------------------------------------------
+|       | Upper Region|   8  |  2  |  0 |   60   |   60   |  2240 |  1280 |  3200 |   8  |   0  |  0  |   0  | <- Available resources in the upper region
+|-------|-------------|------|-----|----|--------|--------|-------|-------|-------|------|------|-----|------|----------------------------------------------
+|       |CurrentRegion|   8  |  0  |  0 |   60   |   60   |  2240 |  1280 |  3200 |   8  |   0  |  0  |   0  | <- Available resources in the current region
+|-------|-------------|------|-----|----|--------|--------|-------|-------|-------|------|------|-----|------|----------------------------------------------
+|       | Lower Region|   8  |  0  |  0 |   60   |   60   |  2240 |  1280 |  3200 |   8  |   0  |  0  |   0  | <- Available resources in the lower region
+|-------|-------------|------|-----|----|--------|--------|-------|-------|-------|------|------|-----|------|----------------------------------------------
+| clock |    region   |                                                                                      -----------------------------------------------
+|  type |  expansion  |                                                                                      | <IO/Regional clock Net Name>
+|-------|-------------|------|-----|----|--------|--------|-------|-------|-------|------|------|-----|------|----------------------------------------------
+| BUFIO |             |   0  |  0  |  0 |    9   |    0   |     0 |     0 |     0 |   0  |   0  |  0  |   0  | "u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/delayed_dqs<7>"
+|-------|-------------|------|-----|----|--------|--------|-------|-------|-------|------|------|-----|------|----------------------------------------------
+| BUFIO |             |   0  |  0  |  0 |    9   |    0   |     0 |     0 |     0 |   0  |   0  |  0  |   0  | "u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/delayed_dqs<6>"
+|-------|-------------|------|-----|----|--------|--------|-------|-------|-------|------|------|-----|------|----------------------------------------------
+
+
+Clock-Region: <CLOCKREGION_X0Y4>
+  key resource utilizations (used/available): edge-bufios - 3/4; center-bufios - 0/2; bufrs - 0/2; regional-clock-spines - 0/4
+|-----------------------------------------------------------------------------------------------------------------------------------------------------------
+|       |    clock    | BRAM |     |    |        |        |       |       |       |      |      |     |      |
+|       |    region   | FIFO | DCM | GT | ILOGIC | OLOGIC |   FF  |  LUTM |  LUTL | MULT | EMAC | PPC | PCIe | <- (Types of Resources in Clock Region)
+|-------|-------------|------|-----|----|--------|--------|-------|-------|-------|------|------|-----|------|----------------------------------------------
+|       | Upper Region|   8  |  4  |  0 |   40   |   40   |  2240 |  1280 |  3200 |   8  |   0  |  0  |   0  | <- Available resources in the upper region
+|-------|-------------|------|-----|----|--------|--------|-------|-------|-------|------|------|-----|------|----------------------------------------------
+|       |CurrentRegion|   8  |  2  |  0 |   60   |   60   |  2240 |  1280 |  3200 |   8  |   0  |  0  |   0  | <- Available resources in the current region
+|-------|-------------|------|-----|----|--------|--------|-------|-------|-------|------|------|-----|------|----------------------------------------------
+|       | Lower Region|   8  |  0  |  0 |   60   |   60   |  2240 |  1280 |  3200 |   8  |   0  |  0  |   0  | <- Available resources in the lower region
+|-------|-------------|------|-----|----|--------|--------|-------|-------|-------|------|------|-----|------|----------------------------------------------
+| clock |    region   |                                                                                      -----------------------------------------------
+|  type |  expansion  |                                                                                      | <IO/Regional clock Net Name>
+|-------|-------------|------|-----|----|--------|--------|-------|-------|-------|------|------|-----|------|----------------------------------------------
+| BUFIO |             |   0  |  0  |  0 |    9   |    0   |     0 |     0 |     0 |   0  |   0  |  0  |   0  | "u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/delayed_dqs<4>"
+|-------|-------------|------|-----|----|--------|--------|-------|-------|-------|------|------|-----|------|----------------------------------------------
+| BUFIO |             |   0  |  0  |  0 |    9   |    0   |     0 |     0 |     0 |   0  |   0  |  0  |   0  | "u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/delayed_dqs<5>"
+|-------|-------------|------|-----|----|--------|--------|-------|-------|-------|------|------|-----|------|----------------------------------------------
+| BUFIO |             |   0  |  0  |  0 |    9   |    0   |     0 |     0 |     0 |   0  |   0  |  0  |   0  | "u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/delayed_dqs<3>"
+|-------|-------------|------|-----|----|--------|--------|-------|-------|-------|------|------|-----|------|----------------------------------------------
+
+
+Clock-Region: <CLOCKREGION_X0Y5>
+  key resource utilizations (used/available): edge-bufios - 3/4; bufrs - 0/2; regional-clock-spines - 0/4
+|-----------------------------------------------------------------------------------------------------------------------------------------------------------
+|       |    clock    | BRAM |     |    |        |        |       |       |       |      |      |     |      |
+|       |    region   | FIFO | DCM | GT | ILOGIC | OLOGIC |   FF  |  LUTM |  LUTL | MULT | EMAC | PPC | PCIe | <- (Types of Resources in Clock Region)
+|-------|-------------|------|-----|----|--------|--------|-------|-------|-------|------|------|-----|------|----------------------------------------------
+|       |CurrentRegion|   8  |  4  |  0 |   40   |   40   |  2240 |  1280 |  3200 |   8  |   0  |  0  |   0  | <- Available resources in the current region
+|-------|-------------|------|-----|----|--------|--------|-------|-------|-------|------|------|-----|------|----------------------------------------------
+|       | Lower Region|   8  |  2  |  0 |   60   |   60   |  2240 |  1280 |  3200 |   8  |   0  |  0  |   0  | <- Available resources in the lower region
+|-------|-------------|------|-----|----|--------|--------|-------|-------|-------|------|------|-----|------|----------------------------------------------
+| clock |    region   |                                                                                      -----------------------------------------------
+|  type |  expansion  |                                                                                      | <IO/Regional clock Net Name>
+|-------|-------------|------|-----|----|--------|--------|-------|-------|-------|------|------|-----|------|----------------------------------------------
+| BUFIO |             |   0  |  0  |  0 |    9   |    0   |     0 |     0 |     0 |   0  |   0  |  0  |   0  | "u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/delayed_dqs<0>"
+|-------|-------------|------|-----|----|--------|--------|-------|-------|-------|------|------|-----|------|----------------------------------------------
+| BUFIO |             |   0  |  0  |  0 |    9   |    0   |     0 |     0 |     0 |   0  |   0  |  0  |   0  | "u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/delayed_dqs<1>"
+|-------|-------------|------|-----|----|--------|--------|-------|-------|-------|------|------|-----|------|----------------------------------------------
+| BUFIO |             |   0  |  0  |  0 |    9   |    0   |     0 |     0 |     0 |   0  |   0  |  0  |   0  | "u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/delayed_dqs<2>"
+|-------|-------------|------|-----|----|--------|--------|-------|-------|-------|------|------|-----|------|----------------------------------------------
+
+
+
+
+######################################################################################
+# REGIONAL CLOCKING RESOURCE DISTRIBUTION UCF REPORT:
+#
+# Number of Regional Clocking Regions in the device: 12  (4 clock spines in each)
+# Number of Regional Clock Networks used in this design: 8 (each network can be
+# composed of up to 3 clock spines and cover up to 3 regional clock regions)
+# 
+######################################################################################
+
+# IO-Clock "u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/delayed_dqs<7>" driven by "BUFIO_X0Y14"
+INST "u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/gen_dqs[7].u_iob_dqs/u_bufio_dqs" LOC = "BUFIO_X0Y14" ;
+NET "u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/delayed_dqs<7>" TNM_NET =
+"TN_u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/delayed_dqs<7>" ;
+TIMEGRP "TN_u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/delayed_dqs<7>" AREA_GROUP =
+"CLKAG_u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/delayed_dqs<7>" ;
+AREA_GROUP "CLKAG_u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/delayed_dqs<7>" RANGE = CLOCKREGION_X0Y3;
+
+
+# IO-Clock "u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/delayed_dqs<0>" driven by "BUFIO_X0Y23"
+INST "u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/gen_dqs[0].u_iob_dqs/u_bufio_dqs" LOC = "BUFIO_X0Y23" ;
+NET "u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/delayed_dqs<0>" TNM_NET =
+"TN_u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/delayed_dqs<0>" ;
+TIMEGRP "TN_u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/delayed_dqs<0>" AREA_GROUP =
+"CLKAG_u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/delayed_dqs<0>" ;
+AREA_GROUP "CLKAG_u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/delayed_dqs<0>" RANGE = CLOCKREGION_X0Y5;
+
+
+# IO-Clock "u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/delayed_dqs<4>" driven by "BUFIO_X0Y18"
+INST "u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/gen_dqs[4].u_iob_dqs/u_bufio_dqs" LOC = "BUFIO_X0Y18" ;
+NET "u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/delayed_dqs<4>" TNM_NET =
+"TN_u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/delayed_dqs<4>" ;
+TIMEGRP "TN_u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/delayed_dqs<4>" AREA_GROUP =
+"CLKAG_u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/delayed_dqs<4>" ;
+AREA_GROUP "CLKAG_u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/delayed_dqs<4>" RANGE = CLOCKREGION_X0Y4;
+
+
+# IO-Clock "u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/delayed_dqs<1>" driven by "BUFIO_X0Y22"
+INST "u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/gen_dqs[1].u_iob_dqs/u_bufio_dqs" LOC = "BUFIO_X0Y22" ;
+NET "u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/delayed_dqs<1>" TNM_NET =
+"TN_u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/delayed_dqs<1>" ;
+TIMEGRP "TN_u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/delayed_dqs<1>" AREA_GROUP =
+"CLKAG_u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/delayed_dqs<1>" ;
+AREA_GROUP "CLKAG_u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/delayed_dqs<1>" RANGE = CLOCKREGION_X0Y5;
+
+
+# IO-Clock "u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/delayed_dqs<5>" driven by "BUFIO_X0Y16"
+INST "u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/gen_dqs[5].u_iob_dqs/u_bufio_dqs" LOC = "BUFIO_X0Y16" ;
+NET "u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/delayed_dqs<5>" TNM_NET =
+"TN_u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/delayed_dqs<5>" ;
+TIMEGRP "TN_u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/delayed_dqs<5>" AREA_GROUP =
+"CLKAG_u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/delayed_dqs<5>" ;
+AREA_GROUP "CLKAG_u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/delayed_dqs<5>" RANGE = CLOCKREGION_X0Y4;
+
+
+# IO-Clock "u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/delayed_dqs<2>" driven by "BUFIO_X0Y20"
+INST "u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/gen_dqs[2].u_iob_dqs/u_bufio_dqs" LOC = "BUFIO_X0Y20" ;
+NET "u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/delayed_dqs<2>" TNM_NET =
+"TN_u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/delayed_dqs<2>" ;
+TIMEGRP "TN_u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/delayed_dqs<2>" AREA_GROUP =
+"CLKAG_u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/delayed_dqs<2>" ;
+AREA_GROUP "CLKAG_u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/delayed_dqs<2>" RANGE = CLOCKREGION_X0Y5;
+
+
+# IO-Clock "u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/delayed_dqs<6>" driven by "BUFIO_X0Y15"
+INST "u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/gen_dqs[6].u_iob_dqs/u_bufio_dqs" LOC = "BUFIO_X0Y15" ;
+NET "u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/delayed_dqs<6>" TNM_NET =
+"TN_u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/delayed_dqs<6>" ;
+TIMEGRP "TN_u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/delayed_dqs<6>" AREA_GROUP =
+"CLKAG_u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/delayed_dqs<6>" ;
+AREA_GROUP "CLKAG_u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/delayed_dqs<6>" RANGE = CLOCKREGION_X0Y3;
+
+
+# IO-Clock "u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/delayed_dqs<3>" driven by "BUFIO_X0Y19"
+INST "u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/gen_dqs[3].u_iob_dqs/u_bufio_dqs" LOC = "BUFIO_X0Y19" ;
+NET "u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/delayed_dqs<3>" TNM_NET =
+"TN_u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/delayed_dqs<3>" ;
+TIMEGRP "TN_u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/delayed_dqs<3>" AREA_GROUP =
+"CLKAG_u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/delayed_dqs<3>" ;
+AREA_GROUP "CLKAG_u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/delayed_dqs<3>" RANGE = CLOCKREGION_X0Y4;
+
+
+Phase 7.2  Initial Clock and IO Placement (Checksum:d27d2641) REAL time: 59 secs 
+
+Phase 8.36  Local Placement Optimization
+Phase 8.36  Local Placement Optimization (Checksum:d27d2641) REAL time: 59 secs 
+
+Phase 9.30  Global Clock Region Assignment
+Phase 9.30  Global Clock Region Assignment (Checksum:d27d2641) REAL time: 59 secs 
+
+Phase 10.3  Local Placement Optimization
+....
+Phase 10.3  Local Placement Optimization (Checksum:39e9eccd) REAL time: 1 mins 3 secs 
+
+Phase 11.5  Local Placement Optimization
+Phase 11.5  Local Placement Optimization (Checksum:b1889f84) REAL time: 1 mins 4 secs 
+
+Phase 12.8  Global Placement
+..........................
+............................
+..............................
+.......................
+..............................
+................
+Phase 12.8  Global Placement (Checksum:a7df4b37) REAL time: 1 mins 11 secs 
+
+Phase 13.29  Local Placement Optimization
+Phase 13.29  Local Placement Optimization (Checksum:a7df4b37) REAL time: 1 mins 11 secs 
+
+Phase 14.5  Local Placement Optimization
+Phase 14.5  Local Placement Optimization (Checksum:a7df4b37) REAL time: 1 mins 12 secs 
+
+Phase 15.18  Placement Optimization
+Phase 15.18  Placement Optimization (Checksum:b14676d5) REAL time: 1 mins 24 secs 
+
+Phase 16.5  Local Placement Optimization
+Phase 16.5  Local Placement Optimization (Checksum:b14676d5) REAL time: 1 mins 24 secs 
+
+Phase 17.34  Placement Validation
+Phase 17.34  Placement Validation (Checksum:b14676d5) REAL time: 1 mins 24 secs 
+
+Total REAL time to Placer completion: 1 mins 24 secs 
+Total CPU  time to Placer completion: 1 mins 7 secs 
+Running post-placement packing...
+Writing output files...
+WARNING:PhysDesignRules:1269 - Issue with pin connections and/or configuration on
+   block:<u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/gen_dqs[1].u_iob_dqs/u_iddr_dq_ce>:<ILOGIC_IFF>.  The Q1 output
+   pin of IFF is not used.
+WARNING:PhysDesignRules:1273 - Issue with pin connections and/or configuration on
+   block:<u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/gen_dqs[1].u_iob_dqs/u_iddr_dq_ce>:<ILOGIC_IFF>.  The SR pin is
+   used for the IFF Flip-flop but the SRVAL_Q1 set/reset value is not configured.
+WARNING:PhysDesignRules:1269 - Issue with pin connections and/or configuration on
+   block:<u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/gen_dqs[4].u_iob_dqs/u_iddr_dq_ce>:<ILOGIC_IFF>.  The Q1 output
+   pin of IFF is not used.
+WARNING:PhysDesignRules:1273 - Issue with pin connections and/or configuration on
+   block:<u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/gen_dqs[4].u_iob_dqs/u_iddr_dq_ce>:<ILOGIC_IFF>.  The SR pin is
+   used for the IFF Flip-flop but the SRVAL_Q1 set/reset value is not configured.
+WARNING:PhysDesignRules:1269 - Issue with pin connections and/or configuration on
+   block:<u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/gen_dqs[7].u_iob_dqs/u_iddr_dq_ce>:<ILOGIC_IFF>.  The Q1 output
+   pin of IFF is not used.
+WARNING:PhysDesignRules:1273 - Issue with pin connections and/or configuration on
+   block:<u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/gen_dqs[7].u_iob_dqs/u_iddr_dq_ce>:<ILOGIC_IFF>.  The SR pin is
+   used for the IFF Flip-flop but the SRVAL_Q1 set/reset value is not configured.
+WARNING:PhysDesignRules:1269 - Issue with pin connections and/or configuration on
+   block:<u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/gen_dqs[2].u_iob_dqs/u_iddr_dq_ce>:<ILOGIC_IFF>.  The Q1 output
+   pin of IFF is not used.
+WARNING:PhysDesignRules:1273 - Issue with pin connections and/or configuration on
+   block:<u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/gen_dqs[2].u_iob_dqs/u_iddr_dq_ce>:<ILOGIC_IFF>.  The SR pin is
+   used for the IFF Flip-flop but the SRVAL_Q1 set/reset value is not configured.
+WARNING:PhysDesignRules:1269 - Issue with pin connections and/or configuration on
+   block:<u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/gen_dqs[5].u_iob_dqs/u_iddr_dq_ce>:<ILOGIC_IFF>.  The Q1 output
+   pin of IFF is not used.
+WARNING:PhysDesignRules:1273 - Issue with pin connections and/or configuration on
+   block:<u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/gen_dqs[5].u_iob_dqs/u_iddr_dq_ce>:<ILOGIC_IFF>.  The SR pin is
+   used for the IFF Flip-flop but the SRVAL_Q1 set/reset value is not configured.
+WARNING:PhysDesignRules:1269 - Issue with pin connections and/or configuration on
+   block:<u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/gen_dqs[0].u_iob_dqs/u_iddr_dq_ce>:<ILOGIC_IFF>.  The Q1 output
+   pin of IFF is not used.
+WARNING:PhysDesignRules:1273 - Issue with pin connections and/or configuration on
+   block:<u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/gen_dqs[0].u_iob_dqs/u_iddr_dq_ce>:<ILOGIC_IFF>.  The SR pin is
+   used for the IFF Flip-flop but the SRVAL_Q1 set/reset value is not configured.
+WARNING:PhysDesignRules:1269 - Issue with pin connections and/or configuration on
+   block:<u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/gen_dqs[3].u_iob_dqs/u_iddr_dq_ce>:<ILOGIC_IFF>.  The Q1 output
+   pin of IFF is not used.
+WARNING:PhysDesignRules:1273 - Issue with pin connections and/or configuration on
+   block:<u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/gen_dqs[3].u_iob_dqs/u_iddr_dq_ce>:<ILOGIC_IFF>.  The SR pin is
+   used for the IFF Flip-flop but the SRVAL_Q1 set/reset value is not configured.
+WARNING:PhysDesignRules:1269 - Issue with pin connections and/or configuration on
+   block:<u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/gen_dqs[6].u_iob_dqs/u_iddr_dq_ce>:<ILOGIC_IFF>.  The Q1 output
+   pin of IFF is not used.
+WARNING:PhysDesignRules:1273 - Issue with pin connections and/or configuration on
+   block:<u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/gen_dqs[6].u_iob_dqs/u_iddr_dq_ce>:<ILOGIC_IFF>.  The SR pin is
+   used for the IFF Flip-flop but the SRVAL_Q1 set/reset value is not configured.
+
+Design Summary
+--------------
+
+Design Summary:
+Number of errors:      0
+Number of warnings:   17
+Slice Logic Utilization:
+  Number of Slice Registers:                 2,145 out of  28,800    7%
+    Number used as Flip Flops:               2,145
+  Number of Slice LUTs:                      1,654 out of  28,800    5%
+    Number used as logic:                    1,636 out of  28,800    5%
+      Number using O6 output only:           1,601
+      Number using O5 output only:              11
+      Number using O5 and O6:                   24
+    Number used as Memory:                      17 out of   7,680    1%
+      Number used as Shift Register:            17
+        Number using O6 output only:            17
+    Number used as exclusive route-thru:         1
+  Number of route-thrus:                        12
+    Number using O6 output only:                12
+
+Slice Logic Distribution:
+  Number of occupied Slices:                 1,157 out of   7,200   16%
+  Number of LUT Flip Flop pairs used:        2,759
+    Number with an unused Flip Flop:           614 out of   2,759   22%
+    Number with an unused LUT:               1,105 out of   2,759   40%
+    Number of fully used LUT-FF pairs:       1,040 out of   2,759   37%
+    Number of unique control sets:             253
+    Number of slice register sites lost
+      to control set restrictions:             574 out of  28,800    1%
+
+  A LUT Flip Flop pair for this architecture represents one LUT paired with
+  one Flip Flop within a slice.  A control set is a unique combination of
+  clock, reset, set, and enable signals for a registered element.
+  The Slice Logic Distribution report is not meaningful if the design is
+  over-mapped for a non-slice resource or if Placement fails.
+  OVERMAPPING of BRAM resources should be ignored if the design is
+  over-mapped for a non-BRAM resource or if placement fails.
+
+IO Utilization:
+  Number of bonded IOBs:                       432 out of     480   90%
+    Number of LOCed IOBs:                      119 out of     432   27%
+    IOB Flip Flops:                            265
+
+Specific Feature Utilization:
+  Number of BlockRAM/FIFO:                       3 out of      60    5%
+    Number using FIFO only:                      3
+    Total primitives used:
+      Number of 36k FIFO used:                   3
+    Total Memory used (KB):                    108 out of   2,160    5%
+  Number of BUFG/BUFGCTRLs:                      4 out of      32   12%
+    Number used as BUFGs:                        4
+  Number of IDELAYCTRLs:                         3 out of      16   18%
+  Number of BUFIOs:                              8 out of      56   14%
+  Number of PLL_ADVs:                            1 out of       6   16%
+
+Average Fanout of Non-Clock Nets:                2.88
+
+Peak Memory Usage:  579 MB
+Total REAL time to MAP completion:  1 mins 29 secs 
+Total CPU time to MAP completion:   1 mins 10 secs 
+
+Mapping completed.
+See MAP report file "mig_30_map.mrp" for details.

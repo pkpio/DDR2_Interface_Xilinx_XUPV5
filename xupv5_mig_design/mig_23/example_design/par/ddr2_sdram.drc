@@ -1,0 +1,58 @@
+WARNING:PhysDesignRules:1269 - Dangling pins on
+   block:<u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/gen_dqs[1].u_iob_dqs/u_id
+   dr_dq_ce>:<ILOGIC_IFF>.  The Q1 output pin of IFF is not used.
+WARNING:PhysDesignRules:1273 - Dangling pins on
+   block:<u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/gen_dqs[1].u_iob_dqs/u_id
+   dr_dq_ce>:<ILOGIC_IFF>.  The SR pin is used for the IFF Flip-flop but the
+   SRVAL_Q1 set/reset value is not configured.
+WARNING:PhysDesignRules:1269 - Dangling pins on
+   block:<u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/gen_dqs[4].u_iob_dqs/u_id
+   dr_dq_ce>:<ILOGIC_IFF>.  The Q1 output pin of IFF is not used.
+WARNING:PhysDesignRules:1273 - Dangling pins on
+   block:<u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/gen_dqs[4].u_iob_dqs/u_id
+   dr_dq_ce>:<ILOGIC_IFF>.  The SR pin is used for the IFF Flip-flop but the
+   SRVAL_Q1 set/reset value is not configured.
+WARNING:PhysDesignRules:1269 - Dangling pins on
+   block:<u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/gen_dqs[7].u_iob_dqs/u_id
+   dr_dq_ce>:<ILOGIC_IFF>.  The Q1 output pin of IFF is not used.
+WARNING:PhysDesignRules:1273 - Dangling pins on
+   block:<u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/gen_dqs[7].u_iob_dqs/u_id
+   dr_dq_ce>:<ILOGIC_IFF>.  The SR pin is used for the IFF Flip-flop but the
+   SRVAL_Q1 set/reset value is not configured.
+WARNING:PhysDesignRules:1269 - Dangling pins on
+   block:<u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/gen_dqs[2].u_iob_dqs/u_id
+   dr_dq_ce>:<ILOGIC_IFF>.  The Q1 output pin of IFF is not used.
+WARNING:PhysDesignRules:1273 - Dangling pins on
+   block:<u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/gen_dqs[2].u_iob_dqs/u_id
+   dr_dq_ce>:<ILOGIC_IFF>.  The SR pin is used for the IFF Flip-flop but the
+   SRVAL_Q1 set/reset value is not configured.
+WARNING:PhysDesignRules:1269 - Dangling pins on
+   block:<u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/gen_dqs[5].u_iob_dqs/u_id
+   dr_dq_ce>:<ILOGIC_IFF>.  The Q1 output pin of IFF is not used.
+WARNING:PhysDesignRules:1273 - Dangling pins on
+   block:<u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/gen_dqs[5].u_iob_dqs/u_id
+   dr_dq_ce>:<ILOGIC_IFF>.  The SR pin is used for the IFF Flip-flop but the
+   SRVAL_Q1 set/reset value is not configured.
+WARNING:PhysDesignRules:1269 - Dangling pins on
+   block:<u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/gen_dqs[0].u_iob_dqs/u_id
+   dr_dq_ce>:<ILOGIC_IFF>.  The Q1 output pin of IFF is not used.
+WARNING:PhysDesignRules:1273 - Dangling pins on
+   block:<u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/gen_dqs[0].u_iob_dqs/u_id
+   dr_dq_ce>:<ILOGIC_IFF>.  The SR pin is used for the IFF Flip-flop but the
+   SRVAL_Q1 set/reset value is not configured.
+WARNING:PhysDesignRules:1269 - Dangling pins on
+   block:<u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/gen_dqs[3].u_iob_dqs/u_id
+   dr_dq_ce>:<ILOGIC_IFF>.  The Q1 output pin of IFF is not used.
+WARNING:PhysDesignRules:1273 - Dangling pins on
+   block:<u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/gen_dqs[3].u_iob_dqs/u_id
+   dr_dq_ce>:<ILOGIC_IFF>.  The SR pin is used for the IFF Flip-flop but the
+   SRVAL_Q1 set/reset value is not configured.
+WARNING:PhysDesignRules:1269 - Dangling pins on
+   block:<u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/gen_dqs[6].u_iob_dqs/u_id
+   dr_dq_ce>:<ILOGIC_IFF>.  The Q1 output pin of IFF is not used.
+WARNING:PhysDesignRules:1273 - Dangling pins on
+   block:<u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/gen_dqs[6].u_iob_dqs/u_id
+   dr_dq_ce>:<ILOGIC_IFF>.  The SR pin is used for the IFF Flip-flop but the
+   SRVAL_Q1 set/reset value is not configured.
+DRC detected 0 errors and 16 warnings.  Please see the previously displayed
+individual error or warning messages for more details.

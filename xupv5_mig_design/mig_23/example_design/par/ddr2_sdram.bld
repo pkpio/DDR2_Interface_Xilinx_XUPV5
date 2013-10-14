@@ -1,0 +1,126 @@
+Release 10.1.03 ngdbuild K.39 (nt)
+Copyright (c) 1995-2008 Xilinx, Inc.  All rights reserved.
+
+Command Line: D:\Xilinx10.1\ISE\bin\nt\unwrapped\ngdbuild.exe -intstyle ise -dd
+../synth/_ngo -nt timestamp -uc ddr2_sdram.ucf -p xc5vlx110tff1136-1
+ddr2_sdram.ngc ddr2_sdram.ngd
+
+Reading NGO file "C:/xupv5_mig_design/mig_23/example_design/par/ddr2_sdram.ngc"
+...
+Loading design module
+"C:\xupv5_mig_design\mig_23\example_design\par/icon.ngc"...
+Applying constraints in "C:\xupv5_mig_design\mig_23\example_design\par/icon.ncf"
+to module "C:\xupv5_mig_design\mig_23\example_design\par/icon.ngc"...
+Loading design module "C:\xupv5_mig_design\mig_23\example_design\par/ila.ngc"...
+Applying constraints in "C:\xupv5_mig_design\mig_23\example_design\par/ila.ncf"
+to module "C:\xupv5_mig_design\mig_23\example_design\par/ila.ngc"...
+Reading in constraint information from 'ddr2_sdram.ucf'...
+Gathering constraint information from source properties...
+Done.
+
+Applying constraints in "ddr2_sdram.ucf" to the design...
+Resolving constraint associations...
+Checking Constraint Associations...
+WARNING:ConstraintSystem:56 - Constraint <TIMESPEC TS_U_TO_D = FROM "U_CLK" TO
+   "D_CLK" TIG;>: Unable to find an active 'TimeGrp' or 'TNM' or 'TPSync' or
+   'TPThru' constraint named 'D_CLK'.
+
+WARNING:ConstraintSystem:56 - Constraint <TIMESPEC TS_J_TO_D = FROM "J_CLK" TO
+   "D_CLK" TIG;>: Unable to find an active 'TimeGrp' or 'TNM' or 'TPSync' or
+   'TPThru' constraint named 'D_CLK'.
+
+WARNING:ConstraintSystem:56 - Constraint <TIMESPEC TS_D_TO_J = FROM "D_CLK" TO
+   "J_CLK" TIG;>: Unable to find an active 'TimeGrp' or 'TNM' or 'TPSync' or
+   'TPThru' constraint named 'D_CLK'.
+
+INFO:ConstraintSystem:178 - TNM 'SYS_CLK', used in period specification
+   'TS_SYS_CLK', was traced into DCM_ADV instance
+   u_ddr2_infrastructure/u_dcm_base. The following new TNM groups and period
+   specifications were generated at the DCM_ADV output(s): 
+   CLK0: <TIMESPEC TS_u_ddr2_infrastructure_dcm_clk0 = PERIOD
+   "u_ddr2_infrastructure_dcm_clk0" TS_SYS_CLK HIGH 50%>
+
+INFO:ConstraintSystem:178 - TNM 'SYS_CLK', used in period specification
+   'TS_SYS_CLK', was traced into DCM_ADV instance
+   u_ddr2_infrastructure/u_dcm_base. The following new TNM groups and period
+   specifications were generated at the DCM_ADV output(s): 
+   CLK90: <TIMESPEC TS_u_ddr2_infrastructure_dcm_clk90 = PERIOD
+   "u_ddr2_infrastructure_dcm_clk90" TS_SYS_CLK PHASE 0.938 ns HIGH 50%>
+
+INFO:ConstraintSystem:178 - TNM 'SYS_CLK', used in period specification
+   'TS_SYS_CLK', was traced into DCM_ADV instance
+   u_ddr2_infrastructure/u_dcm_base. The following new TNM groups and period
+   specifications were generated at the DCM_ADV output(s): 
+   CLKDV: <TIMESPEC TS_u_ddr2_infrastructure_dcm_clkdiv0 = PERIOD
+   "u_ddr2_infrastructure_dcm_clkdiv0" TS_SYS_CLK * 2 HIGH 50%>
+
+Done...
+Checking Partitions ...
+
+Checking expanded design ...
+WARNING:NgdBuild:486 - Attribute "SIM_MODE" is not allowed on symbol
+   "u_ddr2_top_0/u_mem_if_top/u_usr_top/u_usr_wr/.gen_wdf[0].u_wdf" of type
+   "FIFO36_72_EXP".  This attribute will be ignored.
+WARNING:NgdBuild:486 - Attribute "SIM_MODE" is not allowed on symbol
+   "u_ddr2_top_0/u_mem_if_top/u_usr_top/u_usr_wr/.gen_wdf[1].u_wdf" of type
+   "FIFO36_72_EXP".  This attribute will be ignored.
+WARNING:NgdBuild:486 - Attribute "SIM_MODE" is not allowed on symbol
+   "u_ddr2_top_0/u_mem_if_top/u_usr_top/u_usr_addr_fifo/u_af" of type
+   "FIFO36_EXP".  This attribute will be ignored.
+WARNING:NgdBuild:443 - SFF primitive
+   'u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/gen_rden[1].u_calib
+   _rden_r' has unconnected output pin
+WARNING:NgdBuild:443 - SFF primitive
+   'u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/gen_rden[2].u_calib
+   _rden_r' has unconnected output pin
+WARNING:NgdBuild:443 - SFF primitive
+   'u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/gen_rden[3].u_calib
+   _rden_r' has unconnected output pin
+WARNING:NgdBuild:443 - SFF primitive
+   'u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/gen_rden[4].u_calib
+   _rden_r' has unconnected output pin
+WARNING:NgdBuild:443 - SFF primitive
+   'u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/gen_rden[5].u_calib
+   _rden_r' has unconnected output pin
+WARNING:NgdBuild:443 - SFF primitive
+   'u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/gen_rden[6].u_calib
+   _rden_r' has unconnected output pin
+WARNING:NgdBuild:443 - SFF primitive
+   'u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/gen_rden[7].u_calib
+   _rden_r' has unconnected output pin
+WARNING:NgdBuild:486 - Attribute "SIM_MODE" is not allowed on symbol
+   "u_ddr2_tb_top_0/u_tb_test_gen/u_addr_gen/u_wr_rd_addr_lookup" of type
+   "RAMB36_EXP".  This attribute will be ignored.
+WARNING:NgdBuild:486 - Attribute "SIM_MODE" is not allowed on symbol
+   "U0/I_YES_D.U_ILA/U_CAPSTOR/I_CASE1.I_YES_TB.U_TRACE_BUFFER/U_RAM/I_DEPTH_LTE
+   Q_32K.U_SBRAM_0/I_B36KGT0.G_RAMB36[1].u_ramb36/U_RAMB36" of type
+   "RAMB36_EXP".  This attribute will be ignored.
+WARNING:NgdBuild:486 - Attribute "SIM_MODE" is not allowed on symbol
+   "U0/I_YES_D.U_ILA/U_CAPSTOR/I_CASE1.I_YES_TB.U_TRACE_BUFFER/U_RAM/I_DEPTH_LTE
+   Q_32K.U_SBRAM_0/I_B36KGT0.G_RAMB36[0].u_ramb36/U_RAMB36" of type
+   "RAMB36_EXP".  This attribute will be ignored.
+WARNING:NgdBuild:452 - logical net 'N396' has no driver
+WARNING:NgdBuild:452 - logical net 'N397' has no driver
+WARNING:NgdBuild:452 - logical net 'N398' has no driver
+WARNING:NgdBuild:452 - logical net 'N399' has no driver
+WARNING:NgdBuild:452 - logical net 'N400' has no driver
+WARNING:NgdBuild:452 - logical net 'N401' has no driver
+WARNING:NgdBuild:452 - logical net 'N402' has no driver
+WARNING:NgdBuild:452 - logical net 'N403' has no driver
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+NGDBUILD Design Results Summary:
+  Number of errors:     0
+  Number of warnings:  24
+
+Total memory usage is 99260 kilobytes
+
+Writing NGD file "ddr2_sdram.ngd" ...
+
+Writing NGDBUILD log file "ddr2_sdram.bld"...

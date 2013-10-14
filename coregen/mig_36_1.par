@@ -1,0 +1,347 @@
+Release 14.6 par P.68d (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+PRAVEEN-PC::  Tue Oct 08 16:45:24 2013
+
+par -w -intstyle ise -ol high -mt off mig_36_1_map.ncd mig_36_1.ncd
+mig_36_1.pcf 
+
+
+Constraints file: mig_36_1.pcf.
+Loading device for application Rf_Device from file '5vlx110t.nph' in environment C:\Xilinx\14.6\ISE_DS\ISE\.
+   "mig_36_1" is an NCD, version 3.2, device xc5vlx110t, package ff1136, speed -1
+
+Initializing temperature to 85.000 Celsius. (default - Range: 0.000 to 85.000 Celsius)
+Initializing voltage to 0.950 Volts. (default - Range: 0.950 to 1.050 Volts)
+
+
+Device speed data version:  "PRODUCTION 1.73 2013-06-08".
+
+
+
+Device Utilization Summary:
+
+   Number of BUFGs                           4 out of 32     12%
+   Number of BUFIOs                          8 out of 80     10%
+   Number of FIFO36_72_EXPs                  2 out of 148     1%
+   Number of FIFO36_EXPs                     1 out of 148     1%
+   Number of IDELAYCTRLs                     3 out of 22     13%
+   Number of ILOGICs                        72 out of 800     9%
+      Number of LOCed ILOGICs                8 out of 72     11%
+
+   Number of External IOBs                 432 out of 640    67%
+      Number of LOCed IOBs                 119 out of 432    27%
+
+   Number of IODELAYs                       80 out of 800    10%
+      Number of LOCed IODELAYs               8 out of 80     10%
+
+   Number of OLOGICs                       113 out of 800    14%
+   Number of PLL_ADVs                        1 out of 6      16%
+   Number of Slices                       1024 out of 17280   5%
+   Number of Slice Registers              2171 out of 69120   3%
+      Number used as Flip Flops           2171
+      Number used as Latches                 0
+      Number used as LatchThrus              0
+
+   Number of Slice LUTS                   1492 out of 69120   2%
+   Number of Slice LUT-Flip Flop pairs    2611 out of 69120   3%
+
+
+Overall effort level (-ol):   High 
+Router effort level (-rl):    High 
+
+WARNING:Timing:3223 - Timing constraint TS_MC_PHY_INIT_DATA_SEL_90 = MAXDELAY FROM TIMEGRP "TNM_PHY_INIT_DATA_SEL" TO   
+       TIMEGRP "RAMS" TS_SYS_CLK * 4; ignored during timing analysis.
+INFO:Timing:3386 - Intersecting Constraints found and resolved.  For more information, see the TSI report.  Please
+   consult the Xilinx Command Line Tools User Guide for information on generating a TSI report.
+Starting initial Timing Analysis.  REAL time: 17 secs 
+Finished initial Timing Analysis.  REAL time: 17 secs 
+
+Starting Router
+
+
+Phase  1  : 11417 unrouted;      REAL time: 20 secs 
+INFO:Route:538 - One or more MIG cores have been detected in your design and have been successfully
+   placed and routed. These MIG core(s) have critical skew and delay requirements 
+   that are independent of the user (UCF) timing constraints. These MIG-related timing 
+   constraints have been successfully met in this design. However, the user must verify
+   separately that all timing constraints specified in the UCF file have been met.
+
+
+Phase  2  : 9333 unrouted;      REAL time: 21 secs 
+
+Phase  3  : 3323 unrouted;      REAL time: 29 secs 
+
+Phase  4  : 3331 unrouted; (Setup:4, Hold:120, Component Switching Limit:0)     REAL time: 36 secs 
+
+Updating file: mig_36_1.ncd with current fully routed design.
+
+Phase  5  : 0 unrouted; (Setup:4, Hold:120, Component Switching Limit:0)     REAL time: 40 secs 
+
+Phase  6  : 0 unrouted; (Setup:0, Hold:120, Component Switching Limit:0)     REAL time: 41 secs 
+
+Phase  7  : 0 unrouted; (Setup:0, Hold:120, Component Switching Limit:0)     REAL time: 41 secs 
+
+Phase  8  : 0 unrouted; (Setup:0, Hold:120, Component Switching Limit:0)     REAL time: 41 secs 
+
+Phase  9  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 41 secs 
+
+Phase 10  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 42 secs 
+Total REAL time to Router completion: 42 secs 
+Total CPU time to Router completion: 39 secs 
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+Generating "PAR" statistics.
+
+**************************
+Generating Clock Report
+**************************
+
++---------------------+--------------+------+------+------------+-------------+
+|        Clock Net    |   Resource   |Locked|Fanout|Net Skew(ns)|Max Delay(ns)|
++---------------------+--------------+------+------+------------+-------------+
+|             clkdiv0 |BUFGCTRL_X0Y29| No   |  492 |  0.501     |  2.139      |
++---------------------+--------------+------+------+------------+-------------+
+|        clk0_tb_OBUF |BUFGCTRL_X0Y30| No   |  434 |  0.480     |  2.128      |
++---------------------+--------------+------+------+------------+-------------+
+|               clk90 |BUFGCTRL_X0Y31| No   |  177 |  0.357     |  2.110      |
++---------------------+--------------+------+------+------------+-------------+
+|u_ddr2_top_0/u_mem_i |              |      |      |            |             |
+|f_top/u_phy_top/u_ph |              |      |      |            |             |
+| y_io/delayed_dqs<0> |        IO Clk| No   |   17 |  0.101     |  0.425      |
++---------------------+--------------+------+------+------------+-------------+
+|u_ddr2_top_0/u_mem_i |              |      |      |            |             |
+|f_top/u_phy_top/u_ph |              |      |      |            |             |
+| y_io/delayed_dqs<1> |        IO Clk| No   |   17 |  0.083     |  0.380      |
++---------------------+--------------+------+------+------------+-------------+
+|u_ddr2_top_0/u_mem_i |              |      |      |            |             |
+|f_top/u_phy_top/u_ph |              |      |      |            |             |
+| y_io/delayed_dqs<2> |        IO Clk| No   |   17 |  0.128     |  0.425      |
++---------------------+--------------+------+------+------------+-------------+
+|u_ddr2_top_0/u_mem_i |              |      |      |            |             |
+|f_top/u_phy_top/u_ph |              |      |      |            |             |
+| y_io/delayed_dqs<3> |        IO Clk| No   |   17 |  0.101     |  0.425      |
++---------------------+--------------+------+------+------------+-------------+
+|u_ddr2_top_0/u_mem_i |              |      |      |            |             |
+|f_top/u_phy_top/u_ph |              |      |      |            |             |
+| y_io/delayed_dqs<5> |        IO Clk| No   |   17 |  0.128     |  0.425      |
++---------------------+--------------+------+------+------------+-------------+
+|u_ddr2_top_0/u_mem_i |              |      |      |            |             |
+|f_top/u_phy_top/u_ph |              |      |      |            |             |
+| y_io/delayed_dqs<4> |        IO Clk| No   |   17 |  0.083     |  0.380      |
++---------------------+--------------+------+------+------------+-------------+
+|u_ddr2_top_0/u_mem_i |              |      |      |            |             |
+|f_top/u_phy_top/u_ph |              |      |      |            |             |
+| y_io/delayed_dqs<6> |        IO Clk| No   |   17 |  0.101     |  0.425      |
++---------------------+--------------+------+------+------------+-------------+
+|u_ddr2_top_0/u_mem_i |              |      |      |            |             |
+|f_top/u_phy_top/u_ph |              |      |      |            |             |
+| y_io/delayed_dqs<7> |        IO Clk| No   |   17 |  0.083     |  0.380      |
++---------------------+--------------+------+------+------------+-------------+
+|              clk200 |BUFGCTRL_X0Y28| No   |   10 |  0.321     |  1.960      |
++---------------------+--------------+------+------+------------+-------------+
+
+* Net Skew is the difference between the minimum and maximum routing
+only delays for the net. Note this is different from Clock Skew which
+is reported in TRCE timing report. Clock Skew is the difference between
+the minimum and maximum path delays which includes logic delays.
+
+* The fanout is the number of component pins not the individual BEL loads,
+for example SLICE loads not FF loads.
+
+Timing Score: 0 (Setup: 0, Hold: 0, Component Switching Limit: 0)
+
+Number of Timing Constraints that were not applied: 2
+
+Asterisk (*) preceding a constraint indicates it was not met.
+   This may be due to a setup or hold violation.
+
+----------------------------------------------------------------------------------------------------------
+  Constraint                                |    Check    | Worst Case |  Best Case | Timing |   Timing   
+                                            |             |    Slack   | Achievable | Errors |    Score   
+----------------------------------------------------------------------------------------------------------
+  NET         "u_ddr2_top_0/u_mem_if_top/u_ | MAXDELAY    |     0.012ns|     0.838ns|       0|           0
+  phy_top/u_phy_io/gen_dqs[0].u_iob_dqs/en_ |             |            |            |        |            
+  dqs_sync"         MAXDELAY = 0.85 ns      |             |            |            |        |            
+----------------------------------------------------------------------------------------------------------
+  NET         "u_ddr2_top_0/u_mem_if_top/u_ | MAXDELAY    |     0.012ns|     0.838ns|       0|           0
+  phy_top/u_phy_io/gen_dqs[1].u_iob_dqs/en_ |             |            |            |        |            
+  dqs_sync"         MAXDELAY = 0.85 ns      |             |            |            |        |            
+----------------------------------------------------------------------------------------------------------
+  NET         "u_ddr2_top_0/u_mem_if_top/u_ | MAXDELAY    |     0.015ns|     0.835ns|       0|           0
+  phy_top/u_phy_io/gen_dqs[2].u_iob_dqs/en_ |             |            |            |        |            
+  dqs_sync"         MAXDELAY = 0.85 ns      |             |            |            |        |            
+----------------------------------------------------------------------------------------------------------
+  TS_DQ_CE = MAXDELAY FROM TIMEGRP "TNM_DQ_ | SETUP       |     0.021ns|     1.879ns|       0|           0
+  CE_IDDR" TO TIMEGRP "TNM_DQS_FLOPS"       | HOLD        |     1.002ns|            |       0|           0
+     1.9 ns                                 |             |            |            |        |            
+----------------------------------------------------------------------------------------------------------
+  NET         "u_ddr2_top_0/u_mem_if_top/u_ | MAXDELAY    |     0.045ns|     0.805ns|       0|           0
+  phy_top/u_phy_io/gen_dqs[5].u_iob_dqs/en_ |             |            |            |        |            
+  dqs_sync"         MAXDELAY = 0.85 ns      |             |            |            |        |            
+----------------------------------------------------------------------------------------------------------
+  NET         "u_ddr2_top_0/u_mem_if_top/u_ | MAXDELAY    |     0.047ns|     0.803ns|       0|           0
+  phy_top/u_phy_io/gen_dqs[7].u_iob_dqs/en_ |             |            |            |        |            
+  dqs_sync"         MAXDELAY = 0.85 ns      |             |            |            |        |            
+----------------------------------------------------------------------------------------------------------
+  NET         "u_ddr2_top_0/u_mem_if_top/u_ | MAXDELAY    |     0.047ns|     0.803ns|       0|           0
+  phy_top/u_phy_io/gen_dqs[3].u_iob_dqs/en_ |             |            |            |        |            
+  dqs_sync"         MAXDELAY = 0.85 ns      |             |            |            |        |            
+----------------------------------------------------------------------------------------------------------
+  NET         "u_ddr2_top_0/u_mem_if_top/u_ | MAXDELAY    |     0.047ns|     0.803ns|       0|           0
+  phy_top/u_phy_io/gen_dqs[4].u_iob_dqs/en_ |             |            |            |        |            
+  dqs_sync"         MAXDELAY = 0.85 ns      |             |            |            |        |            
+----------------------------------------------------------------------------------------------------------
+  NET         "u_ddr2_top_0/u_mem_if_top/u_ | MAXDELAY    |     0.047ns|     0.803ns|       0|           0
+  phy_top/u_phy_io/gen_dqs[6].u_iob_dqs/en_ |             |            |            |        |            
+  dqs_sync"         MAXDELAY = 0.85 ns      |             |            |            |        |            
+----------------------------------------------------------------------------------------------------------
+  NET "u_ddr2_top_0/u_mem_if_top/u_phy_top/ | MAXDELAY    |     0.071ns|     0.529ns|       0|           0
+  u_phy_io/en_dqs<7>" MAXDELAY = 0.6        |             |            |            |        |            
+    ns                                      |             |            |            |        |            
+----------------------------------------------------------------------------------------------------------
+  NET "u_ddr2_top_0/u_mem_if_top/u_phy_top/ | MAXDELAY    |     0.071ns|     0.529ns|       0|           0
+  u_phy_io/en_dqs<6>" MAXDELAY = 0.6        |             |            |            |        |            
+    ns                                      |             |            |            |        |            
+----------------------------------------------------------------------------------------------------------
+  NET "u_ddr2_top_0/u_mem_if_top/u_phy_top/ | MAXDELAY    |     0.071ns|     0.529ns|       0|           0
+  u_phy_io/en_dqs<5>" MAXDELAY = 0.6        |             |            |            |        |            
+    ns                                      |             |            |            |        |            
+----------------------------------------------------------------------------------------------------------
+  NET "u_ddr2_top_0/u_mem_if_top/u_phy_top/ | MAXDELAY    |     0.071ns|     0.529ns|       0|           0
+  u_phy_io/en_dqs<4>" MAXDELAY = 0.6        |             |            |            |        |            
+    ns                                      |             |            |            |        |            
+----------------------------------------------------------------------------------------------------------
+  NET "u_ddr2_top_0/u_mem_if_top/u_phy_top/ | MAXDELAY    |     0.071ns|     0.529ns|       0|           0
+  u_phy_io/en_dqs<3>" MAXDELAY = 0.6        |             |            |            |        |            
+    ns                                      |             |            |            |        |            
+----------------------------------------------------------------------------------------------------------
+  NET "u_ddr2_top_0/u_mem_if_top/u_phy_top/ | MAXDELAY    |     0.071ns|     0.529ns|       0|           0
+  u_phy_io/en_dqs<2>" MAXDELAY = 0.6        |             |            |            |        |            
+    ns                                      |             |            |            |        |            
+----------------------------------------------------------------------------------------------------------
+  NET "u_ddr2_top_0/u_mem_if_top/u_phy_top/ | MAXDELAY    |     0.071ns|     0.529ns|       0|           0
+  u_phy_io/en_dqs<1>" MAXDELAY = 0.6        |             |            |            |        |            
+    ns                                      |             |            |            |        |            
+----------------------------------------------------------------------------------------------------------
+  NET "u_ddr2_top_0/u_mem_if_top/u_phy_top/ | MAXDELAY    |     0.071ns|     0.529ns|       0|           0
+  u_phy_io/en_dqs<0>" MAXDELAY = 0.6        |             |            |            |        |            
+    ns                                      |             |            |            |        |            
+----------------------------------------------------------------------------------------------------------
+  TS_u_ddr2_infrastructure_clk90_bufg_in =  | SETUP       |     0.085ns|     3.636ns|       0|           0
+  PERIOD TIMEGRP         "u_ddr2_infrastruc | HOLD        |     0.362ns|            |       0|           0
+  ture_clk90_bufg_in" TS_SYS_CLK PHASE 0.93 |             |            |            |        |            
+  75 ns HIGH         50%                    |             |            |            |        |            
+----------------------------------------------------------------------------------------------------------
+  TS_u_ddr2_infrastructure_clk0_bufg_in = P | SETUP       |     0.233ns|     3.517ns|       0|           0
+  ERIOD TIMEGRP         "u_ddr2_infrastruct | HOLD        |     0.034ns|            |       0|           0
+  ure_clk0_bufg_in" TS_SYS_CLK HIGH 50%     |             |            |            |        |            
+----------------------------------------------------------------------------------------------------------
+  TS_u_ddr2_infrastructure_clkdiv0_bufg_in  | SETUP       |     0.305ns|     6.890ns|       0|           0
+  = PERIOD TIMEGRP         "u_ddr2_infrastr | HOLD        |     0.043ns|            |       0|           0
+  ucture_clkdiv0_bufg_in" TS_SYS_CLK / 0.5  |             |            |            |        |            
+  HIGH 50%                                  |             |            |            |        |            
+----------------------------------------------------------------------------------------------------------
+  TS_FROM_EN_DQS_FF_TO_DQ_CE_FF = MAXDELAY  | SETUP       |     1.160ns|     2.690ns|       0|           0
+  FROM TIMEGRP "EN_DQS_FF" TO TIMEGRP       | HOLD        |     2.763ns|            |       0|           0
+     "TNM_DQ_CE_IDDR" 3.85 ns DATAPATHONLY  |             |            |            |        |            
+----------------------------------------------------------------------------------------------------------
+  TS_SYS_CLK = PERIOD TIMEGRP "SYS_CLK" 3.7 | MINLOWPULSE |     1.416ns|     2.334ns|       0|           0
+  5 ns HIGH 50%                             |             |            |            |        |            
+----------------------------------------------------------------------------------------------------------
+  TS_SYS_CLK_200 = PERIOD TIMEGRP "SYS_CLK_ | SETUP       |     3.461ns|     1.539ns|       0|           0
+  200" 5 ns HIGH 50%                        | HOLD        |     0.459ns|            |       0|           0
+                                            | MINPERIOD   |     3.334ns|     1.666ns|       0|           0
+----------------------------------------------------------------------------------------------------------
+  TS_MC_PHY_INIT_DATA_SEL_0 = MAXDELAY FROM | SETUP       |    10.373ns|     4.627ns|       0|           0
+   TIMEGRP "TNM_PHY_INIT_DATA_SEL" TO       | HOLD        |     0.772ns|            |       0|           0
+     TIMEGRP "FFS" TS_SYS_CLK * 4           |             |            |            |        |            
+----------------------------------------------------------------------------------------------------------
+  TS_MC_RD_DATA_SEL = MAXDELAY FROM TIMEGRP | SETUP       |    11.276ns|     3.724ns|       0|           0
+   "TNM_RD_DATA_SEL" TO TIMEGRP "FFS"       | HOLD        |     0.349ns|            |       0|           0
+     TS_SYS_CLK * 4                         |             |            |            |        |            
+----------------------------------------------------------------------------------------------------------
+  TS_MC_RDEN_SEL_MUX = MAXDELAY FROM TIMEGR | SETUP       |    11.720ns|     3.280ns|       0|           0
+  P "TNM_RDEN_SEL_MUX" TO TIMEGRP "FFS"     | HOLD        |     1.199ns|            |       0|           0
+       TS_SYS_CLK * 4                       |             |            |            |        |            
+----------------------------------------------------------------------------------------------------------
+  TS_MC_GATE_DLY = MAXDELAY FROM TIMEGRP "T | SETUP       |    12.968ns|     2.032ns|       0|           0
+  NM_GATE_DLY" TO TIMEGRP "FFS"         TS_ | HOLD        |     0.008ns|            |       0|           0
+  SYS_CLK * 4                               |             |            |            |        |            
+----------------------------------------------------------------------------------------------------------
+  TS_MC_RDEN_DLY = MAXDELAY FROM TIMEGRP "T | SETUP       |    13.093ns|     1.907ns|       0|           0
+  NM_RDEN_DLY" TO TIMEGRP "FFS"         TS_ | HOLD        |     0.016ns|            |       0|           0
+  SYS_CLK * 4                               |             |            |            |        |            
+----------------------------------------------------------------------------------------------------------
+  TS_MC_CAL_RDEN_DLY = MAXDELAY FROM TIMEGR | SETUP       |    13.120ns|     1.880ns|       0|           0
+  P "TNM_CAL_RDEN_DLY" TO TIMEGRP "FFS"     | HOLD        |     0.021ns|            |       0|           0
+       TS_SYS_CLK * 4                       |             |            |            |        |            
+----------------------------------------------------------------------------------------------------------
+  TS_MC_PHY_INIT_DATA_SEL_90 = MAXDELAY FRO | N/A         |         N/A|         N/A|     N/A|         N/A
+  M TIMEGRP "TNM_PHY_INIT_DATA_SEL" TO      |             |            |            |        |            
+      TIMEGRP "RAMS" TS_SYS_CLK * 4         |             |            |            |        |            
+----------------------------------------------------------------------------------------------------------
+
+
+Derived Constraint Report
+Review Timing Report for more details on the following derived constraints.
+To create a Timing Report, run "trce -v 12 -fastpaths -o design_timing_report design.ncd design.pcf"
+or "Run Timing Analysis" from Timing Analyzer (timingan).
+Derived Constraints for TS_SYS_CLK
++-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
+|                               |   Period    |       Actual Period       |      Timing Errors        |      Paths Analyzed       |
+|           Constraint          | Requirement |-------------+-------------|-------------+-------------|-------------+-------------|
+|                               |             |   Direct    | Derivative  |   Direct    | Derivative  |   Direct    | Derivative  |
++-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
+|TS_SYS_CLK                     |      3.750ns|      2.334ns|      3.636ns|            0|            0|            0|        15880|
+| TS_MC_RD_DATA_SEL             |     15.000ns|      3.724ns|          N/A|            0|            0|          384|            0|
+| TS_MC_RDEN_SEL_MUX            |     15.000ns|      3.280ns|          N/A|            0|            0|          128|            0|
+| TS_MC_PHY_INIT_DATA_SEL_0     |     15.000ns|      4.627ns|          N/A|            0|            0|          295|            0|
+| TS_MC_PHY_INIT_DATA_SEL_90    |     15.000ns|          N/A|          N/A|            0|            0|            0|            0|
+| TS_MC_GATE_DLY                |     15.000ns|      2.032ns|          N/A|            0|            0|           40|            0|
+| TS_MC_RDEN_DLY                |     15.000ns|      1.907ns|          N/A|            0|            0|            5|            0|
+| TS_MC_CAL_RDEN_DLY            |     15.000ns|      1.880ns|          N/A|            0|            0|            5|            0|
+| TS_u_ddr2_infrastructure_clk0_|      3.750ns|      3.517ns|          N/A|            0|            0|         3179|            0|
+| bufg_in                       |             |             |             |             |             |             |             |
+| TS_u_ddr2_infrastructure_clk90|      3.750ns|      3.636ns|          N/A|            0|            0|          650|            0|
+| _bufg_in                      |             |             |             |             |             |             |             |
+| TS_u_ddr2_infrastructure_clkdi|      7.500ns|      6.890ns|          N/A|            0|            0|        11194|            0|
+| v0_bufg_in                    |             |             |             |             |             |             |             |
++-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
+
+All constraints were met.
+INFO:Timing:2761 - N/A entries in the Constraints List may indicate that the 
+   constraint is not analyzed due to the following: No paths covered by this 
+   constraint; Other constraints intersect with this constraint; or This 
+   constraint was disabled by a Path Tracing Control. Please run the Timespec 
+   Interaction Report (TSI) via command line (trce tsi) or Timing Analyzer GUI.
+
+
+Generating Pad Report.
+
+All signals are completely routed.
+
+Total REAL time to PAR completion: 48 secs 
+Total CPU time to PAR completion: 45 secs 
+
+Peak Memory Usage:  597 MB
+
+Placer: Placement generated during map.
+Routing: Completed - No errors found.
+Timing: Completed - No errors found.
+
+Number of error messages: 0
+Number of warning messages: 1
+Number of info messages: 2
+
+Writing design to file mig_36_1.ncd
+
+
+
+PAR done!

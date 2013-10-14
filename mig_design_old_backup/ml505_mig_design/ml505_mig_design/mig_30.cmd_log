@@ -1,0 +1,5 @@
+xst -intstyle ise -ifn "C:/Users/praveen/Dropbox/Works and collections/Elec/BTP/DDR_Interface/ml505_mig_design/ml505_mig_design/mig_30.xst" -ofn "C:/Users/praveen/Dropbox/Works and collections/Elec/BTP/DDR_Interface/ml505_mig_design/ml505_mig_design/mig_30.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc "mig_30/user_design/par/mig_30.ucf" -p xc5vlx50t-ff1136-1 "mig_30.ngc" mig_30.ngd  
+map -intstyle ise -p xc5vlx50t-ff1136-1 -w -logic_opt off -ol high -t 1 -register_duplication off -global_opt off -mt off -cm area -ir off -pr off -lc off -power off -o mig_30_map.ncd mig_30.ngd mig_30.pcf 
+par -w -intstyle ise -ol high -mt off mig_30_map.ncd mig_30.ncd mig_30.pcf 
+trce -intstyle ise -v 3 -s 1 -n 3 -fastpaths -xml mig_30.twx mig_30.ncd -o mig_30.twr mig_30.pcf 

@@ -1,0 +1,1440 @@
+Release 14.6 - xst P.68d (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.14 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.14 secs
+ 
+--> Reading design: ddr2_tb_top.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "ddr2_tb_top.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "ddr2_tb_top"
+Output Format                      : NGC
+Target Device                      : xc5vlx110t-1-ff1136
+
+---- Source Options
+Top Module Name                    : ddr2_tb_top
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 32
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "xupv5_mig_design/mig_23/example_design/rtl/ddr2_tb_test_data_gen.v" in library work
+Compiling verilog file "xupv5_mig_design/mig_23/example_design/rtl/ddr2_tb_test_addr_gen.v" in library work
+Module <ddr2_tb_test_data_gen> compiled
+Compiling verilog file "xupv5_mig_design/mig_23/example_design/rtl/ddr2_tb_test_gen.v" in library work
+Module <ddr2_tb_test_addr_gen> compiled
+Compiling verilog file "xupv5_mig_design/mig_23/example_design/rtl/ddr2_tb_test_cmp.v" in library work
+Module <ddr2_tb_test_gen> compiled
+Compiling verilog file "xupv5_mig_design/mig_23/example_design/rtl/ddr2_tb_top.v" in library work
+Module <ddr2_tb_test_cmp> compiled
+Module <ddr2_tb_top> compiled
+No errors in compilation
+Analysis of file <"ddr2_tb_top.prj"> succeeded.
+ 
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for module <ddr2_tb_top> in library <work> with parameters.
+	APPDATA_WIDTH = "00000000000000000000000010010000"
+	BANK_WIDTH = "00000000000000000000000000000010"
+	BURST_LEN = "00000000000000000000000000000100"
+	BURST_LEN_DIV2 = "00000000000000000000000000000010"
+	COL_WIDTH = "00000000000000000000000000001010"
+	DM_WIDTH = "00000000000000000000000000001001"
+	DQ_WIDTH = "00000000000000000000000001001000"
+	ECC_ENABLE = "00000000000000000000000000000000"
+	ROW_WIDTH = "00000000000000000000000000001110"
+	TB_IDLE = "000"
+	TB_READ = "010"
+	TB_WRITE = "001"
+
+Analyzing hierarchy for module <ddr2_tb_test_cmp> in library <work> with parameters.
+	APPDATA_WIDTH = "00000000000000000000000010010000"
+	DQ_WIDTH = "00000000000000000000000001001000"
+	ECC_ENABLE = "00000000000000000000000000000000"
+
+Analyzing hierarchy for module <ddr2_tb_test_gen> in library <work> with parameters.
+	APPDATA_WIDTH = "00000000000000000000000010010000"
+	BANK_WIDTH = "00000000000000000000000000000010"
+	COL_WIDTH = "00000000000000000000000000001010"
+	DM_WIDTH = "00000000000000000000000000001001"
+	DQ_WIDTH = "00000000000000000000000001001000"
+	ECC_ENABLE = "00000000000000000000000000000000"
+	ROW_WIDTH = "00000000000000000000000000001110"
+
+Analyzing hierarchy for module <ddr2_tb_test_addr_gen> in library <work> with parameters.
+	BANK_WIDTH = "00000000000000000000000000000010"
+	COL_WIDTH = "00000000000000000000000000001010"
+	RAM_INITP_00 = "0001000100010001000100010001000100000000000000000000000000000000000100010001000100010001000100010000000000000000000000000000000000010001000100010001000100010001000000000000000000000000000000000001000100010001000100010001000100000000000000000000000000000000"
+	RAM_INIT_00 = "1000000000000000001000001100000010000000000000000010000011001000000000000000000000100000110100000000000000000000001000001101100000000000000000000001000011100000000000000000000000010000111010001000000000000000000100001111000010000000000000000001000011111000"
+	RAM_INIT_01 = "1000000000000000001000001100000010000000000000000010000011001000000000000000000000100000110100000000000000000000001000001101100000000000000000000001000011100000000000000000000000010000111010001000000000000000000100001111000010000000000000000001000011111000"
+	RAM_INIT_02 = "0001000000000000010000001100000000010000000000000100000011001000100100000000000001000000110100001001000000000000010000001101100010010000000000000011000011100000100100000000000000110000111010000001000000000000001100001111000000010000000000000011000011111000"
+	RAM_INIT_03 = "0001000000000000010000001100000000010000000000000100000011001000100100000000000001000000110100001001000000000000010000001101100010010000000000000011000011100000100100000000000000110000111010000001000000000000001100001111000000010000000000000011000011111000"
+	RAM_INIT_04 = "1010000000000000011000001100000000100000000000000110000011001000001000000000000001100000110100001010000000000000011000001101100000100000000000000101000011100000101000000000000001010000111010001010000000000000010100001111000000100000000000000101000011111000"
+	RAM_INIT_05 = "1010000000000000011000001100000000100000000000000110000011001000001000000000000001100000110100001010000000000000011000001101100000100000000000000101000011100000101000000000000001010000111010001010000000000000010100001111000000100000000000000101000011111000"
+	RAM_INIT_06 = "0011000000000000100000001100000010110000000000001000000011001000101100000000000010000000110100000011000000000000100000001101100010110000000000000111000011100000001100000000000001110000111010000011000000000000011100001111000010110000000000000111000011111000"
+	RAM_INIT_07 = "0011000000000000100000001100000010110000000000001000000011001000101100000000000010000000110100000011000000000000100000001101100010110000000000000111000011100000001100000000000001110000111010000011000000000000011100001111000010110000000000000111000011111000"
+	ROW_WIDTH = "00000000000000000000000000001110"
+
+Analyzing hierarchy for module <ddr2_tb_test_data_gen> in library <work> with parameters.
+	APPDATA_WIDTH = "00000000000000000000000010010000"
+	DM_WIDTH = "00000000000000000000000000001001"
+	DQ_WIDTH = "00000000000000000000000001001000"
+	ECC_ENABLE = "00000000000000000000000000000000"
+	RD_FOURTH_DATA = "11"
+	RD_IDLE_FIRST_DATA = "00"
+	RD_SECOND_DATA = "01"
+	RD_THIRD_DATA = "10"
+	WR_FOURTH_DATA = "11"
+	WR_IDLE_FIRST_DATA = "00"
+	WR_SECOND_DATA = "01"
+	WR_THIRD_DATA = "10"
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <ddr2_tb_top>.
+	APPDATA_WIDTH = 32'sb00000000000000000000000010010000
+	BANK_WIDTH = 32'sb00000000000000000000000000000010
+	BURST_LEN = 32'sb00000000000000000000000000000100
+	BURST_LEN_DIV2 = 32'sb00000000000000000000000000000010
+	COL_WIDTH = 32'sb00000000000000000000000000001010
+	DM_WIDTH = 32'sb00000000000000000000000000001001
+	DQ_WIDTH = 32'sb00000000000000000000000001001000
+	ECC_ENABLE = 32'sb00000000000000000000000000000000
+	ROW_WIDTH = 32'sb00000000000000000000000000001110
+	TB_IDLE = 3'b000
+	TB_READ = 3'b010
+	TB_WRITE = 3'b001
+Module <ddr2_tb_top> is correct for synthesis.
+ 
+    Set user-defined property "INIT =  0" for instance <ff_af_afull_r> in unit <ddr2_tb_top>.
+    Set user-defined property "INIT =  0" for instance <ff_af_afull_r1> in unit <ddr2_tb_top>.
+    Set user-defined property "INIT =  0" for instance <ff_af_afull_r2> in unit <ddr2_tb_top>.
+    Set user-defined property "INIT =  0" for instance <ff_wdf_afull_r> in unit <ddr2_tb_top>.
+    Set user-defined property "INIT =  0" for instance <ff_wdf_afull_r1> in unit <ddr2_tb_top>.
+    Set user-defined property "INIT =  0" for instance <ff_wdf_afull_r2> in unit <ddr2_tb_top>.
+    Set user-defined property "INIT =  0" for instance <ff_phy_init_done> in unit <ddr2_tb_top>.
+    Set property "syn_preserve = 1" for signal <rst_r>.
+    Set property "shreg_extract = no" for signal <rst_r>.
+    Set property "equivalent_register_removal = no" for signal <rst_r> (previous value was "false").
+    Set property "syn_maxfan = 10" for signal <rst_r1>.
+    Set property "shreg_extract = no" for signal <rst_r1>.
+Analyzing module <ddr2_tb_test_cmp> in library <work>.
+	APPDATA_WIDTH = 32'sb00000000000000000000000010010000
+	DQ_WIDTH = 32'sb00000000000000000000000001001000
+	ECC_ENABLE = 32'sb00000000000000000000000000000000
+Module <ddr2_tb_test_cmp> is correct for synthesis.
+ 
+    Set user-defined property "INIT =  0" for instance <ff_rd_data_valid_r> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <ff_error_1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <ff_error_2> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[0].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[0].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[1].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[1].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[2].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[2].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[3].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[3].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[4].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[4].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[5].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[5].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[6].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[6].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[7].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[7].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[8].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[8].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[9].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[9].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[10].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[10].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[11].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[11].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[12].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[12].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[13].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[13].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[14].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[14].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[15].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[15].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[16].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[16].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[17].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[17].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[18].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[18].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[19].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[19].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[20].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[20].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[21].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[21].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[22].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[22].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[23].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[23].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[24].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[24].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[25].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[25].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[26].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[26].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[27].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[27].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[28].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[28].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[29].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[29].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[30].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[30].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[31].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[31].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[32].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[32].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[33].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[33].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[34].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[34].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[35].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[35].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[36].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[36].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[37].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[37].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[38].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[38].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[39].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[39].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[40].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[40].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[41].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[41].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[42].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[42].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[43].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[43].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[44].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[44].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[45].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[45].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[46].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[46].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[47].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[47].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[48].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[48].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[49].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[49].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[50].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[50].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[51].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[51].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[52].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[52].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[53].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[53].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[54].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[54].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[55].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[55].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[56].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[56].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[57].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[57].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[58].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[58].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[59].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[59].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[60].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[60].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[61].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[61].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[62].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[62].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[63].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[63].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[64].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[64].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[65].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[65].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[66].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[66].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[67].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[67].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[68].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[68].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[69].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[69].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[70].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[70].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[71].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[71].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[72].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[72].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[73].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[73].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[74].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[74].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[75].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[75].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[76].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[76].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[77].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[77].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[78].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[78].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[79].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[79].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[80].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[80].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[81].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[81].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[82].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[82].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[83].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[83].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[84].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[84].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[85].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[85].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[86].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[86].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[87].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[87].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[88].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[88].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[89].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[89].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[90].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[90].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[91].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[91].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[92].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[92].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[93].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[93].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[94].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[94].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[95].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[95].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[96].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[96].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[97].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[97].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[98].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[98].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[99].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[99].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[100].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[100].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[101].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[101].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[102].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[102].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[103].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[103].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[104].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[104].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[105].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[105].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[106].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[106].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[107].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[107].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[108].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[108].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[109].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[109].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[110].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[110].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[111].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[111].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[112].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[112].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[113].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[113].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[114].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[114].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[115].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[115].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[116].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[116].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[117].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[117].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[118].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[118].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[119].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[119].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[120].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[120].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[121].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[121].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[122].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[122].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[123].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[123].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[124].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[124].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[125].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[125].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[126].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[126].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[127].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[127].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[128].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[128].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[129].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[129].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[130].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[130].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[131].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[131].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[132].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[132].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[133].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[133].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[134].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[134].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[135].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[135].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[136].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[136].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[137].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[137].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[138].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[138].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[139].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[139].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[140].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[140].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[141].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[141].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[142].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[142].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[143].ff_rd_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_rd_data[143].ff_rd_data_r1> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[0].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[1].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[2].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[3].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[4].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[5].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[6].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[7].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[8].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[9].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[10].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[11].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[12].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[13].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[14].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[15].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[16].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[17].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[18].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[19].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[20].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[21].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[22].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[23].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[24].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[25].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[26].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[27].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[28].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[29].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[30].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[31].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[32].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[33].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[34].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[35].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[36].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[37].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[38].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[39].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[40].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[41].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[42].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[43].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[44].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[45].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[46].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[47].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[48].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[49].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[50].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[51].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[52].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[53].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[54].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[55].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[56].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[57].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[58].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[59].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[60].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[61].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[62].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[63].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[64].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[65].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[66].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[67].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[68].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[69].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[70].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[71].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[72].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[73].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[74].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[75].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[76].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[77].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[78].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[79].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[80].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[81].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[82].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[83].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[84].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[85].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[86].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[87].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[88].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[89].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[90].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[91].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[92].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[93].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[94].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[95].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[96].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[97].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[98].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[99].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[100].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[101].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[102].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[103].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[104].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[105].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[106].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[107].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[108].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[109].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[110].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[111].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[112].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[113].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[114].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[115].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[116].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[117].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[118].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[119].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[120].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[121].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[122].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[123].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[124].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[125].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[126].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[127].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[128].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[129].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[130].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[131].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[132].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[133].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[134].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[135].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[136].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[137].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[138].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[139].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[140].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[141].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[142].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set user-defined property "INIT =  0" for instance <gen_cmp_data[143].ff_cmp_data> in unit <ddr2_tb_test_cmp>.
+    Set property "syn_preserve = 1" for signal <rst_r>.
+    Set property "shreg_extract = no" for signal <rst_r>.
+    Set property "equivalent_register_removal = no" for signal <rst_r> (previous value was "false").
+    Set property "syn_maxfan = 10" for signal <rst_r1>.
+    Set property "shreg_extract = no" for signal <rst_r1>.
+Analyzing module <ddr2_tb_test_gen> in library <work>.
+	APPDATA_WIDTH = 32'sb00000000000000000000000010010000
+	BANK_WIDTH = 32'sb00000000000000000000000000000010
+	COL_WIDTH = 32'sb00000000000000000000000000001010
+	DM_WIDTH = 32'sb00000000000000000000000000001001
+	DQ_WIDTH = 32'sb00000000000000000000000001001000
+	ECC_ENABLE = 32'sb00000000000000000000000000000000
+	ROW_WIDTH = 32'sb00000000000000000000000000001110
+Module <ddr2_tb_test_gen> is correct for synthesis.
+ 
+Analyzing module <ddr2_tb_test_addr_gen> in library <work>.
+	BANK_WIDTH = 32'sb00000000000000000000000000000010
+	COL_WIDTH = 32'sb00000000000000000000000000001010
+	RAM_INITP_00 = 256'b0001000100010001000100010001000100000000000000000000000000000000000100010001000100010001000100010000000000000000000000000000000000010001000100010001000100010001000000000000000000000000000000000001000100010001000100010001000100000000000000000000000000000000
+	RAM_INIT_00 = 256'b1000000000000000001000001100000010000000000000000010000011001000000000000000000000100000110100000000000000000000001000001101100000000000000000000001000011100000000000000000000000010000111010001000000000000000000100001111000010000000000000000001000011111000
+	RAM_INIT_01 = 256'b1000000000000000001000001100000010000000000000000010000011001000000000000000000000100000110100000000000000000000001000001101100000000000000000000001000011100000000000000000000000010000111010001000000000000000000100001111000010000000000000000001000011111000
+	RAM_INIT_02 = 256'b0001000000000000010000001100000000010000000000000100000011001000100100000000000001000000110100001001000000000000010000001101100010010000000000000011000011100000100100000000000000110000111010000001000000000000001100001111000000010000000000000011000011111000
+	RAM_INIT_03 = 256'b0001000000000000010000001100000000010000000000000100000011001000100100000000000001000000110100001001000000000000010000001101100010010000000000000011000011100000100100000000000000110000111010000001000000000000001100001111000000010000000000000011000011111000
+	RAM_INIT_04 = 256'b1010000000000000011000001100000000100000000000000110000011001000001000000000000001100000110100001010000000000000011000001101100000100000000000000101000011100000101000000000000001010000111010001010000000000000010100001111000000100000000000000101000011111000
+	RAM_INIT_05 = 256'b1010000000000000011000001100000000100000000000000110000011001000001000000000000001100000110100001010000000000000011000001101100000100000000000000101000011100000101000000000000001010000111010001010000000000000010100001111000000100000000000000101000011111000
+	RAM_INIT_06 = 256'b0011000000000000100000001100000010110000000000001000000011001000101100000000000010000000110100000011000000000000100000001101100010110000000000000111000011100000001100000000000001110000111010000011000000000000011100001111000010110000000000000111000011111000
+	RAM_INIT_07 = 256'b0011000000000000100000001100000010110000000000001000000011001000101100000000000010000000110100000011000000000000100000001101100010110000000000000111000011100000001100000000000001110000111010000011000000000000011100001111000010110000000000000111000011111000
+	ROW_WIDTH = 32'sb00000000000000000000000000001110
+Module <ddr2_tb_test_addr_gen> is correct for synthesis.
+ 
+    Set user-defined property "DOA_REG =  1" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "DOB_REG =  0" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INITP_00 =  1111111100000000111111110000000011111111000000001111111100000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INITP_01 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INITP_02 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INITP_03 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INITP_04 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INITP_05 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INITP_06 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INITP_07 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INITP_08 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INITP_09 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INITP_0A =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INITP_0B =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INITP_0C =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INITP_0D =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INITP_0E =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INITP_0F =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_00 =  800020C0800020C8000020D0000020D8000010E0000010E8800010F0800010F8" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_01 =  800020C0800020C8000020D0000020D8000010E0000010E8800010F0800010F8" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_02 =  100040C0100040C8900040D0900040D8900030E0900030E8100030F0100030F8" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_03 =  100040C0100040C8900040D0900040D8900030E0900030E8100030F0100030F8" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_04 =  A00060C0200060C8200060D0A00060D8200050E0A00050E8A00050F0200050F8" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_05 =  A00060C0200060C8200060D0A00060D8200050E0A00050E8A00050F0200050F8" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_06 =  300080C0B00080C8B00080D0300080D8B00070E0300070E8300070F0B00070F8" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_07 =  300080C0B00080C8B00080D0300080D8B00070E0300070E8300070F0B00070F8" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_08 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_09 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_0A =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_0B =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_0C =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_0D =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_0E =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_0F =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_10 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_11 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_12 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_13 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_14 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_15 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_16 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_17 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_18 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_19 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_1A =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_1B =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_1C =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_1D =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_1E =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_1F =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_20 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_21 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_22 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_23 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_24 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_25 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_26 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_27 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_28 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_29 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_2A =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_2B =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_2C =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_2D =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_2E =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_2F =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_30 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_31 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_32 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_33 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_34 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_35 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_36 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_37 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_38 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_39 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_3A =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_3B =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_3C =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_3D =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_3E =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_3F =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_40 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_41 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_42 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_43 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_44 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_45 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_46 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_47 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_48 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_49 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_4A =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_4B =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_4C =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_4D =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_4E =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_4F =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_50 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_51 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_52 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_53 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_54 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_55 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_56 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_57 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_58 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_59 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_5A =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_5B =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_5C =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_5D =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_5E =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_5F =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_60 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_61 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_62 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_63 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_64 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_65 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_66 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_67 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_68 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_69 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_6A =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_6B =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_6C =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_6D =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_6E =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_6F =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_70 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_71 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_72 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_73 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_74 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_75 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_76 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_77 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_78 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_79 =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_7A =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_7B =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_7C =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_7D =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_7E =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_7F =  0000000000000000000000000000000000000000000000000000000000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_A =  000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_B =  000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "INIT_FILE =  NONE" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "RAM_EXTENSION_A =  NONE" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "RAM_EXTENSION_B =  NONE" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "READ_WIDTH_A =  36" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "READ_WIDTH_B =  36" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "SIM_COLLISION_CHECK =  ALL" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "SIM_MODE =  SAFE" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "SRVAL_A =  000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "SRVAL_B =  000000000" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "WRITE_MODE_A =  WRITE_FIRST" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "WRITE_MODE_B =  WRITE_FIRST" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "WRITE_WIDTH_A =  0" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set user-defined property "WRITE_WIDTH_B =  0" for instance <u_wr_rd_addr_lookup> in unit <ddr2_tb_test_addr_gen>.
+    Set property "syn_preserve = 1" for signal <rst_r>.
+    Set property "shreg_extract = no" for signal <rst_r>.
+    Set property "equivalent_register_removal = no" for signal <rst_r> (previous value was "false").
+    Set property "syn_maxfan = 10" for signal <rst_r1>.
+    Set property "shreg_extract = no" for signal <rst_r1>.
+Analyzing module <ddr2_tb_test_data_gen> in library <work>.
+	APPDATA_WIDTH = 32'sb00000000000000000000000010010000
+	DM_WIDTH = 32'sb00000000000000000000000000001001
+	DQ_WIDTH = 32'sb00000000000000000000000001001000
+	ECC_ENABLE = 32'sb00000000000000000000000000000000
+	RD_FOURTH_DATA = 2'b11
+	RD_IDLE_FIRST_DATA = 2'b00
+	RD_SECOND_DATA = 2'b01
+	RD_THIRD_DATA = 2'b10
+	WR_FOURTH_DATA = 2'b11
+	WR_IDLE_FIRST_DATA = 2'b00
+	WR_SECOND_DATA = 2'b01
+	WR_THIRD_DATA = 2'b10
+Module <ddr2_tb_test_data_gen> is correct for synthesis.
+ 
+    Set user-defined property "INIT =  0" for instance <ff_wdf_wren> in unit <ddr2_tb_test_data_gen>.
+    Set user-defined property "INIT =  0" for instance <ff_wdf_wren_r> in unit <ddr2_tb_test_data_gen>.
+    Set user-defined property "INIT =  0" for instance <ff_rd_data_valid_r> in unit <ddr2_tb_test_data_gen>.
+    Set property "syn_maxfan = 2" for signal <wr_data_rise>.
+    Set property "syn_maxfan = 2" for signal <wr_data_fall>.
+    Set property "syn_preserve = 1" for signal <rst_r>.
+    Set property "shreg_extract = no" for signal <rst_r>.
+    Set property "equivalent_register_removal = no" for signal <rst_r> (previous value was "false").
+    Set property "syn_maxfan = 10" for signal <rst_r1>.
+    Set property "shreg_extract = no" for signal <rst_r1>.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <ddr2_tb_test_cmp>.
+    Related source file is "xupv5_mig_design/mig_23/example_design/rtl/ddr2_tb_test_cmp.v".
+WARNING:Xst:646 - Signal <cmp_data_r1> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+    Found 1-bit register for signal <error_cmp>.
+    Found 1-bit register for signal <error>.
+    Found 8-bit comparator not equal for signal <byte_err_fall_0$cmp_ne0000> created at line 207.
+    Found 8-bit comparator not equal for signal <byte_err_fall_1$cmp_ne0000> created at line 207.
+    Found 8-bit comparator not equal for signal <byte_err_fall_2$cmp_ne0000> created at line 207.
+    Found 8-bit comparator not equal for signal <byte_err_fall_3$cmp_ne0000> created at line 207.
+    Found 8-bit comparator not equal for signal <byte_err_fall_4$cmp_ne0000> created at line 207.
+    Found 8-bit comparator not equal for signal <byte_err_fall_5$cmp_ne0000> created at line 207.
+    Found 8-bit comparator not equal for signal <byte_err_fall_6$cmp_ne0000> created at line 207.
+    Found 8-bit comparator not equal for signal <byte_err_fall_7$cmp_ne0000> created at line 207.
+    Found 8-bit comparator not equal for signal <byte_err_fall_8$cmp_ne0000> created at line 207.
+    Found 9-bit register for signal <byte_err_fall_r>.
+    Found 8-bit comparator not equal for signal <byte_err_rise_0$cmp_ne0000> created at line 211.
+    Found 8-bit comparator not equal for signal <byte_err_rise_1$cmp_ne0000> created at line 211.
+    Found 8-bit comparator not equal for signal <byte_err_rise_2$cmp_ne0000> created at line 211.
+    Found 8-bit comparator not equal for signal <byte_err_rise_3$cmp_ne0000> created at line 211.
+    Found 8-bit comparator not equal for signal <byte_err_rise_4$cmp_ne0000> created at line 211.
+    Found 8-bit comparator not equal for signal <byte_err_rise_5$cmp_ne0000> created at line 211.
+    Found 8-bit comparator not equal for signal <byte_err_rise_6$cmp_ne0000> created at line 211.
+    Found 8-bit comparator not equal for signal <byte_err_rise_7$cmp_ne0000> created at line 211.
+    Found 8-bit comparator not equal for signal <byte_err_rise_8$cmp_ne0000> created at line 211.
+    Found 9-bit register for signal <byte_err_rise_r>.
+    Found 1-bit register for signal <cmp_start>.
+    Found 1-bit register for signal <err_fall>.
+    Found 1-bit register for signal <err_rise>.
+    Found 1-bit register for signal <error_tmp_r>.
+    Found 144-bit register for signal <rd_data_r2>.
+    Found 1-bit register for signal <rd_data_valid_r1>.
+    Found 1-bit register for signal <rd_data_valid_r2>.
+    Found 1-bit register for signal <rst_r>.
+    Found 1-bit register for signal <rst_r1>.
+    Summary:
+	inferred 172 D-type flip-flop(s).
+	inferred  18 Comparator(s).
+Unit <ddr2_tb_test_cmp> synthesized.
+
+
+Synthesizing Unit <ddr2_tb_test_addr_gen>.
+    Related source file is "xupv5_mig_design/mig_23/example_design/rtl/ddr2_tb_test_addr_gen.v".
+WARNING:Xst:646 - Signal <ramb_dout<35:34>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <ramb_dout<30>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <ramb_dout<27:26>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <ramb_dout<11:10>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+    Found 31-bit register for signal <app_af_addr>.
+    Found 3-bit register for signal <app_af_cmd>.
+    Found 1-bit register for signal <app_af_wren>.
+    Found 27-bit register for signal <af_addr_r<26:0>>.
+    Found 3-bit register for signal <af_cmd_r>.
+    Found 1-bit register for signal <af_wren_r>.
+    Found 1-bit register for signal <rst_r>.
+    Found 1-bit register for signal <rst_r1>.
+    Found 6-bit up counter for signal <wr_addr_cnt>.
+    Found 1-bit register for signal <wr_addr_en_r0>.
+    Found 1-bit register for signal <wr_addr_en_r1>.
+    Summary:
+	inferred   1 Counter(s).
+	inferred  70 D-type flip-flop(s).
+Unit <ddr2_tb_test_addr_gen> synthesized.
+
+
+Synthesizing Unit <ddr2_tb_test_data_gen>.
+    Related source file is "xupv5_mig_design/mig_23/example_design/rtl/ddr2_tb_test_data_gen.v".
+INFO:Xst:2117 - HDL ADVISOR - Mux Selector <rd_state> of Case statement line 246 was re-encoded using one-hot encoding. The case statement will be optimized (default statement optimization), but this optimization may lead to design initialization problems. To ensure the design works safely, you can:
+   	- add an 'INIT' attribute on signal <rd_state> (optimization is then done without any risk)
+   	- use the attribute 'signal_encoding user' to avoid onehot optimization
+   	- use the attribute 'safe_implementation yes' to force XST to perform a safe (but less efficient) optimization
+INFO:Xst:2117 - HDL ADVISOR - Mux Selector <wr_state> of Case statement line 200 was re-encoded using one-hot encoding. The case statement will be optimized (default statement optimization), but this optimization may lead to design initialization problems. To ensure the design works safely, you can:
+   	- add an 'INIT' attribute on signal <wr_state> (optimization is then done without any risk)
+   	- use the attribute 'signal_encoding user' to avoid onehot optimization
+   	- use the attribute 'safe_implementation yes' to force XST to perform a safe (but less efficient) optimization
+    Found finite state machine <FSM_0> for signal <wr_state>.
+    -----------------------------------------------------------------------
+    | States             | 4                                              |
+    | Transitions        | 8                                              |
+    | Inputs             | 1                                              |
+    | Outputs            | 4                                              |
+    | Clock              | clk                       (rising_edge)        |
+    | Reset              | rst_r1                    (positive)           |
+    | Reset type         | synchronous                                    |
+    | Reset State        | 00                                             |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found finite state machine <FSM_1> for signal <rd_state>.
+    -----------------------------------------------------------------------
+    | States             | 4                                              |
+    | Transitions        | 8                                              |
+    | Inputs             | 1                                              |
+    | Outputs            | 4                                              |
+    | Clock              | clk                       (rising_edge)        |
+    | Reset              | rst_r1                    (positive)           |
+    | Reset type         | synchronous                                    |
+    | Reset State        | 00                                             |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 144-bit register for signal <app_wdf_data>.
+    Found 18-bit register for signal <app_wdf_mask_data>.
+    Found 144-bit register for signal <app_wdf_data_r>.
+    Found 18-bit register for signal <app_wdf_mask_data_r>.
+    Found 72-bit register for signal <rd_data_pat_fall>.
+    Found 72-bit register for signal <rd_data_pat_rise>.
+    Found 1-bit register for signal <rst_r>.
+    Found 1-bit register for signal <rst_r1>.
+    Found 1-bit register for signal <wr_data_en_r>.
+    Found 72-bit register for signal <wr_data_fall>.
+    Found 72-bit register for signal <wr_data_rise>.
+    Summary:
+	inferred   2 Finite State Machine(s).
+	inferred 615 D-type flip-flop(s).
+Unit <ddr2_tb_test_data_gen> synthesized.
+
+
+Synthesizing Unit <ddr2_tb_test_gen>.
+    Related source file is "xupv5_mig_design/mig_23/example_design/rtl/ddr2_tb_test_gen.v".
+Unit <ddr2_tb_test_gen> synthesized.
+
+
+Synthesizing Unit <ddr2_tb_top>.
+    Related source file is "xupv5_mig_design/mig_23/example_design/rtl/ddr2_tb_top.v".
+    Found finite state machine <FSM_2> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 3                                              |
+    | Transitions        | 12                                             |
+    | Inputs             | 5                                              |
+    | Outputs            | 4                                              |
+    | Clock              | clk0                      (rising_edge)        |
+    | Reset              | rst_r1                    (positive)           |
+    | Reset type         | synchronous                                    |
+    | Reset State        | 000                                            |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 1-bit register for signal <app_af_not_afull_r>.
+    Found 1-bit register for signal <app_wdf_not_afull_r>.
+    Found 3-bit register for signal <burst_cnt>.
+    Found 3-bit subtractor for signal <burst_cnt$addsub0000> created at line 261.
+    Found 1-bit register for signal <phy_init_done_tb_r>.
+    Found 1-bit register for signal <rst_r>.
+    Found 1-bit register for signal <rst_r1>.
+    Found 4-bit register for signal <state_cnt>.
+    Found 4-bit adder for signal <state_cnt$share0000> created at line 237.
+    Found 1-bit register for signal <wr_addr_en>.
+    Found 1-bit register for signal <wr_data_en>.
+    Summary:
+	inferred   1 Finite State Machine(s).
+	inferred  14 D-type flip-flop(s).
+	inferred   2 Adder/Subtractor(s).
+Unit <ddr2_tb_top> synthesized.
+
+INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 2
+ 3-bit subtractor                                      : 1
+ 4-bit adder                                           : 1
+# Counters                                             : 1
+ 6-bit up counter                                      : 1
+# Registers                                            : 69
+ 1-bit register                                        : 53
+ 144-bit register                                      : 3
+ 18-bit register                                       : 2
+ 3-bit register                                        : 3
+ 31-bit register                                       : 1
+ 4-bit register                                        : 1
+ 72-bit register                                       : 4
+ 9-bit register                                        : 2
+# Comparators                                          : 18
+ 8-bit comparator not equal                            : 18
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Analyzing FSM <FSM_2> for best encoding.
+Optimizing FSM <state/FSM> on signal <state[1:2]> with gray encoding.
+-------------------
+ State | Encoding
+-------------------
+ 000   | 00
+ 001   | 01
+ 010   | 11
+-------------------
+Analyzing FSM <FSM_1> for best encoding.
+Optimizing FSM <u_tb_test_gen/u_data_gen/rd_state/FSM> on signal <rd_state[1:2]> with gray encoding.
+-------------------
+ State | Encoding
+-------------------
+ 00    | 00
+ 01    | 01
+ 10    | 11
+ 11    | 10
+-------------------
+Analyzing FSM <FSM_0> for best encoding.
+Optimizing FSM <u_tb_test_gen/u_data_gen/wr_state/FSM> on signal <wr_state[1:2]> with gray encoding.
+-------------------
+ State | Encoding
+-------------------
+ 00    | 00
+ 01    | 01
+ 10    | 11
+ 11    | 10
+-------------------
+INFO:Xst:2261 - The FF/Latch <af_cmd_r_2> in Unit <u_addr_gen> is equivalent to the following 4 FFs/Latches, which will be removed : <app_af_addr_27> <app_af_addr_28> <app_af_addr_29> <app_af_addr_30> 
+INFO:Xst:2261 - The FF/Latch <app_wdf_mask_data_r_0> in Unit <u_data_gen> is equivalent to the following 17 FFs/Latches, which will be removed : <app_wdf_mask_data_r_1> <app_wdf_mask_data_r_2> <app_wdf_mask_data_r_3> <app_wdf_mask_data_r_4> <app_wdf_mask_data_r_5> <app_wdf_mask_data_r_6> <app_wdf_mask_data_r_7> <app_wdf_mask_data_r_8> <app_wdf_mask_data_r_9> <app_wdf_mask_data_r_10> <app_wdf_mask_data_r_11> <app_wdf_mask_data_r_12> <app_wdf_mask_data_r_13> <app_wdf_mask_data_r_14> <app_wdf_mask_data_r_15> <app_wdf_mask_data_r_16> <app_wdf_mask_data_r_17> 
+INFO:Xst:2261 - The FF/Latch <app_wdf_mask_data_0> in Unit <u_data_gen> is equivalent to the following 17 FFs/Latches, which will be removed : <app_wdf_mask_data_1> <app_wdf_mask_data_2> <app_wdf_mask_data_3> <app_wdf_mask_data_4> <app_wdf_mask_data_5> <app_wdf_mask_data_6> <app_wdf_mask_data_7> <app_wdf_mask_data_8> <app_wdf_mask_data_9> <app_wdf_mask_data_10> <app_wdf_mask_data_11> <app_wdf_mask_data_12> <app_wdf_mask_data_13> <app_wdf_mask_data_14> <app_wdf_mask_data_15> <app_wdf_mask_data_16> <app_wdf_mask_data_17> 
+WARNING:Xst:1710 - FF/Latch <af_cmd_r_2> (without init value) has a constant value of 0 in block <u_addr_gen>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <app_wdf_mask_data_r_0> (without init value) has a constant value of 0 in block <u_data_gen>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <app_af_cmd_2> (without init value) has a constant value of 0 in block <u_addr_gen>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <app_wdf_mask_data_0> (without init value) has a constant value of 0 in block <u_data_gen>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2404 -  FFs/Latches <app_af_addr<30:27>> (without init value) have a constant value of 0 in block <ddr2_tb_test_addr_gen>.
+WARNING:Xst:2404 -  FFs/Latches <af_cmd_r<2:2>> (without init value) have a constant value of 0 in block <ddr2_tb_test_addr_gen>.
+WARNING:Xst:2404 -  FFs/Latches <app_wdf_mask_data_r<17:0>> (without init value) have a constant value of 0 in block <ddr2_tb_test_data_gen>.
+WARNING:Xst:2404 -  FFs/Latches <app_af_cmd<2:2>> (without init value) have a constant value of 0 in block <ddr2_tb_test_addr_gen>.
+WARNING:Xst:2404 -  FFs/Latches <app_wdf_mask_data<17:0>> (without init value) have a constant value of 0 in block <ddr2_tb_test_data_gen>.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# FSMs                                                 : 3
+# Adders/Subtractors                                   : 2
+ 3-bit subtractor                                      : 1
+ 4-bit adder                                           : 1
+# Counters                                             : 1
+ 6-bit up counter                                      : 1
+# Registers                                            : 1274
+ Flip-Flops                                            : 1274
+# Comparators                                          : 18
+ 8-bit comparator not equal                            : 18
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+INFO:Xst:1901 - Instance u_wr_rd_addr_lookup in unit ddr2_tb_test_addr_gen of type RAMB36 has been replaced by RAMB36_EXP
+
+Optimizing unit <ddr2_tb_top> ...
+WARNING:Xst:1710 - FF/Latch <burst_cnt_1> (without init value) has a constant value of 0 in block <ddr2_tb_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <burst_cnt_2> (without init value) has a constant value of 0 in block <ddr2_tb_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <state_cnt_3> (without init value) has a constant value of 0 in block <ddr2_tb_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <burst_cnt_2> (without init value) has a constant value of 0 in block <ddr2_tb_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <burst_cnt_1> (without init value) has a constant value of 0 in block <ddr2_tb_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <state_cnt_3> (without init value) has a constant value of 0 in block <ddr2_tb_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <burst_cnt_2> (without init value) has a constant value of 0 in block <ddr2_tb_top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <burst_cnt_1> (without init value) has a constant value of 0 in block <ddr2_tb_top>. This FF/Latch will be trimmed during the optimization process.
+
+Optimizing unit <ddr2_tb_test_cmp> ...
+
+Optimizing unit <ddr2_tb_test_addr_gen> ...
+
+Optimizing unit <ddr2_tb_test_data_gen> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+INFO:Xst:2261 - The FF/Latch <u_tb_test_gen/u_data_gen/rd_data_pat_fall_71> in Unit <ddr2_tb_top> is equivalent to the following 17 FFs/Latches, which will be removed : <u_tb_test_gen/u_data_gen/rd_data_pat_fall_67> <u_tb_test_gen/u_data_gen/rd_data_pat_fall_63> <u_tb_test_gen/u_data_gen/rd_data_pat_fall_59> <u_tb_test_gen/u_data_gen/rd_data_pat_fall_55> <u_tb_test_gen/u_data_gen/rd_data_pat_fall_51> <u_tb_test_gen/u_data_gen/rd_data_pat_fall_47> <u_tb_test_gen/u_data_gen/rd_data_pat_fall_43> <u_tb_test_gen/u_data_gen/rd_data_pat_fall_39> <u_tb_test_gen/u_data_gen/rd_data_pat_fall_35> <u_tb_test_gen/u_data_gen/rd_data_pat_fall_31> <u_tb_test_gen/u_data_gen/rd_data_pat_fall_27> <u_tb_test_gen/u_data_gen/rd_data_pat_fall_23> <u_tb_test_gen/u_data_gen/rd_data_pat_fall_19> <u_tb_test_gen/u_data_gen/rd_data_pat_fall_15> <u_tb_test_gen/u_data_gen/rd_data_pat_fall_11> <u_tb_test_gen/u_data_gen/rd_data_pat_fall_7> <u_tb_test_gen/u_data_gen/rd_data_pat_fall_3> 
+INFO:Xst:2261 - The FF/Latch <u_tb_test_gen/u_data_gen/rd_data_pat_fall_69> in Unit <ddr2_tb_top> is equivalent to the following 17 FFs/Latches, which will be removed : <u_tb_test_gen/u_data_gen/rd_data_pat_fall_65> <u_tb_test_gen/u_data_gen/rd_data_pat_fall_61> <u_tb_test_gen/u_data_gen/rd_data_pat_fall_57> <u_tb_test_gen/u_data_gen/rd_data_pat_fall_53> <u_tb_test_gen/u_data_gen/rd_data_pat_fall_49> <u_tb_test_gen/u_data_gen/rd_data_pat_fall_45> <u_tb_test_gen/u_data_gen/rd_data_pat_fall_41> <u_tb_test_gen/u_data_gen/rd_data_pat_fall_37> <u_tb_test_gen/u_data_gen/rd_data_pat_fall_33> <u_tb_test_gen/u_data_gen/rd_data_pat_fall_29> <u_tb_test_gen/u_data_gen/rd_data_pat_fall_25> <u_tb_test_gen/u_data_gen/rd_data_pat_fall_21> <u_tb_test_gen/u_data_gen/rd_data_pat_fall_17> <u_tb_test_gen/u_data_gen/rd_data_pat_fall_13> <u_tb_test_gen/u_data_gen/rd_data_pat_fall_9> <u_tb_test_gen/u_data_gen/rd_data_pat_fall_5> <u_tb_test_gen/u_data_gen/rd_data_pat_fall_1> 
+INFO:Xst:2261 - The FF/Latch <u_tb_test_gen/u_data_gen/rd_data_pat_fall_68> in Unit <ddr2_tb_top> is equivalent to the following 17 FFs/Latches, which will be removed : <u_tb_test_gen/u_data_gen/rd_data_pat_fall_64> <u_tb_test_gen/u_data_gen/rd_data_pat_fall_60> <u_tb_test_gen/u_data_gen/rd_data_pat_fall_56> <u_tb_test_gen/u_data_gen/rd_data_pat_fall_52> <u_tb_test_gen/u_data_gen/rd_data_pat_fall_48> <u_tb_test_gen/u_data_gen/rd_data_pat_fall_44> <u_tb_test_gen/u_data_gen/rd_data_pat_fall_40> <u_tb_test_gen/u_data_gen/rd_data_pat_fall_36> <u_tb_test_gen/u_data_gen/rd_data_pat_fall_32> <u_tb_test_gen/u_data_gen/rd_data_pat_fall_28> <u_tb_test_gen/u_data_gen/rd_data_pat_fall_24> <u_tb_test_gen/u_data_gen/rd_data_pat_fall_20> <u_tb_test_gen/u_data_gen/rd_data_pat_fall_16> <u_tb_test_gen/u_data_gen/rd_data_pat_fall_12> <u_tb_test_gen/u_data_gen/rd_data_pat_fall_8> <u_tb_test_gen/u_data_gen/rd_data_pat_fall_4> <u_tb_test_gen/u_data_gen/rd_data_pat_fall_0> 
+INFO:Xst:2261 - The FF/Latch <u_tb_test_gen/u_data_gen/rd_data_pat_rise_69> in Unit <ddr2_tb_top> is equivalent to the following 17 FFs/Latches, which will be removed : <u_tb_test_gen/u_data_gen/rd_data_pat_rise_65> <u_tb_test_gen/u_data_gen/rd_data_pat_rise_61> <u_tb_test_gen/u_data_gen/rd_data_pat_rise_57> <u_tb_test_gen/u_data_gen/rd_data_pat_rise_53> <u_tb_test_gen/u_data_gen/rd_data_pat_rise_49> <u_tb_test_gen/u_data_gen/rd_data_pat_rise_45> <u_tb_test_gen/u_data_gen/rd_data_pat_rise_41> <u_tb_test_gen/u_data_gen/rd_data_pat_rise_37> <u_tb_test_gen/u_data_gen/rd_data_pat_rise_33> <u_tb_test_gen/u_data_gen/rd_data_pat_rise_29> <u_tb_test_gen/u_data_gen/rd_data_pat_rise_25> <u_tb_test_gen/u_data_gen/rd_data_pat_rise_21> <u_tb_test_gen/u_data_gen/rd_data_pat_rise_17> <u_tb_test_gen/u_data_gen/rd_data_pat_rise_13> <u_tb_test_gen/u_data_gen/rd_data_pat_rise_9> <u_tb_test_gen/u_data_gen/rd_data_pat_rise_5> <u_tb_test_gen/u_data_gen/rd_data_pat_rise_1> 
+INFO:Xst:2261 - The FF/Latch <u_tb_test_gen/u_data_gen/rd_data_pat_fall_70> in Unit <ddr2_tb_top> is equivalent to the following 17 FFs/Latches, which will be removed : <u_tb_test_gen/u_data_gen/rd_data_pat_fall_66> <u_tb_test_gen/u_data_gen/rd_data_pat_fall_62> <u_tb_test_gen/u_data_gen/rd_data_pat_fall_58> <u_tb_test_gen/u_data_gen/rd_data_pat_fall_54> <u_tb_test_gen/u_data_gen/rd_data_pat_fall_50> <u_tb_test_gen/u_data_gen/rd_data_pat_fall_46> <u_tb_test_gen/u_data_gen/rd_data_pat_fall_42> <u_tb_test_gen/u_data_gen/rd_data_pat_fall_38> <u_tb_test_gen/u_data_gen/rd_data_pat_fall_34> <u_tb_test_gen/u_data_gen/rd_data_pat_fall_30> <u_tb_test_gen/u_data_gen/rd_data_pat_fall_26> <u_tb_test_gen/u_data_gen/rd_data_pat_fall_22> <u_tb_test_gen/u_data_gen/rd_data_pat_fall_18> <u_tb_test_gen/u_data_gen/rd_data_pat_fall_14> <u_tb_test_gen/u_data_gen/rd_data_pat_fall_10> <u_tb_test_gen/u_data_gen/rd_data_pat_fall_6> <u_tb_test_gen/u_data_gen/rd_data_pat_fall_2> 
+INFO:Xst:2261 - The FF/Latch <u_tb_test_gen/u_data_gen/rd_data_pat_rise_71> in Unit <ddr2_tb_top> is equivalent to the following 17 FFs/Latches, which will be removed : <u_tb_test_gen/u_data_gen/rd_data_pat_rise_67> <u_tb_test_gen/u_data_gen/rd_data_pat_rise_63> <u_tb_test_gen/u_data_gen/rd_data_pat_rise_59> <u_tb_test_gen/u_data_gen/rd_data_pat_rise_55> <u_tb_test_gen/u_data_gen/rd_data_pat_rise_51> <u_tb_test_gen/u_data_gen/rd_data_pat_rise_47> <u_tb_test_gen/u_data_gen/rd_data_pat_rise_43> <u_tb_test_gen/u_data_gen/rd_data_pat_rise_39> <u_tb_test_gen/u_data_gen/rd_data_pat_rise_35> <u_tb_test_gen/u_data_gen/rd_data_pat_rise_31> <u_tb_test_gen/u_data_gen/rd_data_pat_rise_27> <u_tb_test_gen/u_data_gen/rd_data_pat_rise_23> <u_tb_test_gen/u_data_gen/rd_data_pat_rise_19> <u_tb_test_gen/u_data_gen/rd_data_pat_rise_15> <u_tb_test_gen/u_data_gen/rd_data_pat_rise_11> <u_tb_test_gen/u_data_gen/rd_data_pat_rise_7> <u_tb_test_gen/u_data_gen/rd_data_pat_rise_3> 
+INFO:Xst:2261 - The FF/Latch <u_tb_test_gen/u_data_gen/rd_data_pat_rise_68> in Unit <ddr2_tb_top> is equivalent to the following 17 FFs/Latches, which will be removed : <u_tb_test_gen/u_data_gen/rd_data_pat_rise_64> <u_tb_test_gen/u_data_gen/rd_data_pat_rise_60> <u_tb_test_gen/u_data_gen/rd_data_pat_rise_56> <u_tb_test_gen/u_data_gen/rd_data_pat_rise_52> <u_tb_test_gen/u_data_gen/rd_data_pat_rise_48> <u_tb_test_gen/u_data_gen/rd_data_pat_rise_44> <u_tb_test_gen/u_data_gen/rd_data_pat_rise_40> <u_tb_test_gen/u_data_gen/rd_data_pat_rise_36> <u_tb_test_gen/u_data_gen/rd_data_pat_rise_32> <u_tb_test_gen/u_data_gen/rd_data_pat_rise_28> <u_tb_test_gen/u_data_gen/rd_data_pat_rise_24> <u_tb_test_gen/u_data_gen/rd_data_pat_rise_20> <u_tb_test_gen/u_data_gen/rd_data_pat_rise_16> <u_tb_test_gen/u_data_gen/rd_data_pat_rise_12> <u_tb_test_gen/u_data_gen/rd_data_pat_rise_8> <u_tb_test_gen/u_data_gen/rd_data_pat_rise_4> <u_tb_test_gen/u_data_gen/rd_data_pat_rise_0> 
+INFO:Xst:2261 - The FF/Latch <u_tb_test_gen/u_data_gen/rd_data_pat_rise_70> in Unit <ddr2_tb_top> is equivalent to the following 17 FFs/Latches, which will be removed : <u_tb_test_gen/u_data_gen/rd_data_pat_rise_66> <u_tb_test_gen/u_data_gen/rd_data_pat_rise_62> <u_tb_test_gen/u_data_gen/rd_data_pat_rise_58> <u_tb_test_gen/u_data_gen/rd_data_pat_rise_54> <u_tb_test_gen/u_data_gen/rd_data_pat_rise_50> <u_tb_test_gen/u_data_gen/rd_data_pat_rise_46> <u_tb_test_gen/u_data_gen/rd_data_pat_rise_42> <u_tb_test_gen/u_data_gen/rd_data_pat_rise_38> <u_tb_test_gen/u_data_gen/rd_data_pat_rise_34> <u_tb_test_gen/u_data_gen/rd_data_pat_rise_30> <u_tb_test_gen/u_data_gen/rd_data_pat_rise_26> <u_tb_test_gen/u_data_gen/rd_data_pat_rise_22> <u_tb_test_gen/u_data_gen/rd_data_pat_rise_18> <u_tb_test_gen/u_data_gen/rd_data_pat_rise_14> <u_tb_test_gen/u_data_gen/rd_data_pat_rise_10> <u_tb_test_gen/u_data_gen/rd_data_pat_rise_6> <u_tb_test_gen/u_data_gen/rd_data_pat_rise_2> 
+INFO:Xst:2261 - The FF/Latch <u_tb_test_gen/u_data_gen/wr_data_fall_70> in Unit <ddr2_tb_top> is equivalent to the following 17 FFs/Latches, which will be removed : <u_tb_test_gen/u_data_gen/wr_data_fall_66> <u_tb_test_gen/u_data_gen/wr_data_fall_62> <u_tb_test_gen/u_data_gen/wr_data_fall_58> <u_tb_test_gen/u_data_gen/wr_data_fall_54> <u_tb_test_gen/u_data_gen/wr_data_fall_50> <u_tb_test_gen/u_data_gen/wr_data_fall_46> <u_tb_test_gen/u_data_gen/wr_data_fall_42> <u_tb_test_gen/u_data_gen/wr_data_fall_38> <u_tb_test_gen/u_data_gen/wr_data_fall_34> <u_tb_test_gen/u_data_gen/wr_data_fall_30> <u_tb_test_gen/u_data_gen/wr_data_fall_26> <u_tb_test_gen/u_data_gen/wr_data_fall_22> <u_tb_test_gen/u_data_gen/wr_data_fall_18> <u_tb_test_gen/u_data_gen/wr_data_fall_14> <u_tb_test_gen/u_data_gen/wr_data_fall_10> <u_tb_test_gen/u_data_gen/wr_data_fall_6> <u_tb_test_gen/u_data_gen/wr_data_fall_2> 
+INFO:Xst:2261 - The FF/Latch <u_tb_test_gen/u_data_gen/wr_data_rise_71> in Unit <ddr2_tb_top> is equivalent to the following 17 FFs/Latches, which will be removed : <u_tb_test_gen/u_data_gen/wr_data_rise_67> <u_tb_test_gen/u_data_gen/wr_data_rise_63> <u_tb_test_gen/u_data_gen/wr_data_rise_59> <u_tb_test_gen/u_data_gen/wr_data_rise_55> <u_tb_test_gen/u_data_gen/wr_data_rise_51> <u_tb_test_gen/u_data_gen/wr_data_rise_47> <u_tb_test_gen/u_data_gen/wr_data_rise_43> <u_tb_test_gen/u_data_gen/wr_data_rise_39> <u_tb_test_gen/u_data_gen/wr_data_rise_35> <u_tb_test_gen/u_data_gen/wr_data_rise_31> <u_tb_test_gen/u_data_gen/wr_data_rise_27> <u_tb_test_gen/u_data_gen/wr_data_rise_23> <u_tb_test_gen/u_data_gen/wr_data_rise_19> <u_tb_test_gen/u_data_gen/wr_data_rise_15> <u_tb_test_gen/u_data_gen/wr_data_rise_11> <u_tb_test_gen/u_data_gen/wr_data_rise_7> <u_tb_test_gen/u_data_gen/wr_data_rise_3> 
+INFO:Xst:2261 - The FF/Latch <u_tb_test_gen/u_data_gen/wr_data_rise_68> in Unit <ddr2_tb_top> is equivalent to the following 17 FFs/Latches, which will be removed : <u_tb_test_gen/u_data_gen/wr_data_rise_64> <u_tb_test_gen/u_data_gen/wr_data_rise_60> <u_tb_test_gen/u_data_gen/wr_data_rise_56> <u_tb_test_gen/u_data_gen/wr_data_rise_52> <u_tb_test_gen/u_data_gen/wr_data_rise_48> <u_tb_test_gen/u_data_gen/wr_data_rise_44> <u_tb_test_gen/u_data_gen/wr_data_rise_40> <u_tb_test_gen/u_data_gen/wr_data_rise_36> <u_tb_test_gen/u_data_gen/wr_data_rise_32> <u_tb_test_gen/u_data_gen/wr_data_rise_28> <u_tb_test_gen/u_data_gen/wr_data_rise_24> <u_tb_test_gen/u_data_gen/wr_data_rise_20> <u_tb_test_gen/u_data_gen/wr_data_rise_16> <u_tb_test_gen/u_data_gen/wr_data_rise_12> <u_tb_test_gen/u_data_gen/wr_data_rise_8> <u_tb_test_gen/u_data_gen/wr_data_rise_4> <u_tb_test_gen/u_data_gen/wr_data_rise_0> 
+INFO:Xst:2261 - The FF/Latch <u_tb_test_gen/u_data_gen/wr_data_rise_70> in Unit <ddr2_tb_top> is equivalent to the following 17 FFs/Latches, which will be removed : <u_tb_test_gen/u_data_gen/wr_data_rise_66> <u_tb_test_gen/u_data_gen/wr_data_rise_62> <u_tb_test_gen/u_data_gen/wr_data_rise_58> <u_tb_test_gen/u_data_gen/wr_data_rise_54> <u_tb_test_gen/u_data_gen/wr_data_rise_50> <u_tb_test_gen/u_data_gen/wr_data_rise_46> <u_tb_test_gen/u_data_gen/wr_data_rise_42> <u_tb_test_gen/u_data_gen/wr_data_rise_38> <u_tb_test_gen/u_data_gen/wr_data_rise_34> <u_tb_test_gen/u_data_gen/wr_data_rise_30> <u_tb_test_gen/u_data_gen/wr_data_rise_26> <u_tb_test_gen/u_data_gen/wr_data_rise_22> <u_tb_test_gen/u_data_gen/wr_data_rise_18> <u_tb_test_gen/u_data_gen/wr_data_rise_14> <u_tb_test_gen/u_data_gen/wr_data_rise_10> <u_tb_test_gen/u_data_gen/wr_data_rise_6> <u_tb_test_gen/u_data_gen/wr_data_rise_2> 
+INFO:Xst:2261 - The FF/Latch <u_tb_test_gen/u_data_gen/wr_data_fall_71> in Unit <ddr2_tb_top> is equivalent to the following 17 FFs/Latches, which will be removed : <u_tb_test_gen/u_data_gen/wr_data_fall_67> <u_tb_test_gen/u_data_gen/wr_data_fall_63> <u_tb_test_gen/u_data_gen/wr_data_fall_59> <u_tb_test_gen/u_data_gen/wr_data_fall_55> <u_tb_test_gen/u_data_gen/wr_data_fall_51> <u_tb_test_gen/u_data_gen/wr_data_fall_47> <u_tb_test_gen/u_data_gen/wr_data_fall_43> <u_tb_test_gen/u_data_gen/wr_data_fall_39> <u_tb_test_gen/u_data_gen/wr_data_fall_35> <u_tb_test_gen/u_data_gen/wr_data_fall_31> <u_tb_test_gen/u_data_gen/wr_data_fall_27> <u_tb_test_gen/u_data_gen/wr_data_fall_23> <u_tb_test_gen/u_data_gen/wr_data_fall_19> <u_tb_test_gen/u_data_gen/wr_data_fall_15> <u_tb_test_gen/u_data_gen/wr_data_fall_11> <u_tb_test_gen/u_data_gen/wr_data_fall_7> <u_tb_test_gen/u_data_gen/wr_data_fall_3> 
+INFO:Xst:2261 - The FF/Latch <u_tb_test_gen/u_data_gen/wr_data_fall_69> in Unit <ddr2_tb_top> is equivalent to the following 17 FFs/Latches, which will be removed : <u_tb_test_gen/u_data_gen/wr_data_fall_65> <u_tb_test_gen/u_data_gen/wr_data_fall_61> <u_tb_test_gen/u_data_gen/wr_data_fall_57> <u_tb_test_gen/u_data_gen/wr_data_fall_53> <u_tb_test_gen/u_data_gen/wr_data_fall_49> <u_tb_test_gen/u_data_gen/wr_data_fall_45> <u_tb_test_gen/u_data_gen/wr_data_fall_41> <u_tb_test_gen/u_data_gen/wr_data_fall_37> <u_tb_test_gen/u_data_gen/wr_data_fall_33> <u_tb_test_gen/u_data_gen/wr_data_fall_29> <u_tb_test_gen/u_data_gen/wr_data_fall_25> <u_tb_test_gen/u_data_gen/wr_data_fall_21> <u_tb_test_gen/u_data_gen/wr_data_fall_17> <u_tb_test_gen/u_data_gen/wr_data_fall_13> <u_tb_test_gen/u_data_gen/wr_data_fall_9> <u_tb_test_gen/u_data_gen/wr_data_fall_5> <u_tb_test_gen/u_data_gen/wr_data_fall_1> 
+INFO:Xst:2261 - The FF/Latch <u_tb_test_gen/u_data_gen/wr_data_fall_68> in Unit <ddr2_tb_top> is equivalent to the following 17 FFs/Latches, which will be removed : <u_tb_test_gen/u_data_gen/wr_data_fall_64> <u_tb_test_gen/u_data_gen/wr_data_fall_60> <u_tb_test_gen/u_data_gen/wr_data_fall_56> <u_tb_test_gen/u_data_gen/wr_data_fall_52> <u_tb_test_gen/u_data_gen/wr_data_fall_48> <u_tb_test_gen/u_data_gen/wr_data_fall_44> <u_tb_test_gen/u_data_gen/wr_data_fall_40> <u_tb_test_gen/u_data_gen/wr_data_fall_36> <u_tb_test_gen/u_data_gen/wr_data_fall_32> <u_tb_test_gen/u_data_gen/wr_data_fall_28> <u_tb_test_gen/u_data_gen/wr_data_fall_24> <u_tb_test_gen/u_data_gen/wr_data_fall_20> <u_tb_test_gen/u_data_gen/wr_data_fall_16> <u_tb_test_gen/u_data_gen/wr_data_fall_12> <u_tb_test_gen/u_data_gen/wr_data_fall_8> <u_tb_test_gen/u_data_gen/wr_data_fall_4> <u_tb_test_gen/u_data_gen/wr_data_fall_0> 
+INFO:Xst:2261 - The FF/Latch <u_tb_test_gen/u_data_gen/wr_data_rise_69> in Unit <ddr2_tb_top> is equivalent to the following 17 FFs/Latches, which will be removed : <u_tb_test_gen/u_data_gen/wr_data_rise_65> <u_tb_test_gen/u_data_gen/wr_data_rise_61> <u_tb_test_gen/u_data_gen/wr_data_rise_57> <u_tb_test_gen/u_data_gen/wr_data_rise_53> <u_tb_test_gen/u_data_gen/wr_data_rise_49> <u_tb_test_gen/u_data_gen/wr_data_rise_45> <u_tb_test_gen/u_data_gen/wr_data_rise_41> <u_tb_test_gen/u_data_gen/wr_data_rise_37> <u_tb_test_gen/u_data_gen/wr_data_rise_33> <u_tb_test_gen/u_data_gen/wr_data_rise_29> <u_tb_test_gen/u_data_gen/wr_data_rise_25> <u_tb_test_gen/u_data_gen/wr_data_rise_21> <u_tb_test_gen/u_data_gen/wr_data_rise_17> <u_tb_test_gen/u_data_gen/wr_data_rise_13> <u_tb_test_gen/u_data_gen/wr_data_rise_9> <u_tb_test_gen/u_data_gen/wr_data_rise_5> <u_tb_test_gen/u_data_gen/wr_data_rise_1> 
+INFO:Xst:2261 - The FF/Latch <u_tb_test_gen/u_data_gen/app_wdf_data_r_140> in Unit <ddr2_tb_top> is equivalent to the following 17 FFs/Latches, which will be removed : <u_tb_test_gen/u_data_gen/app_wdf_data_r_136> <u_tb_test_gen/u_data_gen/app_wdf_data_r_132> <u_tb_test_gen/u_data_gen/app_wdf_data_r_128> <u_tb_test_gen/u_data_gen/app_wdf_data_r_124> <u_tb_test_gen/u_data_gen/app_wdf_data_r_120> <u_tb_test_gen/u_data_gen/app_wdf_data_r_116> <u_tb_test_gen/u_data_gen/app_wdf_data_r_112> <u_tb_test_gen/u_data_gen/app_wdf_data_r_108> <u_tb_test_gen/u_data_gen/app_wdf_data_r_104> <u_tb_test_gen/u_data_gen/app_wdf_data_r_100> <u_tb_test_gen/u_data_gen/app_wdf_data_r_96> <u_tb_test_gen/u_data_gen/app_wdf_data_r_92> <u_tb_test_gen/u_data_gen/app_wdf_data_r_88> <u_tb_test_gen/u_data_gen/app_wdf_data_r_84> <u_tb_test_gen/u_data_gen/app_wdf_data_r_80> <u_tb_test_gen/u_data_gen/app_wdf_data_r_76> <u_tb_test_gen/u_data_gen/app_wdf_data_r_72> 
+INFO:Xst:2261 - The FF/Latch <u_tb_test_gen/u_data_gen/app_wdf_data_r_141> in Unit <ddr2_tb_top> is equivalent to the following 17 FFs/Latches, which will be removed : <u_tb_test_gen/u_data_gen/app_wdf_data_r_137> <u_tb_test_gen/u_data_gen/app_wdf_data_r_133> <u_tb_test_gen/u_data_gen/app_wdf_data_r_129> <u_tb_test_gen/u_data_gen/app_wdf_data_r_125> <u_tb_test_gen/u_data_gen/app_wdf_data_r_121> <u_tb_test_gen/u_data_gen/app_wdf_data_r_117> <u_tb_test_gen/u_data_gen/app_wdf_data_r_113> <u_tb_test_gen/u_data_gen/app_wdf_data_r_109> <u_tb_test_gen/u_data_gen/app_wdf_data_r_105> <u_tb_test_gen/u_data_gen/app_wdf_data_r_101> <u_tb_test_gen/u_data_gen/app_wdf_data_r_97> <u_tb_test_gen/u_data_gen/app_wdf_data_r_93> <u_tb_test_gen/u_data_gen/app_wdf_data_r_89> <u_tb_test_gen/u_data_gen/app_wdf_data_r_85> <u_tb_test_gen/u_data_gen/app_wdf_data_r_81> <u_tb_test_gen/u_data_gen/app_wdf_data_r_77> <u_tb_test_gen/u_data_gen/app_wdf_data_r_73> 
+INFO:Xst:2261 - The FF/Latch <u_tb_test_gen/u_data_gen/app_wdf_data_r_142> in Unit <ddr2_tb_top> is equivalent to the following 17 FFs/Latches, which will be removed : <u_tb_test_gen/u_data_gen/app_wdf_data_r_138> <u_tb_test_gen/u_data_gen/app_wdf_data_r_134> <u_tb_test_gen/u_data_gen/app_wdf_data_r_130> <u_tb_test_gen/u_data_gen/app_wdf_data_r_126> <u_tb_test_gen/u_data_gen/app_wdf_data_r_122> <u_tb_test_gen/u_data_gen/app_wdf_data_r_118> <u_tb_test_gen/u_data_gen/app_wdf_data_r_114> <u_tb_test_gen/u_data_gen/app_wdf_data_r_110> <u_tb_test_gen/u_data_gen/app_wdf_data_r_106> <u_tb_test_gen/u_data_gen/app_wdf_data_r_102> <u_tb_test_gen/u_data_gen/app_wdf_data_r_98> <u_tb_test_gen/u_data_gen/app_wdf_data_r_94> <u_tb_test_gen/u_data_gen/app_wdf_data_r_90> <u_tb_test_gen/u_data_gen/app_wdf_data_r_86> <u_tb_test_gen/u_data_gen/app_wdf_data_r_82> <u_tb_test_gen/u_data_gen/app_wdf_data_r_78> <u_tb_test_gen/u_data_gen/app_wdf_data_r_74> 
+INFO:Xst:2261 - The FF/Latch <u_tb_test_gen/u_data_gen/app_wdf_data_r_143> in Unit <ddr2_tb_top> is equivalent to the following 17 FFs/Latches, which will be removed : <u_tb_test_gen/u_data_gen/app_wdf_data_r_139> <u_tb_test_gen/u_data_gen/app_wdf_data_r_135> <u_tb_test_gen/u_data_gen/app_wdf_data_r_131> <u_tb_test_gen/u_data_gen/app_wdf_data_r_127> <u_tb_test_gen/u_data_gen/app_wdf_data_r_123> <u_tb_test_gen/u_data_gen/app_wdf_data_r_119> <u_tb_test_gen/u_data_gen/app_wdf_data_r_115> <u_tb_test_gen/u_data_gen/app_wdf_data_r_111> <u_tb_test_gen/u_data_gen/app_wdf_data_r_107> <u_tb_test_gen/u_data_gen/app_wdf_data_r_103> <u_tb_test_gen/u_data_gen/app_wdf_data_r_99> <u_tb_test_gen/u_data_gen/app_wdf_data_r_95> <u_tb_test_gen/u_data_gen/app_wdf_data_r_91> <u_tb_test_gen/u_data_gen/app_wdf_data_r_87> <u_tb_test_gen/u_data_gen/app_wdf_data_r_83> <u_tb_test_gen/u_data_gen/app_wdf_data_r_79> <u_tb_test_gen/u_data_gen/app_wdf_data_r_75> 
+INFO:Xst:2261 - The FF/Latch <u_tb_test_gen/u_data_gen/app_wdf_data_r_70> in Unit <ddr2_tb_top> is equivalent to the following 17 FFs/Latches, which will be removed : <u_tb_test_gen/u_data_gen/app_wdf_data_r_66> <u_tb_test_gen/u_data_gen/app_wdf_data_r_62> <u_tb_test_gen/u_data_gen/app_wdf_data_r_58> <u_tb_test_gen/u_data_gen/app_wdf_data_r_54> <u_tb_test_gen/u_data_gen/app_wdf_data_r_50> <u_tb_test_gen/u_data_gen/app_wdf_data_r_46> <u_tb_test_gen/u_data_gen/app_wdf_data_r_42> <u_tb_test_gen/u_data_gen/app_wdf_data_r_38> <u_tb_test_gen/u_data_gen/app_wdf_data_r_34> <u_tb_test_gen/u_data_gen/app_wdf_data_r_30> <u_tb_test_gen/u_data_gen/app_wdf_data_r_26> <u_tb_test_gen/u_data_gen/app_wdf_data_r_22> <u_tb_test_gen/u_data_gen/app_wdf_data_r_18> <u_tb_test_gen/u_data_gen/app_wdf_data_r_14> <u_tb_test_gen/u_data_gen/app_wdf_data_r_10> <u_tb_test_gen/u_data_gen/app_wdf_data_r_6> <u_tb_test_gen/u_data_gen/app_wdf_data_r_2> 
+INFO:Xst:2261 - The FF/Latch <u_tb_test_gen/u_data_gen/app_wdf_data_r_71> in Unit <ddr2_tb_top> is equivalent to the following 17 FFs/Latches, which will be removed : <u_tb_test_gen/u_data_gen/app_wdf_data_r_67> <u_tb_test_gen/u_data_gen/app_wdf_data_r_63> <u_tb_test_gen/u_data_gen/app_wdf_data_r_59> <u_tb_test_gen/u_data_gen/app_wdf_data_r_55> <u_tb_test_gen/u_data_gen/app_wdf_data_r_51> <u_tb_test_gen/u_data_gen/app_wdf_data_r_47> <u_tb_test_gen/u_data_gen/app_wdf_data_r_43> <u_tb_test_gen/u_data_gen/app_wdf_data_r_39> <u_tb_test_gen/u_data_gen/app_wdf_data_r_35> <u_tb_test_gen/u_data_gen/app_wdf_data_r_31> <u_tb_test_gen/u_data_gen/app_wdf_data_r_27> <u_tb_test_gen/u_data_gen/app_wdf_data_r_23> <u_tb_test_gen/u_data_gen/app_wdf_data_r_19> <u_tb_test_gen/u_data_gen/app_wdf_data_r_15> <u_tb_test_gen/u_data_gen/app_wdf_data_r_11> <u_tb_test_gen/u_data_gen/app_wdf_data_r_7> <u_tb_test_gen/u_data_gen/app_wdf_data_r_3> 
+INFO:Xst:2261 - The FF/Latch <u_tb_test_gen/u_data_gen/app_wdf_data_r_68> in Unit <ddr2_tb_top> is equivalent to the following 17 FFs/Latches, which will be removed : <u_tb_test_gen/u_data_gen/app_wdf_data_r_64> <u_tb_test_gen/u_data_gen/app_wdf_data_r_60> <u_tb_test_gen/u_data_gen/app_wdf_data_r_56> <u_tb_test_gen/u_data_gen/app_wdf_data_r_52> <u_tb_test_gen/u_data_gen/app_wdf_data_r_48> <u_tb_test_gen/u_data_gen/app_wdf_data_r_44> <u_tb_test_gen/u_data_gen/app_wdf_data_r_40> <u_tb_test_gen/u_data_gen/app_wdf_data_r_36> <u_tb_test_gen/u_data_gen/app_wdf_data_r_32> <u_tb_test_gen/u_data_gen/app_wdf_data_r_28> <u_tb_test_gen/u_data_gen/app_wdf_data_r_24> <u_tb_test_gen/u_data_gen/app_wdf_data_r_20> <u_tb_test_gen/u_data_gen/app_wdf_data_r_16> <u_tb_test_gen/u_data_gen/app_wdf_data_r_12> <u_tb_test_gen/u_data_gen/app_wdf_data_r_8> <u_tb_test_gen/u_data_gen/app_wdf_data_r_4> <u_tb_test_gen/u_data_gen/app_wdf_data_r_0> 
+INFO:Xst:2261 - The FF/Latch <u_tb_test_gen/u_data_gen/app_wdf_data_r_69> in Unit <ddr2_tb_top> is equivalent to the following 17 FFs/Latches, which will be removed : <u_tb_test_gen/u_data_gen/app_wdf_data_r_65> <u_tb_test_gen/u_data_gen/app_wdf_data_r_61> <u_tb_test_gen/u_data_gen/app_wdf_data_r_57> <u_tb_test_gen/u_data_gen/app_wdf_data_r_53> <u_tb_test_gen/u_data_gen/app_wdf_data_r_49> <u_tb_test_gen/u_data_gen/app_wdf_data_r_45> <u_tb_test_gen/u_data_gen/app_wdf_data_r_41> <u_tb_test_gen/u_data_gen/app_wdf_data_r_37> <u_tb_test_gen/u_data_gen/app_wdf_data_r_33> <u_tb_test_gen/u_data_gen/app_wdf_data_r_29> <u_tb_test_gen/u_data_gen/app_wdf_data_r_25> <u_tb_test_gen/u_data_gen/app_wdf_data_r_21> <u_tb_test_gen/u_data_gen/app_wdf_data_r_17> <u_tb_test_gen/u_data_gen/app_wdf_data_r_13> <u_tb_test_gen/u_data_gen/app_wdf_data_r_9> <u_tb_test_gen/u_data_gen/app_wdf_data_r_5> <u_tb_test_gen/u_data_gen/app_wdf_data_r_1> 
+INFO:Xst:2261 - The FF/Latch <u_tb_test_gen/u_data_gen/app_wdf_data_68> in Unit <ddr2_tb_top> is equivalent to the following 17 FFs/Latches, which will be removed : <u_tb_test_gen/u_data_gen/app_wdf_data_64> <u_tb_test_gen/u_data_gen/app_wdf_data_60> <u_tb_test_gen/u_data_gen/app_wdf_data_56> <u_tb_test_gen/u_data_gen/app_wdf_data_52> <u_tb_test_gen/u_data_gen/app_wdf_data_48> <u_tb_test_gen/u_data_gen/app_wdf_data_44> <u_tb_test_gen/u_data_gen/app_wdf_data_40> <u_tb_test_gen/u_data_gen/app_wdf_data_36> <u_tb_test_gen/u_data_gen/app_wdf_data_32> <u_tb_test_gen/u_data_gen/app_wdf_data_28> <u_tb_test_gen/u_data_gen/app_wdf_data_24> <u_tb_test_gen/u_data_gen/app_wdf_data_20> <u_tb_test_gen/u_data_gen/app_wdf_data_16> <u_tb_test_gen/u_data_gen/app_wdf_data_12> <u_tb_test_gen/u_data_gen/app_wdf_data_8> <u_tb_test_gen/u_data_gen/app_wdf_data_4> <u_tb_test_gen/u_data_gen/app_wdf_data_0> 
+INFO:Xst:2261 - The FF/Latch <u_tb_test_gen/u_data_gen/app_wdf_data_69> in Unit <ddr2_tb_top> is equivalent to the following 17 FFs/Latches, which will be removed : <u_tb_test_gen/u_data_gen/app_wdf_data_65> <u_tb_test_gen/u_data_gen/app_wdf_data_61> <u_tb_test_gen/u_data_gen/app_wdf_data_57> <u_tb_test_gen/u_data_gen/app_wdf_data_53> <u_tb_test_gen/u_data_gen/app_wdf_data_49> <u_tb_test_gen/u_data_gen/app_wdf_data_45> <u_tb_test_gen/u_data_gen/app_wdf_data_41> <u_tb_test_gen/u_data_gen/app_wdf_data_37> <u_tb_test_gen/u_data_gen/app_wdf_data_33> <u_tb_test_gen/u_data_gen/app_wdf_data_29> <u_tb_test_gen/u_data_gen/app_wdf_data_25> <u_tb_test_gen/u_data_gen/app_wdf_data_21> <u_tb_test_gen/u_data_gen/app_wdf_data_17> <u_tb_test_gen/u_data_gen/app_wdf_data_13> <u_tb_test_gen/u_data_gen/app_wdf_data_9> <u_tb_test_gen/u_data_gen/app_wdf_data_5> <u_tb_test_gen/u_data_gen/app_wdf_data_1> 
+INFO:Xst:2261 - The FF/Latch <u_tb_test_gen/u_data_gen/app_wdf_data_140> in Unit <ddr2_tb_top> is equivalent to the following 17 FFs/Latches, which will be removed : <u_tb_test_gen/u_data_gen/app_wdf_data_136> <u_tb_test_gen/u_data_gen/app_wdf_data_132> <u_tb_test_gen/u_data_gen/app_wdf_data_128> <u_tb_test_gen/u_data_gen/app_wdf_data_124> <u_tb_test_gen/u_data_gen/app_wdf_data_120> <u_tb_test_gen/u_data_gen/app_wdf_data_116> <u_tb_test_gen/u_data_gen/app_wdf_data_112> <u_tb_test_gen/u_data_gen/app_wdf_data_108> <u_tb_test_gen/u_data_gen/app_wdf_data_104> <u_tb_test_gen/u_data_gen/app_wdf_data_100> <u_tb_test_gen/u_data_gen/app_wdf_data_96> <u_tb_test_gen/u_data_gen/app_wdf_data_92> <u_tb_test_gen/u_data_gen/app_wdf_data_88> <u_tb_test_gen/u_data_gen/app_wdf_data_84> <u_tb_test_gen/u_data_gen/app_wdf_data_80> <u_tb_test_gen/u_data_gen/app_wdf_data_76> <u_tb_test_gen/u_data_gen/app_wdf_data_72> 
+INFO:Xst:2261 - The FF/Latch <u_tb_test_gen/u_data_gen/app_wdf_data_141> in Unit <ddr2_tb_top> is equivalent to the following 17 FFs/Latches, which will be removed : <u_tb_test_gen/u_data_gen/app_wdf_data_137> <u_tb_test_gen/u_data_gen/app_wdf_data_133> <u_tb_test_gen/u_data_gen/app_wdf_data_129> <u_tb_test_gen/u_data_gen/app_wdf_data_125> <u_tb_test_gen/u_data_gen/app_wdf_data_121> <u_tb_test_gen/u_data_gen/app_wdf_data_117> <u_tb_test_gen/u_data_gen/app_wdf_data_113> <u_tb_test_gen/u_data_gen/app_wdf_data_109> <u_tb_test_gen/u_data_gen/app_wdf_data_105> <u_tb_test_gen/u_data_gen/app_wdf_data_101> <u_tb_test_gen/u_data_gen/app_wdf_data_97> <u_tb_test_gen/u_data_gen/app_wdf_data_93> <u_tb_test_gen/u_data_gen/app_wdf_data_89> <u_tb_test_gen/u_data_gen/app_wdf_data_85> <u_tb_test_gen/u_data_gen/app_wdf_data_81> <u_tb_test_gen/u_data_gen/app_wdf_data_77> <u_tb_test_gen/u_data_gen/app_wdf_data_73> 
+INFO:Xst:2261 - The FF/Latch <u_tb_test_gen/u_data_gen/app_wdf_data_142> in Unit <ddr2_tb_top> is equivalent to the following 17 FFs/Latches, which will be removed : <u_tb_test_gen/u_data_gen/app_wdf_data_138> <u_tb_test_gen/u_data_gen/app_wdf_data_134> <u_tb_test_gen/u_data_gen/app_wdf_data_130> <u_tb_test_gen/u_data_gen/app_wdf_data_126> <u_tb_test_gen/u_data_gen/app_wdf_data_122> <u_tb_test_gen/u_data_gen/app_wdf_data_118> <u_tb_test_gen/u_data_gen/app_wdf_data_114> <u_tb_test_gen/u_data_gen/app_wdf_data_110> <u_tb_test_gen/u_data_gen/app_wdf_data_106> <u_tb_test_gen/u_data_gen/app_wdf_data_102> <u_tb_test_gen/u_data_gen/app_wdf_data_98> <u_tb_test_gen/u_data_gen/app_wdf_data_94> <u_tb_test_gen/u_data_gen/app_wdf_data_90> <u_tb_test_gen/u_data_gen/app_wdf_data_86> <u_tb_test_gen/u_data_gen/app_wdf_data_82> <u_tb_test_gen/u_data_gen/app_wdf_data_78> <u_tb_test_gen/u_data_gen/app_wdf_data_74> 
+INFO:Xst:2261 - The FF/Latch <u_tb_test_gen/u_data_gen/app_wdf_data_143> in Unit <ddr2_tb_top> is equivalent to the following 17 FFs/Latches, which will be removed : <u_tb_test_gen/u_data_gen/app_wdf_data_139> <u_tb_test_gen/u_data_gen/app_wdf_data_135> <u_tb_test_gen/u_data_gen/app_wdf_data_131> <u_tb_test_gen/u_data_gen/app_wdf_data_127> <u_tb_test_gen/u_data_gen/app_wdf_data_123> <u_tb_test_gen/u_data_gen/app_wdf_data_119> <u_tb_test_gen/u_data_gen/app_wdf_data_115> <u_tb_test_gen/u_data_gen/app_wdf_data_111> <u_tb_test_gen/u_data_gen/app_wdf_data_107> <u_tb_test_gen/u_data_gen/app_wdf_data_103> <u_tb_test_gen/u_data_gen/app_wdf_data_99> <u_tb_test_gen/u_data_gen/app_wdf_data_95> <u_tb_test_gen/u_data_gen/app_wdf_data_91> <u_tb_test_gen/u_data_gen/app_wdf_data_87> <u_tb_test_gen/u_data_gen/app_wdf_data_83> <u_tb_test_gen/u_data_gen/app_wdf_data_79> <u_tb_test_gen/u_data_gen/app_wdf_data_75> 
+INFO:Xst:2261 - The FF/Latch <u_tb_test_gen/u_data_gen/app_wdf_data_70> in Unit <ddr2_tb_top> is equivalent to the following 17 FFs/Latches, which will be removed : <u_tb_test_gen/u_data_gen/app_wdf_data_66> <u_tb_test_gen/u_data_gen/app_wdf_data_62> <u_tb_test_gen/u_data_gen/app_wdf_data_58> <u_tb_test_gen/u_data_gen/app_wdf_data_54> <u_tb_test_gen/u_data_gen/app_wdf_data_50> <u_tb_test_gen/u_data_gen/app_wdf_data_46> <u_tb_test_gen/u_data_gen/app_wdf_data_42> <u_tb_test_gen/u_data_gen/app_wdf_data_38> <u_tb_test_gen/u_data_gen/app_wdf_data_34> <u_tb_test_gen/u_data_gen/app_wdf_data_30> <u_tb_test_gen/u_data_gen/app_wdf_data_26> <u_tb_test_gen/u_data_gen/app_wdf_data_22> <u_tb_test_gen/u_data_gen/app_wdf_data_18> <u_tb_test_gen/u_data_gen/app_wdf_data_14> <u_tb_test_gen/u_data_gen/app_wdf_data_10> <u_tb_test_gen/u_data_gen/app_wdf_data_6> <u_tb_test_gen/u_data_gen/app_wdf_data_2> 
+INFO:Xst:2261 - The FF/Latch <u_tb_test_gen/u_data_gen/app_wdf_data_71> in Unit <ddr2_tb_top> is equivalent to the following 17 FFs/Latches, which will be removed : <u_tb_test_gen/u_data_gen/app_wdf_data_67> <u_tb_test_gen/u_data_gen/app_wdf_data_63> <u_tb_test_gen/u_data_gen/app_wdf_data_59> <u_tb_test_gen/u_data_gen/app_wdf_data_55> <u_tb_test_gen/u_data_gen/app_wdf_data_51> <u_tb_test_gen/u_data_gen/app_wdf_data_47> <u_tb_test_gen/u_data_gen/app_wdf_data_43> <u_tb_test_gen/u_data_gen/app_wdf_data_39> <u_tb_test_gen/u_data_gen/app_wdf_data_35> <u_tb_test_gen/u_data_gen/app_wdf_data_31> <u_tb_test_gen/u_data_gen/app_wdf_data_27> <u_tb_test_gen/u_data_gen/app_wdf_data_23> <u_tb_test_gen/u_data_gen/app_wdf_data_19> <u_tb_test_gen/u_data_gen/app_wdf_data_15> <u_tb_test_gen/u_data_gen/app_wdf_data_11> <u_tb_test_gen/u_data_gen/app_wdf_data_7> <u_tb_test_gen/u_data_gen/app_wdf_data_3> 
+Found area constraint ratio of 100 (+ 5) on block ddr2_tb_top, actual ratio is 1.
+INFO:Xst:2260 - The FF/Latch <u_tb_test_cmp/gen_cmp_data[69].ff_cmp_data> in Unit <ddr2_tb_top> is equivalent to the following 17 FFs/Latches : <u_tb_test_cmp/gen_cmp_data[65].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[61].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[57].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[53].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[49].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[45].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[41].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[37].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[33].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[29].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[25].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[21].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[17].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[13].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[9].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[5].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[1].ff_cmp_data> 
+INFO:Xst:2260 - The FF/Latch <u_tb_test_cmp/gen_cmp_data[68].ff_cmp_data> in Unit <ddr2_tb_top> is equivalent to the following 17 FFs/Latches : <u_tb_test_cmp/gen_cmp_data[64].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[60].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[56].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[52].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[48].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[44].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[40].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[36].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[32].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[28].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[24].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[20].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[16].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[12].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[8].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[4].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[0].ff_cmp_data> 
+INFO:Xst:2260 - The FF/Latch <u_tb_test_cmp/gen_cmp_data[70].ff_cmp_data> in Unit <ddr2_tb_top> is equivalent to the following 17 FFs/Latches : <u_tb_test_cmp/gen_cmp_data[66].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[62].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[58].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[54].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[50].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[46].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[42].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[38].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[34].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[30].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[26].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[22].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[18].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[14].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[10].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[6].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[2].ff_cmp_data> 
+INFO:Xst:2260 - The FF/Latch <u_tb_test_cmp/gen_cmp_data[142].ff_cmp_data> in Unit <ddr2_tb_top> is equivalent to the following 17 FFs/Latches : <u_tb_test_cmp/gen_cmp_data[138].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[134].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[130].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[126].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[122].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[118].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[114].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[110].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[106].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[102].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[98].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[94].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[90].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[86].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[82].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[78].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[74].ff_cmp_data> 
+INFO:Xst:2260 - The FF/Latch <u_tb_test_cmp/ff_rd_data_valid_r> in Unit <ddr2_tb_top> is equivalent to the following FF/Latch : <u_tb_test_gen/u_data_gen/ff_rd_data_valid_r> 
+INFO:Xst:2260 - The FF/Latch <u_tb_test_cmp/gen_cmp_data[140].ff_cmp_data> in Unit <ddr2_tb_top> is equivalent to the following 17 FFs/Latches : <u_tb_test_cmp/gen_cmp_data[136].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[132].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[128].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[124].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[120].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[116].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[112].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[108].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[104].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[100].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[96].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[92].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[88].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[84].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[80].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[76].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[72].ff_cmp_data> 
+INFO:Xst:2260 - The FF/Latch <u_tb_test_cmp/gen_cmp_data[71].ff_cmp_data> in Unit <ddr2_tb_top> is equivalent to the following 17 FFs/Latches : <u_tb_test_cmp/gen_cmp_data[67].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[63].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[59].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[55].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[51].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[47].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[43].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[39].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[35].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[31].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[27].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[23].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[19].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[15].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[11].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[7].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[3].ff_cmp_data> 
+INFO:Xst:2260 - The FF/Latch <u_tb_test_cmp/gen_cmp_data[143].ff_cmp_data> in Unit <ddr2_tb_top> is equivalent to the following 17 FFs/Latches : <u_tb_test_cmp/gen_cmp_data[139].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[135].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[131].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[127].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[123].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[119].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[115].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[111].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[107].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[103].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[99].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[95].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[91].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[87].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[83].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[79].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[75].ff_cmp_data> 
+INFO:Xst:2260 - The FF/Latch <u_tb_test_cmp/gen_cmp_data[141].ff_cmp_data> in Unit <ddr2_tb_top> is equivalent to the following 17 FFs/Latches : <u_tb_test_cmp/gen_cmp_data[137].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[133].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[129].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[125].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[121].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[117].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[113].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[109].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[105].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[101].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[97].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[93].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[89].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[85].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[81].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[77].ff_cmp_data> <u_tb_test_cmp/gen_cmp_data[73].ff_cmp_data> 
+
+Final Macro Processing ...
+
+Processing Unit <ddr2_tb_top> :
+	Found 2-bit shift register for signal <u_tb_test_gen/u_addr_gen/app_af_cmd_1>.
+	Found 2-bit shift register for signal <u_tb_test_gen/u_addr_gen/app_af_cmd_0>.
+	Found 2-bit shift register for signal <u_tb_test_gen/u_addr_gen/app_af_addr_26>.
+	Found 2-bit shift register for signal <u_tb_test_gen/u_addr_gen/app_af_addr_25>.
+	Found 2-bit shift register for signal <u_tb_test_gen/u_addr_gen/app_af_addr_24>.
+	Found 2-bit shift register for signal <u_tb_test_gen/u_addr_gen/app_af_addr_23>.
+	Found 2-bit shift register for signal <u_tb_test_gen/u_addr_gen/app_af_addr_22>.
+	Found 2-bit shift register for signal <u_tb_test_gen/u_addr_gen/app_af_addr_21>.
+	Found 2-bit shift register for signal <u_tb_test_gen/u_addr_gen/app_af_addr_20>.
+	Found 2-bit shift register for signal <u_tb_test_gen/u_addr_gen/app_af_addr_19>.
+	Found 2-bit shift register for signal <u_tb_test_gen/u_addr_gen/app_af_addr_18>.
+	Found 2-bit shift register for signal <u_tb_test_gen/u_addr_gen/app_af_addr_17>.
+	Found 2-bit shift register for signal <u_tb_test_gen/u_addr_gen/app_af_addr_16>.
+	Found 2-bit shift register for signal <u_tb_test_gen/u_addr_gen/app_af_addr_15>.
+	Found 2-bit shift register for signal <u_tb_test_gen/u_addr_gen/app_af_addr_14>.
+	Found 2-bit shift register for signal <u_tb_test_gen/u_addr_gen/app_af_addr_13>.
+	Found 2-bit shift register for signal <u_tb_test_gen/u_addr_gen/app_af_addr_12>.
+	Found 2-bit shift register for signal <u_tb_test_gen/u_addr_gen/app_af_addr_11>.
+	Found 2-bit shift register for signal <u_tb_test_gen/u_addr_gen/app_af_addr_10>.
+	Found 2-bit shift register for signal <u_tb_test_gen/u_addr_gen/app_af_addr_9>.
+	Found 2-bit shift register for signal <u_tb_test_gen/u_addr_gen/app_af_addr_8>.
+	Found 2-bit shift register for signal <u_tb_test_gen/u_addr_gen/app_af_addr_7>.
+	Found 2-bit shift register for signal <u_tb_test_gen/u_addr_gen/app_af_addr_6>.
+	Found 2-bit shift register for signal <u_tb_test_gen/u_addr_gen/app_af_addr_5>.
+	Found 2-bit shift register for signal <u_tb_test_gen/u_addr_gen/app_af_addr_4>.
+	Found 2-bit shift register for signal <u_tb_test_gen/u_addr_gen/app_af_addr_3>.
+	Found 2-bit shift register for signal <u_tb_test_gen/u_addr_gen/app_af_addr_2>.
+	Found 2-bit shift register for signal <u_tb_test_gen/u_addr_gen/app_af_addr_1>.
+	Found 2-bit shift register for signal <u_tb_test_gen/u_addr_gen/app_af_addr_0>.
+	Found 2-bit shift register for signal <u_tb_test_gen/u_data_gen/app_wdf_data_143>.
+	Found 2-bit shift register for signal <u_tb_test_gen/u_data_gen/app_wdf_data_142>.
+	Found 2-bit shift register for signal <u_tb_test_gen/u_data_gen/app_wdf_data_141>.
+	Found 2-bit shift register for signal <u_tb_test_gen/u_data_gen/app_wdf_data_140>.
+	Found 2-bit shift register for signal <u_tb_test_gen/u_data_gen/app_wdf_data_71>.
+	Found 2-bit shift register for signal <u_tb_test_gen/u_data_gen/app_wdf_data_70>.
+	Found 2-bit shift register for signal <u_tb_test_gen/u_data_gen/app_wdf_data_69>.
+	Found 2-bit shift register for signal <u_tb_test_gen/u_data_gen/app_wdf_data_68>.
+INFO:Xst:741 - HDL ADVISOR - A 4-bit shift register was found for signal <u_tb_test_gen/u_addr_gen/app_af_wren> and currently occupies 4 logic cells (2 slices). Removing the set/reset logic would take advantage of SRL32 (and derived) primitives and reduce this to 1 logic cells (1 slices). Evaluate if the set/reset can be removed for this simple shift register. The majority of simple pipeline structures do not need to be set/reset operationally.
+Unit <ddr2_tb_top> processed.
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 665
+ Flip-Flops                                            : 665
+# Shift Registers                                      : 37
+ 2-bit shift register                                  : 37
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : ddr2_tb_top.ngr
+Top Level Output File Name         : ddr2_tb_top
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 350
+
+Cell Usage :
+# BELS                             : 103
+#      GND                         : 1
+#      INV                         : 4
+#      LUT2                        : 4
+#      LUT3                        : 11
+#      LUT4                        : 17
+#      LUT5                        : 4
+#      LUT6                        : 61
+#      VCC                         : 1
+# FlipFlops/Latches                : 702
+#      FD                          : 182
+#      FDE                         : 37
+#      FDR                         : 32
+#      FDRE                        : 6
+#      FDRSE                       : 445
+# RAMS                             : 1
+#      RAMB36_EXP                  : 1
+# Shift Registers                  : 37
+#      SRLC16E                     : 37
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 349
+#      IBUF                        : 149
+#      OBUF                        : 200
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 5vlx110tff1136-1 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:             702  out of  69120     1%  
+ Number of Slice LUTs:                  138  out of  69120     0%  
+    Number used as Logic:               101  out of  69120     0%  
+    Number used as Memory:               37  out of  17920     0%  
+       Number used as SRL:               37
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:    743
+   Number with an unused Flip Flop:      41  out of    743     5%  
+   Number with an unused LUT:           605  out of    743    81%  
+   Number of fully used LUT-FF pairs:    97  out of    743    13%  
+   Number of unique control sets:         9
+
+IO Utilization: 
+ Number of IOs:                         350
+ Number of bonded IOBs:                 350  out of    640    54%  
+
+Specific Feature Utilization:
+ Number of Block RAM/FIFO:                1  out of    148     0%  
+    Number using Block RAM only:          1
+ Number of BUFG/BUFGCTRLs:                1  out of     32     3%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk0                               | BUFGP                  | 740   |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -1
+
+   Minimum period: 2.304ns (Maximum Frequency: 434.028MHz)
+   Minimum input arrival time before clock: 1.170ns
+   Maximum output required time after clock: 3.352ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk0'
+  Clock period: 2.304ns (frequency: 434.028MHz)
+  Total number of paths / destination ports: 1041 / 642
+-------------------------------------------------------------------------
+Delay:               2.304ns (Levels of Logic = 2)
+  Source:            u_tb_test_cmp/gen_cmp_data[65].ff_cmp_data (FF)
+  Destination:       u_tb_test_cmp/byte_err_rise_r_8 (FF)
+  Source Clock:      clk0 rising
+  Destination Clock: clk0 rising
+
+  Data Path: u_tb_test_cmp/gen_cmp_data[65].ff_cmp_data to u_tb_test_cmp/byte_err_rise_r_8
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDRSE:C->Q            1   0.471   1.069  u_tb_test_cmp/gen_cmp_data[65].ff_cmp_data (u_tb_test_cmp/cmp_data_r<65>)
+     LUT6:I0->O            1   0.094   0.576  u_tb_test_cmp/byte_err_rise_r_8_rstpot_SW0 (N78)
+     LUT6:I4->O            1   0.094   0.000  u_tb_test_cmp/byte_err_rise_r_8_rstpot (u_tb_test_cmp/byte_err_rise_r_8_rstpot)
+     FDR:D                    -0.018          u_tb_test_cmp/byte_err_rise_r_8
+    ----------------------------------------
+    Total                      2.304ns (0.659ns logic, 1.645ns route)
+                                       (28.6% logic, 71.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk0'
+  Total number of paths / destination ports: 153 / 153
+-------------------------------------------------------------------------
+Offset:              1.170ns (Levels of Logic = 1)
+  Source:            rst0 (PAD)
+  Destination:       rst_r (FF)
+  Destination Clock: clk0 rising
+
+  Data Path: rst0 to rst_r
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             4   0.818   0.352  rst0_IBUF (rst0_IBUF)
+     FD:D                     -0.018          rst_r
+    ----------------------------------------
+    Total                      1.170ns (0.818ns logic, 0.352ns route)
+                                       (69.9% logic, 30.1% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk0'
+  Total number of paths / destination ports: 177 / 177
+-------------------------------------------------------------------------
+Offset:              3.352ns (Levels of Logic = 1)
+  Source:            u_tb_test_gen/u_data_gen/app_wdf_data_143 (FF)
+  Destination:       app_wdf_data<143> (PAD)
+  Source Clock:      clk0 rising
+
+  Data Path: u_tb_test_gen/u_data_gen/app_wdf_data_143 to app_wdf_data<143>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q             18   0.471   0.429  u_tb_test_gen/u_data_gen/app_wdf_data_143 (u_tb_test_gen/u_data_gen/app_wdf_data_143)
+     OBUF:I->O                 2.452          app_wdf_data_103_OBUF (app_wdf_data<103>)
+    ----------------------------------------
+    Total                      3.352ns (2.923ns logic, 0.429ns route)
+                                       (87.2% logic, 12.8% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 19.00 secs
+Total CPU time to Xst completion: 19.54 secs
+ 
+--> 
+
+Total memory usage is 409056 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   22 (   0 filtered)
+Number of infos    :   49 (   0 filtered)
+

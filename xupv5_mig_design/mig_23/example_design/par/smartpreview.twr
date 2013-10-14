@@ -1,0 +1,163 @@
+Number of Timing Constraints that were not applied: 2
+
+Asterisk (*) preceding a constraint indicates it was not met.
+   This may be due to a setup or hold violation.
+
+------------------------------------------------------------------------------------------------------
+  Constraint                                |  Check  | Worst Case |  Best Case | Timing |   Timing   
+                                            |         |    Slack   | Achievable | Errors |    Score   
+------------------------------------------------------------------------------------------------------
+* TS_u_ddr2_infrastructure_dcm_clkdiv0 = PE | SETUP   |     0.018ns|     7.482ns|       0|           0
+  RIOD TIMEGRP         "u_ddr2_infrastructu | HOLD    |    -0.064ns|            |       2|          91
+  re_dcm_clkdiv0" TS_SYS_CLK * 2 HIGH 50%   |         |            |            |        |            
+------------------------------------------------------------------------------------------------------
+* TS_MC_GATE_DLY = MAXDELAY FROM TIMEGRP "T | SETUP   |    12.558ns|     2.442ns|       0|           0
+  NM_GATE_DLY" TO TIMEGRP "FFS"         TS_ | HOLD    |    -0.039ns|            |       1|          39
+  SYS_CLK * 4                               |         |            |            |        |            
+------------------------------------------------------------------------------------------------------
+  TS_u_ddr2_infrastructure_dcm_clk0 = PERIO | SETUP   |     0.003ns|     3.747ns|       0|           0
+  D TIMEGRP         "u_ddr2_infrastructure_ | HOLD    |     0.068ns|            |       0|           0
+  dcm_clk0" TS_SYS_CLK HIGH 50%             |         |            |            |        |            
+------------------------------------------------------------------------------------------------------
+  TS_u_ddr2_infrastructure_dcm_clk90 = PERI | SETUP   |     0.004ns|     3.742ns|       0|           0
+  OD TIMEGRP         "u_ddr2_infrastructure | HOLD    |     0.337ns|            |       0|           0
+  _dcm_clk90" TS_SYS_CLK PHASE 0.938 ns HIG |         |            |            |        |            
+  H 50%                                     |         |            |            |        |            
+------------------------------------------------------------------------------------------------------
+  TS_DQ_CE = MAXDELAY FROM TIMEGRP "TNM_DQ_ | SETUP   |     0.011ns|     1.889ns|       0|           0
+  CE_IDDR" TO TIMEGRP "TNM_DQS_FLOPS"       | HOLD    |     1.013ns|            |       0|           0
+     1.9 ns                                 |         |            |            |        |            
+------------------------------------------------------------------------------------------------------
+  NET         "u_ddr2_top_0/u_mem_if_top/u_ | MAXDELAY|     0.012ns|     0.838ns|       0|           0
+  phy_top/u_phy_io/gen_dqs[7].u_iob_dqs/en_ |         |            |            |        |            
+  dqs_sync"         MAXDELAY = 0.85 ns      |         |            |            |        |            
+------------------------------------------------------------------------------------------------------
+  NET         "u_ddr2_top_0/u_mem_if_top/u_ | MAXDELAY|     0.012ns|     0.838ns|       0|           0
+  phy_top/u_phy_io/gen_dqs[6].u_iob_dqs/en_ |         |            |            |        |            
+  dqs_sync"         MAXDELAY = 0.85 ns      |         |            |            |        |            
+------------------------------------------------------------------------------------------------------
+  NET         "u_ddr2_top_0/u_mem_if_top/u_ | MAXDELAY|     0.012ns|     0.838ns|       0|           0
+  phy_top/u_phy_io/gen_dqs[4].u_iob_dqs/en_ |         |            |            |        |            
+  dqs_sync"         MAXDELAY = 0.85 ns      |         |            |            |        |            
+------------------------------------------------------------------------------------------------------
+  NET         "u_ddr2_top_0/u_mem_if_top/u_ | MAXDELAY|     0.012ns|     0.838ns|       0|           0
+  phy_top/u_phy_io/gen_dqs[3].u_iob_dqs/en_ |         |            |            |        |            
+  dqs_sync"         MAXDELAY = 0.85 ns      |         |            |            |        |            
+------------------------------------------------------------------------------------------------------
+  NET         "u_ddr2_top_0/u_mem_if_top/u_ | MAXDELAY|     0.012ns|     0.838ns|       0|           0
+  phy_top/u_phy_io/gen_dqs[2].u_iob_dqs/en_ |         |            |            |        |            
+  dqs_sync"         MAXDELAY = 0.85 ns      |         |            |            |        |            
+------------------------------------------------------------------------------------------------------
+  NET         "u_ddr2_top_0/u_mem_if_top/u_ | MAXDELAY|     0.015ns|     0.835ns|       0|           0
+  phy_top/u_phy_io/gen_dqs[1].u_iob_dqs/en_ |         |            |            |        |            
+  dqs_sync"         MAXDELAY = 0.85 ns      |         |            |            |        |            
+------------------------------------------------------------------------------------------------------
+  NET         "u_ddr2_top_0/u_mem_if_top/u_ | MAXDELAY|     0.015ns|     0.835ns|       0|           0
+  phy_top/u_phy_io/gen_dqs[0].u_iob_dqs/en_ |         |            |            |        |            
+  dqs_sync"         MAXDELAY = 0.85 ns      |         |            |            |        |            
+------------------------------------------------------------------------------------------------------
+  NET         "u_ddr2_top_0/u_mem_if_top/u_ | MAXDELAY|     0.015ns|     0.835ns|       0|           0
+  phy_top/u_phy_io/gen_dqs[5].u_iob_dqs/en_ |         |            |            |        |            
+  dqs_sync"         MAXDELAY = 0.85 ns      |         |            |            |        |            
+------------------------------------------------------------------------------------------------------
+  NET "u_ddr2_top_0/u_mem_if_top/u_phy_top/ | MAXDELAY|     0.068ns|     0.532ns|       0|           0
+  u_phy_io/en_dqs<1>" MAXDELAY = 0.6        |         |            |            |        |            
+    ns                                      |         |            |            |        |            
+------------------------------------------------------------------------------------------------------
+  NET "u_ddr2_top_0/u_mem_if_top/u_phy_top/ | MAXDELAY|     0.071ns|     0.529ns|       0|           0
+  u_phy_io/en_dqs<0>" MAXDELAY = 0.6        |         |            |            |        |            
+    ns                                      |         |            |            |        |            
+------------------------------------------------------------------------------------------------------
+  NET "u_ddr2_top_0/u_mem_if_top/u_phy_top/ | MAXDELAY|     0.071ns|     0.529ns|       0|           0
+  u_phy_io/en_dqs<3>" MAXDELAY = 0.6        |         |            |            |        |            
+    ns                                      |         |            |            |        |            
+------------------------------------------------------------------------------------------------------
+  NET "u_ddr2_top_0/u_mem_if_top/u_phy_top/ | MAXDELAY|     0.071ns|     0.529ns|       0|           0
+  u_phy_io/en_dqs<4>" MAXDELAY = 0.6        |         |            |            |        |            
+    ns                                      |         |            |            |        |            
+------------------------------------------------------------------------------------------------------
+  NET "u_ddr2_top_0/u_mem_if_top/u_phy_top/ | MAXDELAY|     0.071ns|     0.529ns|       0|           0
+  u_phy_io/en_dqs<5>" MAXDELAY = 0.6        |         |            |            |        |            
+    ns                                      |         |            |            |        |            
+------------------------------------------------------------------------------------------------------
+  NET "u_ddr2_top_0/u_mem_if_top/u_phy_top/ | MAXDELAY|     0.071ns|     0.529ns|       0|           0
+  u_phy_io/en_dqs<6>" MAXDELAY = 0.6        |         |            |            |        |            
+    ns                                      |         |            |            |        |            
+------------------------------------------------------------------------------------------------------
+  NET "u_ddr2_top_0/u_mem_if_top/u_phy_top/ | MAXDELAY|     0.071ns|     0.529ns|       0|           0
+  u_phy_io/en_dqs<7>" MAXDELAY = 0.6        |         |            |            |        |            
+    ns                                      |         |            |            |        |            
+------------------------------------------------------------------------------------------------------
+  NET "u_ddr2_top_0/u_mem_if_top/u_phy_top/ | MAXDELAY|     0.229ns|     0.371ns|       0|           0
+  u_phy_io/en_dqs<2>" MAXDELAY = 0.6        |         |            |            |        |            
+    ns                                      |         |            |            |        |            
+------------------------------------------------------------------------------------------------------
+  TS_SYS_CLK_200 = PERIOD TIMEGRP "SYS_CLK_ | SETUP   |     3.164ns|     1.836ns|       0|           0
+  200" 5 ns HIGH 50%                        | HOLD    |     0.357ns|            |       0|           0
+------------------------------------------------------------------------------------------------------
+  TS_MC_RD_DATA_SEL = MAXDELAY FROM TIMEGRP | SETUP   |     8.766ns|     6.234ns|       0|           0
+   "TNM_RD_DATA_SEL" TO TIMEGRP "FFS"       | HOLD    |     0.058ns|            |       0|           0
+     TS_SYS_CLK * 4                         |         |            |            |        |            
+------------------------------------------------------------------------------------------------------
+  TS_MC_PHY_INIT_DATA_SEL_0 = MAXDELAY FROM | SETUP   |    10.123ns|     4.877ns|       0|           0
+   TIMEGRP "TNM_PHY_INIT_DATA_SEL" TO       | HOLD    |     0.078ns|            |       0|           0
+     TIMEGRP "FFS" TS_SYS_CLK * 4           |         |            |            |        |            
+------------------------------------------------------------------------------------------------------
+  TS_MC_RDEN_SEL_MUX = MAXDELAY FROM TIMEGR | SETUP   |    10.176ns|     4.824ns|       0|           0
+  P "TNM_RDEN_SEL_MUX" TO TIMEGRP "FFS"     | HOLD    |     0.368ns|            |       0|           0
+       TS_SYS_CLK * 4                       |         |            |            |        |            
+------------------------------------------------------------------------------------------------------
+  TS_U_TO_J = MAXDELAY FROM TIMEGRP "U_CLK" | SETUP   |    12.273ns|     2.727ns|       0|           0
+   TO TIMEGRP "J_CLK" 15 ns                 | HOLD    |     1.660ns|            |       0|           0
+------------------------------------------------------------------------------------------------------
+  TS_MC_CAL_RDEN_DLY = MAXDELAY FROM TIMEGR | SETUP   |    12.884ns|     2.116ns|       0|           0
+  P "TNM_CAL_RDEN_DLY" TO TIMEGRP "FFS"     | HOLD    |     0.277ns|            |       0|           0
+       TS_SYS_CLK * 4                       |         |            |            |        |            
+------------------------------------------------------------------------------------------------------
+  TS_MC_RDEN_DLY = MAXDELAY FROM TIMEGRP "T | SETUP   |    13.034ns|     1.966ns|       0|           0
+  NM_RDEN_DLY" TO TIMEGRP "FFS"         TS_ | HOLD    |     0.089ns|            |       0|           0
+  SYS_CLK * 4                               |         |            |            |        |            
+------------------------------------------------------------------------------------------------------
+  TS_U_TO_U = MAXDELAY FROM TIMEGRP "U_CLK" | SETUP   |    14.110ns|     0.890ns|       0|           0
+   TO TIMEGRP "U_CLK" 15 ns                 | HOLD    |     0.566ns|            |       0|           0
+------------------------------------------------------------------------------------------------------
+  TS_J_TO_J = MAXDELAY FROM TIMEGRP "J_CLK" | SETUP   |    18.413ns|    11.587ns|       0|           0
+   TO TIMEGRP "J_CLK" 30 ns                 | HOLD    |     0.348ns|            |       0|           0
+------------------------------------------------------------------------------------------------------
+  TS_MC_PHY_INIT_DATA_SEL_90 = MAXDELAY FRO | N/A     |         N/A|         N/A|     N/A|         N/A
+  M TIMEGRP "TNM_PHY_INIT_DATA_SEL" TO      |         |            |            |        |            
+      TIMEGRP "RAMS" TS_SYS_CLK * 4         |         |            |            |        |            
+------------------------------------------------------------------------------------------------------
+  TS_SYS_CLK = PERIOD TIMEGRP "SYS_CLK" 3.7 | N/A     |         N/A|         N/A|     N/A|         N/A
+  5 ns HIGH 50%                             |         |            |            |        |            
+------------------------------------------------------------------------------------------------------
+
+
+Derived Constraint Report
+Derived Constraints for TS_SYS_CLK
++-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
+|                               |   Period    |       Actual Period       |      Timing Errors        |      Paths Analyzed       |
+|           Constraint          | Requirement |-------------+-------------|-------------+-------------|-------------+-------------|
+|                               |             |   Direct    | Derivative  |   Direct    | Derivative  |   Direct    | Derivative  |
++-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
+|TS_SYS_CLK                     |      3.750ns|          N/A|      3.747ns|            0|            3|            0|        21779|
+| TS_MC_RD_DATA_SEL             |     15.000ns|      6.234ns|          N/A|            0|            0|          384|            0|
+| TS_MC_RDEN_SEL_MUX            |     15.000ns|      4.824ns|          N/A|            0|            0|          128|            0|
+| TS_MC_PHY_INIT_DATA_SEL_0     |     15.000ns|      4.877ns|          N/A|            0|            0|          167|            0|
+| TS_MC_PHY_INIT_DATA_SEL_90    |     15.000ns|          N/A|          N/A|            0|            0|            0|            0|
+| TS_MC_GATE_DLY                |     15.000ns|      2.442ns|          N/A|            1|            0|           40|            0|
+| TS_MC_RDEN_DLY                |     15.000ns|      1.966ns|          N/A|            0|            0|            5|            0|
+| TS_MC_CAL_RDEN_DLY            |     15.000ns|      2.116ns|          N/A|            0|            0|            5|            0|
+| TS_u_ddr2_infrastructure_dcm_c|      3.750ns|      3.747ns|          N/A|            0|            0|         5180|            0|
+| lk0                           |             |             |             |             |             |             |             |
+| TS_u_ddr2_infrastructure_dcm_c|      3.750ns|      3.742ns|          N/A|            0|            0|          648|            0|
+| lk90                          |             |             |             |             |             |             |             |
+| TS_u_ddr2_infrastructure_dcm_c|      7.500ns|      7.482ns|          N/A|            2|            0|        15222|            0|
+| lkdiv0                        |             |             |             |             |             |             |             |
++-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
+
+2 constraints not met.
+INFO:Timing:2761 - N/A entries in the Constraints list may indicate that the 
+   constraint does not cover any paths or that it has no requested value.
+
+

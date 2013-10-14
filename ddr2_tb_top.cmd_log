@@ -1,0 +1,5 @@
+xst -intstyle ise -ifn "E:/Dropbox/Works and collections/Elec/BTP/DDR_Interface/ddr2_tb_top.xst" -ofn "E:/Dropbox/Works and collections/Elec/BTP/DDR_Interface/ddr2_tb_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc5vlx110t-ff1136-1 "ddr2_tb_top.ngc" ddr2_tb_top.ngd  
+map -intstyle ise -p xc5vlx110t-ff1136-1 -w -logic_opt off -ol high -t 1 -register_duplication off -global_opt off -mt off -cm area -ir off -pr off -lc off -power off -o ddr2_tb_top_map.ncd ddr2_tb_top.ngd ddr2_tb_top.pcf 
+par -w -intstyle ise -ol high -mt off ddr2_tb_top_map.ncd ddr2_tb_top.ncd ddr2_tb_top.pcf 
+trce -intstyle ise -v 3 -s 1 -n 3 -fastpaths -xml ddr2_tb_top.twx ddr2_tb_top.ncd -o ddr2_tb_top.twr ddr2_tb_top.pcf 
