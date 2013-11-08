@@ -1,6 +1,0 @@
-CommandLine
-D:\Xilinx10.1\ISE\bin\nt\unwrapped\ngdbuild.exe -intstyle ise -dd ../synth/_ngo -nt timestamp -uc ddr2_sdram.ucf -p xc5vlx110tff1136-1 ddr2_sdram.ngc ddr2_sdram.ngd
-s
-FormatString
-ngdbuild [-p <partname>] {-sd <source_dir>} {-l <library>} [-ur <rules_file[.urf]>] [-dd <output_dir>] [-r] [-a] [-u] [-nt timestamp|on|off] [-uc <ucf_file[.ucf]>] [-aul] [-bm <bmm_file[.bmm]>] [-i] [-modular initial|module|assemble] [-intstyle ise|xflow|silent] [-quiet] [-verbose] [-active <active_module_name>] [-pimpath <pimpath>] {-use_pim <pim_module_name>} [-insert_keep_hierarchy] [--forcengd] {--n <ngl_file>} {--sl <library>} [--global_opt] [--script <tcl_file>] [--incremental] [--csttrans] <design_name> [<ngd_file[.ngd]>]
-s

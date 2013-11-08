@@ -1,0 +1,2 @@
+xst -intstyle ise -ifn "E:/Dropbox/Works and collections/Elec/Rice/DDR2_Interface_Xilinx_XUPV5/mig_30.xst" -ofn "E:/Dropbox/Works and collections/Elec/Rice/DDR2_Interface_Xilinx_XUPV5/mig_30.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc5vlx110t-ff1136-1 "mig_30.ngc" mig_30.ngd  

@@ -1,8 +1,0 @@
-INTSTYLE=ise
-INFILE=E:\Dropbox\Works and collections\Elec\BTP\DDR_Interface\coregen\mig_36_1.ncd
-OUTFILE=E:\Dropbox\Works and collections\Elec\BTP\DDR_Interface\coregen\mig_36_1.bit
-FAMILY=Virtex5
-PART=xc5vlx110t-1ff1136
-WORKINGDIR=E:\Dropbox\Works and collections\Elec\BTP\DDR_Interface\coregen
-LICENSE=ISE
-USER_INFO=__0_0_0

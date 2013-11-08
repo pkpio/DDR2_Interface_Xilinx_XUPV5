@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=E:\Dropbox\Works and collections\Elec\Rice\DDR2_Interface_Xilinx_XUPV5\mig_36_1.ncd
+OUTFILE=E:\Dropbox\Works and collections\Elec\Rice\DDR2_Interface_Xilinx_XUPV5\mig_36_1.bit
+FAMILY=Virtex5
+PART=xc5vlx110t-1ff1136
+WORKINGDIR=E:\Dropbox\Works and collections\Elec\Rice\DDR2_Interface_Xilinx_XUPV5
+LICENSE=ISE
+USER_INFO=__0_0_0

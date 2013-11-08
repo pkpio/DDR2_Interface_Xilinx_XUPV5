@@ -1,0 +1,13 @@
+xst -intstyle ise -ifn "E:/Dropbox/Works and collections/Elec/Rice/DDR2_Interface_Xilinx_XUPV5/mig_36_1.xst" -ofn "E:/Dropbox/Works and collections/Elec/Rice/DDR2_Interface_Xilinx_XUPV5/mig_36_1.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc5vlx110t-ff1136-1 "mig_36_1.ngc" mig_36_1.ngd  
+map -intstyle ise -p xc5vlx110t-ff1136-1 -w -logic_opt off -ol high -t 1 -register_duplication off -global_opt off -mt off -cm area -ir off -pr off -lc off -power off -o mig_36_1_map.ncd mig_36_1.ngd mig_36_1.pcf 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc "source/mig_36_1.ucf" -p xc5vlx110t-ff1136-1 "mig_36_1.ngc" mig_36_1.ngd  
+map -intstyle ise -p xc5vlx110t-ff1136-1 -w -logic_opt off -ol high -t 1 -register_duplication off -global_opt off -mt off -cm area -ir off -pr off -lc off -power off -o mig_36_1_map.ncd mig_36_1.ngd mig_36_1.pcf 
+par -w -intstyle ise -ol high -mt off mig_36_1_map.ncd mig_36_1.ncd mig_36_1.pcf 
+trce -intstyle ise -v 3 -s 1 -n 3 -fastpaths -xml mig_36_1.twx mig_36_1.ncd -o mig_36_1.twr mig_36_1.pcf 
+bitgen -intstyle ise -f mig_36_1.ut mig_36_1.ncd 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc "source/mig_36_1.ucf" -p xc5vlx110t-ff1136-1 "mig_36_1.ngc" mig_36_1.ngd  
+map -intstyle ise -p xc5vlx110t-ff1136-1 -w -logic_opt off -ol high -t 1 -register_duplication off -global_opt off -mt off -cm area -ir off -pr off -lc off -power off -o mig_36_1_map.ncd mig_36_1.ngd mig_36_1.pcf 
+par -w -intstyle ise -ol high -mt off mig_36_1_map.ncd mig_36_1.ncd mig_36_1.pcf 
+trce -intstyle ise -v 3 -s 1 -n 3 -fastpaths -xml mig_36_1.twx mig_36_1.ncd -o mig_36_1.twr mig_36_1.pcf 
+bitgen -intstyle ise -f mig_36_1.ut mig_36_1.ncd 

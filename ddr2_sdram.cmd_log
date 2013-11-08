@@ -1,6 +1,0 @@
-xst -intstyle ise -ifn "E:/Dropbox/Works and collections/Elec/BTP/DDR_Interface/ddr2_sdram.xst" -ofn "E:/Dropbox/Works and collections/Elec/BTP/DDR_Interface/ddr2_sdram.syr" 
-ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc5vlx110t-ff1136-1 "ddr2_sdram.ngc" ddr2_sdram.ngd  
-xst -intstyle ise -ifn "E:/Dropbox/Works and collections/Elec/BTP/DDR_Interface/ddr2_sdram.xst" -ofn "E:/Dropbox/Works and collections/Elec/BTP/DDR_Interface/ddr2_sdram.syr" 
-ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc5vlx110t-ff1136-1 "ddr2_sdram.ngc" ddr2_sdram.ngd  
-ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc "xupv5_mig_design/mig_23/example_design/par/ddr2_sdram.ucf" -p xc5vlx110t-ff1136-1 "ddr2_sdram.ngc" ddr2_sdram.ngd  
-ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc "xupv5_mig_design/mig_23/example_design/par/ddr2_sdram.ucf" -p xc5vlx110t-ff1136-1 "ddr2_sdram.ngc" ddr2_sdram.ngd  

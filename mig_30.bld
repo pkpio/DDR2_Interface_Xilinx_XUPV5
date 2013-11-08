@@ -1,0 +1,76 @@
+Release 13.3 ngdbuild O.76xd (nt64)
+Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
+
+Command Line: C:\Xilinx\13.3\ISE_DS\ISE\bin\nt64\unwrapped\ngdbuild.exe
+-intstyle ise -dd _ngo -nt timestamp -i -p xc5vlx110t-ff1136-1 mig_30.ngc
+mig_30.ngd
+
+Reading NGO file "E:/Dropbox/Works and
+collections/Elec/Rice/DDR2_Interface_Xilinx_XUPV5/mig_30.ngc" ...
+Gathering constraint information from source properties...
+Done.
+
+Resolving constraint associations...
+Checking Constraint Associations...
+Done...
+
+Checking expanded design ...
+ERROR:NgdBuild:604 - logical block 'i_icon' with type 'icon' could not be
+   resolved. A pin name misspelling can cause this, a missing edif or ngc file,
+   case mismatch between the block name and the edif or ngc file name, or the
+   misspelling of a type name. Symbol 'icon' is not supported in target
+   'virtex5'.
+ERROR:NgdBuild:604 - logical block 'i_ila' with type 'ila' could not be
+   resolved. A pin name misspelling can cause this, a missing edif or ngc file,
+   case mismatch between the block name and the edif or ngc file name, or the
+   misspelling of a type name. Symbol 'ila' is not supported in target
+   'virtex5'.
+WARNING:NgdBuild:443 - SFF primitive
+   'u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/gen_rden[1].u_calib
+   _rden_r' has unconnected output pin
+WARNING:NgdBuild:443 - SFF primitive
+   'u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/gen_rden[2].u_calib
+   _rden_r' has unconnected output pin
+WARNING:NgdBuild:443 - SFF primitive
+   'u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/gen_rden[3].u_calib
+   _rden_r' has unconnected output pin
+WARNING:NgdBuild:443 - SFF primitive
+   'u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/gen_rden[4].u_calib
+   _rden_r' has unconnected output pin
+WARNING:NgdBuild:443 - SFF primitive
+   'u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/gen_rden[5].u_calib
+   _rden_r' has unconnected output pin
+WARNING:NgdBuild:443 - SFF primitive
+   'u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/gen_rden[6].u_calib
+   _rden_r' has unconnected output pin
+WARNING:NgdBuild:443 - SFF primitive
+   'u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/u_phy_calib/gen_rden[7].u_calib
+   _rden_r' has unconnected output pin
+WARNING:NgdBuild:452 - logical net 'N541' has no driver
+WARNING:NgdBuild:452 - logical net 'N542' has no driver
+WARNING:NgdBuild:452 - logical net 'N543' has no driver
+WARNING:NgdBuild:452 - logical net 'N544' has no driver
+WARNING:NgdBuild:452 - logical net 'N545' has no driver
+WARNING:NgdBuild:452 - logical net 'N546' has no driver
+WARNING:NgdBuild:452 - logical net 'N547' has no driver
+WARNING:NgdBuild:452 - logical net 'N548' has no driver
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+NGDBUILD Design Results Summary:
+  Number of errors:     2
+  Number of warnings:  15
+
+Total memory usage is 190656 kilobytes
+
+Total REAL time to NGDBUILD completion:  8 sec
+Total CPU time to NGDBUILD completion:   6 sec
+
+One or more errors were found during NGDBUILD.  No NGD file will be written.
+
+Writing NGDBUILD log file "mig_30.bld"...
