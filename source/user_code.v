@@ -1,4 +1,17 @@
-
+//////////////////////////////////////////////////////////////////////////////////
+//
+// Author         :   Praveen Kumar Pendyala
+// Create Date    :   30/10/13
+// Modify Date    :   11/11/13
+// Module Name    :   simpleTestModuleOne
+// Project Name   :   DDR2_Interface_Xilinx_XUPV5
+// Target Devices :   Xilinx Vertix 5, XUPV5 110T
+// Tool versions  :   13.2 ISE
+//
+// Description    :   This module is user end code for DDR2 interfacing. The logic is in accordance with the
+//timing diagram given in the references.
+//
+//////////////////////////////////////////////////////////////////////////////////
 
 module ddr_interfacing(
     )
