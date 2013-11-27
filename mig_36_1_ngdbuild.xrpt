@@ -5,7 +5,7 @@
     The structure and the elements are likely to change over the next few releases.
     This means code written to parse this file will need to be revisited each subsequent release.-->
 
-  <application stringID="NgdBuild" timeStamp="Tue Nov 05 23:27:20 2013">
+  <application stringID="NgdBuild" timeStamp="Wed Nov 27 13:40:10 2013">
     <section stringID="User_Env">
       <table stringID="User_EnvVar">
         <column stringID="variable"/>
@@ -33,7 +33,7 @@
       </table>
       <item stringID="User_EnvOs" value="OS Information">
         <item stringID="User_EnvOsname" value="Microsoft Windows 7 , 64-bit"/>
-        <item stringID="User_EnvOsrelease" value="major release  (build 7600)"/>
+        <item stringID="User_EnvOsrelease" value="Service Pack 1  (build 7601)"/>
       </item>
       <item stringID="User_EnvHost" value="Praveen-PC"/>
       <table stringID="User_EnvCpu">
@@ -99,7 +99,7 @@
         <item dataType="int" stringID="NGDBUILD_NUM_LUT6" value="567"/>
         <item dataType="int" stringID="NGDBUILD_NUM_MUXCY" value="61"/>
         <item dataType="int" stringID="NGDBUILD_NUM_MUXF7" value="36"/>
-        <item dataType="int" stringID="NGDBUILD_NUM_OBUF" value="31"/>
+        <item dataType="int" stringID="NGDBUILD_NUM_OBUF" value="39"/>
         <item dataType="int" stringID="NGDBUILD_NUM_OBUFDS" value="2"/>
         <item dataType="int" stringID="NGDBUILD_NUM_ODDR" value="146"/>
         <item dataType="int" stringID="NGDBUILD_NUM_PLL_ADV" value="1"/>
@@ -146,7 +146,7 @@
         <item dataType="int" stringID="NGDBUILD_NUM_LUT6" value="567"/>
         <item dataType="int" stringID="NGDBUILD_NUM_MUXCY" value="61"/>
         <item dataType="int" stringID="NGDBUILD_NUM_MUXF7" value="36"/>
-        <item dataType="int" stringID="NGDBUILD_NUM_OBUF" value="31"/>
+        <item dataType="int" stringID="NGDBUILD_NUM_OBUF" value="39"/>
         <item dataType="int" stringID="NGDBUILD_NUM_OBUFDS" value="2"/>
         <item dataType="int" stringID="NGDBUILD_NUM_OBUFT" value="64"/>
         <item dataType="int" stringID="NGDBUILD_NUM_OBUFTDS" value="8"/>

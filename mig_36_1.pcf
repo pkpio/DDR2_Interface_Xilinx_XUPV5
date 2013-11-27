@@ -1,5 +1,5 @@
 //! **************************************************************************
-// Written by: Map O.76xd on Tue Nov 05 23:28:50 2013
+// Written by: Map O.76xd on Wed Nov 27 13:41:34 2013
 //! **************************************************************************
 
 SCHEMATIC START;
@@ -96,6 +96,12 @@ COMP "ddr2_ck_n<0>" LOCATE = SITE "C25" LEVEL 1;
 COMP "ddr2_ck_n<1>" LOCATE = SITE "E27" LEVEL 1;
 COMP "ddr2_cs_n<0>" LOCATE = SITE "B33" LEVEL 1;
 COMP "error" LOCATE = SITE "D34" LEVEL 1;
+COMP "LED<0>" LOCATE = SITE "AE24" LEVEL 1;
+COMP "LED<1>" LOCATE = SITE "AD24" LEVEL 1;
+COMP "LED<2>" LOCATE = SITE "AD25" LEVEL 1;
+COMP "LED<3>" LOCATE = SITE "G16" LEVEL 1;
+COMP "LED<4>" LOCATE = SITE "AD26" LEVEL 1;
+COMP "LED<5>" LOCATE = SITE "G15" LEVEL 1;
 COMP "clk200_n" LOCATE = SITE "L18" LEVEL 1;
 COMP "clk200_p" LOCATE = SITE "K17" LEVEL 1;
 COMP "ddr2_dqs_n<0>" LOCATE = SITE "D25" LEVEL 1;

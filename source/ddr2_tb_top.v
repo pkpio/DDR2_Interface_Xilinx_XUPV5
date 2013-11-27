@@ -89,7 +89,10 @@ module ddr2_tb_top #
    output [APPDATA_WIDTH-1:0]             app_wdf_data,
    output [(APPDATA_WIDTH/8)-1:0]         app_wdf_mask_data,
    output                                 error,
-   output                                 error_cmp
+   output                                 error_cmp,
+	
+	//For debugging
+	output [7:0]									LED
    );
 
   localparam BURST_LEN_DIV2 = BURST_LEN/2;
@@ -118,6 +121,11 @@ module ddr2_tb_top #
   reg [3:0]                state_cnt;
   reg                      wr_addr_en ;
   reg                      wr_data_en ;
+  
+  //For debugging
+  reg [7:0] LEDreg;  
+  assign LED = LEDreg;
+
 
   // XST attributes for local reset "tree"
   // synthesis attribute shreg_extract of rst_r is "no";
@@ -251,6 +259,7 @@ module ddr2_tb_top #
               if (state_cnt == 4'd7) begin
                 state      <= TB_READ;
                 state_cnt  <= 4'd0;
+					 LEDreg <= 7'b11111111;
               end else
                 state_cnt  <= state_cnt + 1;
             end else

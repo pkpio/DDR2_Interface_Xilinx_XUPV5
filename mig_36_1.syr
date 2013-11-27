@@ -3,14 +3,14 @@ Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.11 secs
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.12 secs
  
 --> Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.11 secs
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.12 secs
  
 --> Reading design: mig_36_1.prj
 
@@ -104,6 +104,7 @@ Slice Utilization Ratio Delta      : 5
 
 =========================================================================
 
+WARNING:Xst:2682 - Unable to write in file "mig_36_1.lso"
 
 =========================================================================
 *                          HDL Compilation                              *
@@ -149,6 +150,7 @@ Compiling verilog file "source/ddr2_top.v" in library work
 Module <ddr2_mem_if_top> compiled
 Compiling verilog file "source/ddr2_tb_top.v" in library work
 Module <ddr2_top> compiled
+WARNING:HDLCompilers:299 - "source/ddr2_tb_top.v" line 262 Too many digits specified in binary constant
 Compiling verilog file "source/ddr2_infrastructure.v" in library work
 Module <ddr2_tb_top> compiled
 Compiling verilog file "source/ddr2_idelay_ctrl.v" in library work
@@ -2432,6 +2434,7 @@ Performing bidirectional port resolution...
 INFO:Xst:2679 - Register <i> in unit <ddr2_phy_calib> has a constant value of 1000 during circuit operation. The register is replaced by logic.
 INFO:Xst:2679 - Register <calib_err<0>> in unit <ddr2_phy_calib> has a constant value of 0 during circuit operation. The register is replaced by logic.
 INFO:Xst:2679 - Register <calib_err<1>> in unit <ddr2_phy_calib> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <LEDreg> in unit <ddr2_tb_top> has a constant value of 01111111 during circuit operation. The register is replaced by logic.
 
 Synthesizing Unit <ddr2_ctrl>.
     Related source file is "source/ddr2_ctrl.v".
@@ -3199,12 +3202,12 @@ Synthesizing Unit <ddr2_tb_top>.
     Found 1-bit register for signal <app_af_not_afull_r>.
     Found 1-bit register for signal <app_wdf_not_afull_r>.
     Found 3-bit register for signal <burst_cnt>.
-    Found 3-bit subtractor for signal <burst_cnt$addsub0000> created at line 257.
+    Found 3-bit subtractor for signal <burst_cnt$addsub0000> created at line 266.
     Found 1-bit register for signal <phy_init_done_tb_r>.
     Found 1-bit register for signal <rst_r>.
     Found 1-bit register for signal <rst_r1>.
     Found 4-bit register for signal <state_cnt>.
-    Found 4-bit adder for signal <state_cnt$share0000> created at line 233.
+    Found 4-bit adder for signal <state_cnt$share0000> created at line 241.
     Found 1-bit register for signal <wr_addr_en>.
     Found 1-bit register for signal <wr_data_en>.
     Summary:
@@ -4568,7 +4571,7 @@ Optimization Goal                  : Speed
 Keep Hierarchy                     : No
 
 Design Statistics
-# IOs                              : 120
+# IOs                              : 128
 
 Cell Usage :
 # BELS                             : 1944
@@ -4610,12 +4613,12 @@ Cell Usage :
 #      SRLC32E                     : 18
 # Clock Buffers                    : 4
 #      BUFG                        : 4
-# IO Buffers                       : 108
+# IO Buffers                       : 116
 #      IBUF                        : 1
 #      IBUFGDS_LVPECL_25           : 2
 #      IOBUF                       : 64
 #      IOBUFDS                     : 8
-#      OBUF                        : 31
+#      OBUF                        : 39
 #      OBUFDS                      : 2
 # Others                           : 93
 #      BUFIO                       : 8
@@ -4647,8 +4650,8 @@ Slice Logic Distribution:
    Number of unique control sets:       325
 
 IO Utilization: 
- Number of IOs:                         120
- Number of bonded IOBs:                 120  out of    640    18%  
+ Number of IOs:                         128
+ Number of bonded IOBs:                 128  out of    640    20%  
 
 Specific Feature Utilization:
  Number of Block RAM/FIFO:                1  out of    148     0%  
@@ -5776,14 +5779,14 @@ WARNING:Xst:616 - Invalid property "SYN_PRESERVE 1": Did not attach to u_ddr2_to
 WARNING:Xst:616 - Invalid property "SYN_PRESERVE 1": Did not attach to u_ddr2_top_0/u_mem_if_top/u_phy_top/u_phy_io/gen_dm_inst.gen_dm[7].u_iob_dm/u_dm_ce.
 
 
-Total REAL time to Xst completion: 89.00 secs
-Total CPU time to Xst completion: 88.97 secs
+Total REAL time to Xst completion: 74.00 secs
+Total CPU time to Xst completion: 73.39 secs
  
 --> 
 
-Total memory usage is 531584 kilobytes
+Total memory usage is 530584 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings : 1404 (   0 filtered)
-Number of infos    :  115 (   0 filtered)
+Number of warnings : 1406 (   0 filtered)
+Number of infos    :  116 (   0 filtered)
 

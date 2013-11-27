@@ -6,7 +6,7 @@ Command Line: C:\Xilinx\13.3\ISE_DS\ISE\bin\nt64\unwrapped\ngdbuild.exe
 xc5vlx110t-ff1136-1 mig_36_1.ngc mig_36_1.ngd
 
 Reading NGO file "E:/Dropbox/Works and
-collections/Elec/Rice/DDR2_Interface_Xilinx_XUPV5/mig_36_1.ngc" ...
+collections/Elec/BTP/DDR2_Interface_Xilinx_XUPV5/mig_36_1.ngc" ...
 Gathering constraint information from source properties...
 Done.
 
@@ -78,10 +78,10 @@ NGDBUILD Design Results Summary:
   Number of errors:     0
   Number of warnings:  15
 
-Total memory usage is 199040 kilobytes
+Total memory usage is 198732 kilobytes
 
 Writing NGD file "mig_36_1.ngd" ...
 Total REAL time to NGDBUILD completion:  10 sec
-Total CPU time to NGDBUILD completion:   9 sec
+Total CPU time to NGDBUILD completion:   10 sec
 
 Writing NGDBUILD log file "mig_36_1.bld"...

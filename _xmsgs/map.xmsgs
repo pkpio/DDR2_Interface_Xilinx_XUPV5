@@ -46,20 +46,44 @@ of frag <arg fmt="%s" index="2">REGCLKBU</arg> connected to power/ground net <ar
 of frag <arg fmt="%s" index="2">REGCLKBL</arg> connected to power/ground net <arg fmt="%s" index="3">u_ddr2_tb_top_0/u_tb_test_gen/u_addr_gen/u_wr_rd_addr_lookup_REGCLKBL_tiesig</arg>
 </msg>
 
-<msg type="info" file="Pack" num="1716" delta="old" >Initializing temperature to <arg fmt="%0.3f" index="1">85.000</arg> Celsius. (default - Range: <arg fmt="%0.3f" index="2">0.000</arg> to <arg fmt="%0.3f" index="3">85.000</arg> Celsius)
+<msg type="info" file="Pack" num="1716" delta="new" >Initializing temperature to <arg fmt="%0.3f" index="1">85.000</arg> Celsius. (default - Range: <arg fmt="%0.3f" index="2">0.000</arg> to <arg fmt="%0.3f" index="3">85.000</arg> Celsius)
 </msg>
 
-<msg type="info" file="Pack" num="1720" delta="old" >Initializing voltage to <arg fmt="%0.3f" index="1">0.950</arg> Volts. (default - Range: <arg fmt="%0.3f" index="2">0.950</arg> to <arg fmt="%0.3f" index="3">1.050</arg> Volts)
+<msg type="info" file="Pack" num="1720" delta="new" >Initializing voltage to <arg fmt="%0.3f" index="1">0.950</arg> Volts. (default - Range: <arg fmt="%0.3f" index="2">0.950</arg> to <arg fmt="%0.3f" index="3">1.050</arg> Volts)
 </msg>
 
-<msg type="warning" file="Timing" num="3223" delta="old" >Timing constraint <arg fmt="%s" index="1">TS_MC_PHY_INIT_DATA_SEL_90 = MAXDELAY FROM TIMEGRP &quot;TNM_PHY_INIT_DATA_SEL&quot; TO TIMEGRP &quot;RAMS&quot; TS_SYS_CLK * 4</arg> ignored during timing analysis.</msg>
+<msg type="warning" file="Timing" num="3223" delta="new" >Timing constraint <arg fmt="%s" index="1">TS_MC_PHY_INIT_DATA_SEL_90 = MAXDELAY FROM TIMEGRP &quot;TNM_PHY_INIT_DATA_SEL&quot; TO TIMEGRP &quot;RAMS&quot; TS_SYS_CLK * 4</arg> ignored during timing analysis.</msg>
 
-<msg type="info" file="Timing" num="3386" delta="old" >Intersecting Constraints found and resolved.  For more information, see the TSI report.  Please consult the Xilinx Command Line Tools User Guide for information on generating a TSI report.</msg>
+<msg type="info" file="Timing" num="3386" delta="new" >Intersecting Constraints found and resolved.  For more information, see the TSI report.  Please consult the Xilinx Command Line Tools User Guide for information on generating a TSI report.</msg>
 
-<msg type="info" file="Map" num="215" delta="old" >The Interim Design Summary has been generated in the MAP Report (.mrp).
+<msg type="info" file="Map" num="215" delta="new" >The Interim Design Summary has been generated in the MAP Report (.mrp).
 </msg>
 
-<msg type="info" file="Pack" num="1650" delta="old" >Map created a placed design.
+<msg type="warning" file="Place" num="837" delta="new" >Partially locked IO Bus is found. 
+<arg fmt="%s" index="1"> Following components of the bus are not locked: 
+	 Comp: LED&lt;7&gt;
+	 Comp: LED&lt;6&gt;
+</arg>
+</msg>
+
+<msg type="warning" file="Place" num="838" delta="new" >An IO Bus with more than one IO standard is found.
+<arg fmt="%s" index="1">Components associated with this bus are as follows: 
+	 Comp: LED&lt;0&gt;   IOSTANDARD = LVDCI_18
+	 Comp: LED&lt;1&gt;   IOSTANDARD = LVDCI_18
+	 Comp: LED&lt;2&gt;   IOSTANDARD = LVDCI_18
+	 Comp: LED&lt;3&gt;   IOSTANDARD = LVCMOS12
+	 Comp: LED&lt;4&gt;   IOSTANDARD = LVDCI_18
+	 Comp: LED&lt;5&gt;   IOSTANDARD = LVCMOS12
+	 Comp: LED&lt;6&gt;   IOSTANDARD = LVCMOS25
+	 Comp: LED&lt;7&gt;   IOSTANDARD = LVCMOS25
+
+</arg>
+</msg>
+
+<msg type="info" file="Place" num="834" delta="new" >Only a subset of IOs are locked. Out of <arg fmt="%d" index="1">128</arg> IOs, <arg fmt="%d" index="2">126</arg> are locked and <arg fmt="%d" index="3">2</arg> are not locked. <arg fmt="%s" index="4">If you would like to print the names of these IOs, please set the environment variable XIL_PAR_DESIGN_CHECK_VERBOSE to 1.</arg> 
+</msg>
+
+<msg type="info" file="Pack" num="1650" delta="new" >Map created a placed design.
 </msg>
 
 </messages>

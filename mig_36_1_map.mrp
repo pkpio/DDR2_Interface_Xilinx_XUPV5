@@ -9,20 +9,20 @@ Target Device  : xc5vlx110t
 Target Package : ff1136
 Target Speed   : -1
 Mapper Version : virtex5 -- $Revision: 1.55 $
-Mapped Date    : Tue Nov 05 23:27:29 2013
+Mapped Date    : Wed Nov 27 13:40:14 2013
 
 Design Summary
 --------------
 Number of errors:      0
-Number of warnings:    3
+Number of warnings:    5
 Slice Logic Utilization:
   Number of Slice Registers:                 2,805 out of  69,120    4%
     Number used as Flip Flops:               2,805
-  Number of Slice LUTs:                      1,816 out of  69,120    2%
-    Number used as logic:                    1,761 out of  69,120    2%
-      Number using O6 output only:           1,725
+  Number of Slice LUTs:                      1,814 out of  69,120    2%
+    Number used as logic:                    1,759 out of  69,120    2%
+      Number using O6 output only:           1,724
       Number using O5 output only:              11
-      Number using O5 and O6:                   25
+      Number using O5 and O6:                   24
     Number used as Memory:                      54 out of  17,920    1%
       Number used as Shift Register:            54
         Number using O6 output only:            54
@@ -31,11 +31,11 @@ Slice Logic Utilization:
     Number using O6 output only:                12
 
 Slice Logic Distribution:
-  Number of occupied Slices:                 1,405 out of  17,280    8%
-  Number of LUT Flip Flop pairs used:        3,430
-    Number with an unused Flip Flop:           625 out of   3,430   18%
-    Number with an unused LUT:               1,614 out of   3,430   47%
-    Number of fully used LUT-FF pairs:       1,191 out of   3,430   34%
+  Number of occupied Slices:                 1,359 out of  17,280    7%
+  Number of LUT Flip Flop pairs used:        3,462
+    Number with an unused Flip Flop:           657 out of   3,462   18%
+    Number with an unused LUT:               1,648 out of   3,462   47%
+    Number of fully used LUT-FF pairs:       1,157 out of   3,462   33%
     Number of unique control sets:             305
     Number of slice register sites lost
       to control set restrictions:             725 out of  69,120    1%
@@ -49,8 +49,8 @@ Slice Logic Distribution:
   over-mapped for a non-BRAM resource or if placement fails.
 
 IO Utilization:
-  Number of bonded IOBs:                       120 out of     640   18%
-    Number of LOCed IOBs:                      120 out of     120  100%
+  Number of bonded IOBs:                       128 out of     640   20%
+    Number of LOCed IOBs:                      126 out of     128   98%
     IOB Flip Flops:                            265
 
 Specific Feature Utilization:
@@ -69,9 +69,9 @@ Specific Feature Utilization:
 
 Average Fanout of Non-Clock Nets:                2.77
 
-Peak Memory Usage:  663 MB
-Total REAL time to MAP completion:  1 mins 24 secs 
-Total CPU time to MAP completion:   1 mins 10 secs 
+Peak Memory Usage:  661 MB
+Total REAL time to MAP completion:  1 mins 22 secs 
+Total CPU time to MAP completion:   1 mins 12 secs 
 
 Table of Contents
 -----------------
@@ -105,6 +105,23 @@ WARNING:Pack:2874 - Trimming timing constraints from pin
 WARNING:Timing:3223 - Timing constraint TS_MC_PHY_INIT_DATA_SEL_90 = MAXDELAY
    FROM TIMEGRP "TNM_PHY_INIT_DATA_SEL" TO TIMEGRP "RAMS" TS_SYS_CLK * 4 ignored
    during timing analysis.
+WARNING:Place:837 - Partially locked IO Bus is found. 
+    Following components of the bus are not locked: 
+   	 Comp: LED<7>
+   	 Comp: LED<6>
+
+WARNING:Place:838 - An IO Bus with more than one IO standard is found.
+   Components associated with this bus are as follows: 
+   	 Comp: LED<0>   IOSTANDARD = LVDCI_18
+   	 Comp: LED<1>   IOSTANDARD = LVDCI_18
+   	 Comp: LED<2>   IOSTANDARD = LVDCI_18
+   	 Comp: LED<3>   IOSTANDARD = LVCMOS12
+   	 Comp: LED<4>   IOSTANDARD = LVDCI_18
+   	 Comp: LED<5>   IOSTANDARD = LVCMOS12
+   	 Comp: LED<6>   IOSTANDARD = LVCMOS25
+   	 Comp: LED<7>   IOSTANDARD = LVCMOS25
+
+
 
 Section 3 - Informational
 -------------------------
@@ -141,6 +158,9 @@ INFO:Timing:3386 - Intersecting Constraints found and resolved.  For more
    Tools User Guide for information on generating a TSI report.
 INFO:Map:215 - The Interim Design Summary has been generated in the MAP Report
    (.mrp).
+INFO:Place:834 - Only a subset of IOs are locked. Out of 128 IOs, 126 are locked
+   and 2 are not locked. If you would like to print the names of these IOs,
+   please set the environment variable XIL_PAR_DESIGN_CHECK_VERBOSE to 1. 
 INFO:Pack:1650 - Map created a placed design.
 
 Section 4 - Removed Logic Summary
@@ -891,6 +911,14 @@ Section 6 - IOB Properties
 | IOB Name                           | Type             | Direction | IO Standard          | Diff  | Drive    | Slew | Reg (s)      | Resistor | IOB      |
 |                                    |                  |           |                      | Term  | Strength | Rate |              |          | Delay    |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| LED<0>                             | IOB              | OUTPUT    | LVDCI_18             |       |          |      |              |          |          |
+| LED<1>                             | IOB              | OUTPUT    | LVDCI_18             |       |          |      |              |          |          |
+| LED<2>                             | IOB              | OUTPUT    | LVDCI_18             |       |          |      |              |          |          |
+| LED<3>                             | IOB              | OUTPUT    | LVCMOS12             |       | 8        | SLOW |              |          |          |
+| LED<4>                             | IOB              | OUTPUT    | LVDCI_18             |       |          |      |              |          |          |
+| LED<5>                             | IOB              | OUTPUT    | LVCMOS12             |       | 8        | SLOW |              |          |          |
+| LED<6>                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| LED<7>                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
 | clk200_n                           | IOB              | INPUT     | LVPECL_25            |       |          |      |              |          |          |
 | clk200_p                           | IOB              | INPUT     | LVPECL_25            |       |          |      |              |          |          |
 | ddr2_a<0>                          | IOB              | OUTPUT    | SSTL18_II            |       |          |      | OFF          |          |          |

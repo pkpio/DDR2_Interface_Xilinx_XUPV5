@@ -186,7 +186,10 @@ module mig_36_1 #
    inout  [DQS_WIDTH-1:0]             ddr2_dqs,
    inout  [DQS_WIDTH-1:0]             ddr2_dqs_n,
    output [CLK_WIDTH-1:0]             ddr2_ck,
-   output [CLK_WIDTH-1:0]             ddr2_ck_n
+   output [CLK_WIDTH-1:0]             ddr2_ck_n,
+	
+	//For debugging
+	output	wire [7:0]	LED 	//8 optional LEDs for visual feedback & debugging
    );
 
   //***************************************************************************
@@ -446,7 +449,8 @@ u_ddr2_tb_top_0
    .app_af_cmd             (app_af_cmd),
    .rd_data_fifo_out       (rd_data_fifo_out),
    .app_wdf_data           (app_wdf_data),
-   .app_wdf_mask_data      (app_wdf_mask_data)
+   .app_wdf_mask_data      (app_wdf_mask_data),
+	.LED							(LED)
    );
 
    //*****************************************************************
